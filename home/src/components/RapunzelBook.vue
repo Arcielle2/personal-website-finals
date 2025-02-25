@@ -37,14 +37,14 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(to right, #ff9a9e, #fad0c4);
+  background: url('https://i.pinimg.com/736x/4f/a8/c5/4fa8c5e3c1e9f1f94bd124c2ca492124.jpg') no-repeat center center/cover;
 }
 
 .book {
-  width: 300px;
-  height: 400px;
+  width: 400px;
+  height: 500px;
   position: relative;
-  perspective: 1000px;
+  perspective: 1200px;
 }
 
 .cover {
@@ -60,9 +60,10 @@ export default {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
   font-family: 'Parisienne', cursive;
-  font-size: 24px;
+  font-size: 28px;
   padding: 20px;
   transition: transform 1s;
+  backface-visibility: hidden;
 }
 
 /* Left cover (Stays still) */
@@ -84,11 +85,11 @@ export default {
 
 .continue-btn {
   margin-top: 20px;
-  padding: 10px 20px;
+  padding: 12px 24px;
   background: #d291bc;
   border: none;
   color: white;
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
   border-radius: 5px;
   transition: background 0.3s;

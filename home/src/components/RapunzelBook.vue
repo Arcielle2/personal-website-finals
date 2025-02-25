@@ -1,6 +1,6 @@
 <template>
-  <div class="container" :class="{ 'centered': !isOpen }">
-    <div class="book" :class="{ 'expanded': isOpen }">
+  <div class="container">
+    <div class="book" :class="{ 'open-book': isOpen }">
       <div class="page left" v-if="isOpen">
         <h1>Welcome to the Adventure!</h1>
         <p>Enjoy the magical journey of Rapunzel.</p>
@@ -45,24 +45,22 @@ export default {
   transition: justify-content 1s;
 }
 
-.container.centered {
-  justify-content: flex-start;
-}
-
 .book {
   width: 450px;
   height: 550px;
   position: relative;
   perspective: 1200px;
-  transition: width 1s;
+  transition: transform 1s;
 }
 
-.book.expanded {
+.book.open-book {
+  display: flex;
   width: 900px;
+  justify-content: center;
 }
 
 .page {
-  width: 100%;
+  width: 450px;
   height: 100%;
   position: absolute;
   display: flex;
@@ -84,14 +82,13 @@ export default {
 /* Left page (appears when opened) */
 .left {
   background: #6a5acd;
-  z-index: 1;
+  position: relative;
 }
 
 /* Right page with flipping effect */
 .right {
   transform-origin: left;
   background: #b39ddb;
-  z-index: 2;
   transform-style: preserve-3d;
 }
 

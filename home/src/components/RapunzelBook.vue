@@ -1,14 +1,14 @@
 <template>
   <div class="container">
-    <div :class="['book', { open: isOpen }]" @click="flipBook">
-      <div class="cover front">
+    <div class="book">
+      <div class="cover left">
+        <h1>Welcome to the Adventure!</h1>
+        <p>Enjoy the magical journey of Rapunzel.</p>
+      </div>
+      <div :class="['cover right', { open: isOpen }]" @click="flipBook">
         <h1>Hello There!</h1>
         <p>Are you ready to get started?</p>
         <button class="continue-btn">Click to Continue</button>
-      </div>
-      <div class="cover back">
-        <h1>Welcome to the Adventure!</h1>
-        <p>Enjoy the magical journey of Rapunzel.</p>
       </div>
     </div>
   </div>
@@ -45,7 +45,6 @@ export default {
   height: 400px;
   position: relative;
   perspective: 1000px;
-  cursor: pointer;
 }
 
 .cover {
@@ -66,22 +65,21 @@ export default {
   transition: transform 1s;
 }
 
-.front {
-  transform-origin: left;
-}
-
-.book.open .front {
-  transform: rotateY(-180deg);
-}
-
-.back {
-  transform: rotateY(180deg);
+/* Left cover (Stays still) */
+.left {
   background: #fbc2eb;
-  transform-origin: right;
+  z-index: 1;
 }
 
-.book.open .back {
-  transform: rotateY(0deg);
+/* Right cover (Flips open) */
+.right {
+  transform-origin: left;
+  background: #ffcfdf;
+  z-index: 2;
+}
+
+.right.open {
+  transform: rotateY(-180deg);
 }
 
 .continue-btn {

@@ -5,10 +5,9 @@
         <h1>Welcome to the Adventure!</h1>
         <p>Enjoy the magical journey of Rapunzel.</p>
       </div>
-      <div :class="['cover right', { open: isOpen }]" @click="flipBook">
-        <h1>Hello There!</h1>
+      <div :class="['cover right', { open: isOpen }]"><h1>Hello There!</h1>
         <p>Are you ready to get started?</p>
-        <button class="continue-btn">Click to Continue</button>
+        <button class="continue-btn" @click="flipBook">Click to Continue</button>
       </div>
     </div>
   </div>
@@ -37,12 +36,12 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: url('https://i.pinimg.com/736x/4f/a8/c5/4fa8c5e3c1e9f1f94bd124c2ca492124.jpg') no-repeat center center/cover;
+  background: url('https://i.pinimg.com/originals/5d/e5/49/5de5498c524cf1cc3f48c6d1adced94a.jpg') no-repeat center center/cover;
 }
 
 .book {
-  width: 400px;
-  height: 500px;
+  width: 450px;
+  height: 550px;
   position: relative;
   perspective: 1200px;
 }
@@ -55,27 +54,28 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #ffcfdf;
+  background: #a68bc5;
   border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   text-align: center;
   font-family: 'Parisienne', cursive;
-  font-size: 28px;
+  font-size: 30px;
   padding: 20px;
   transition: transform 1s;
   backface-visibility: hidden;
+  color: #fff;
 }
 
 /* Left cover (Stays still) */
 .left {
-  background: #fbc2eb;
+  background: #6a5acd;
   z-index: 1;
 }
 
 /* Right cover (Flips open) */
 .right {
   transform-origin: left;
-  background: #ffcfdf;
+  background: #b39ddb;
   z-index: 2;
 }
 
@@ -86,16 +86,16 @@ export default {
 .continue-btn {
   margin-top: 20px;
   padding: 12px 24px;
-  background: #d291bc;
+  background: #7e57c2;
   border: none;
   color: white;
-  font-size: 20px;
+  font-size: 22px;
   cursor: pointer;
   border-radius: 5px;
   transition: background 0.3s;
 }
 
 .continue-btn:hover {
-  background: #c774a8;
+  background: #5e35b1;
 }
 </style>

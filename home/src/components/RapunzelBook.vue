@@ -1,7 +1,7 @@
 <template>
-  <div class="container">
-    <div class="book">
-      <div class="page left">
+  <div class="container" :class="{ 'centered': !isOpen }">
+    <div class="book" :class="{ 'expanded': isOpen }">
+      <div class="page left" v-if="isOpen">
         <h1>Welcome to the Adventure!</h1>
         <p>Enjoy the magical journey of Rapunzel.</p>
       </div>
@@ -12,7 +12,6 @@
           <button class="continue-btn" @click="flipPage">Click to Continue</button>
         </div>
         <div class="back">
-          <p></p>
         </div>
       </div>
     </div>
@@ -28,7 +27,7 @@ export default {
   },
   methods: {
     flipPage() {
-      this.isOpen = !this.isOpen;
+      this.isOpen = true;
     }
   }
 };
@@ -43,6 +42,11 @@ export default {
   align-items: center;
   height: 100vh;
   background: url('https://i.pinimg.com/originals/5d/e5/49/5de5498c524cf1cc3f48c6d1adced94a.jpg') no-repeat center center/cover;
+  transition: justify-content 1s;
+}
+
+.container.centered {
+  justify-content: flex-start;
 }
 
 .book {
@@ -50,6 +54,11 @@ export default {
   height: 550px;
   position: relative;
   perspective: 1200px;
+  transition: width 1s;
+}
+
+.book.expanded {
+  width: 900px;
 }
 
 .page {
@@ -72,7 +81,7 @@ export default {
   color: #fff;
 }
 
-/* Left page (Stays still) */
+/* Left page (appears when opened) */
 .left {
   background: #6a5acd;
   z-index: 1;

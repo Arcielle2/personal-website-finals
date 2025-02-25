@@ -1,13 +1,20 @@
 <template>
   <div class="container">
     <div class="book">
-      <div class="cover left">
+      <div class="page left">
         <h1>Welcome to the Adventure!</h1>
         <p>Enjoy the magical journey of Rapunzel.</p>
       </div>
-      <div :class="['cover right', { open: isOpen }]"><h1>Hello There!</h1>
-        <p>Are you ready to get started?</p>
-        <button class="continue-btn" @click="flipBook">Click to Continue</button>
+      <div class="page right" :class="{ open: isOpen }">
+        <div class="front">
+          <h1>Hello There!</h1>
+          <p>Are you ready to get started?</p>
+          <button class="continue-btn" @click="flipPage">Click to Continue</button>
+        </div>
+        <div class="back">
+          <h1>The Journey Begins!</h1>
+          <p>Once upon a time, in a faraway land...</p>
+        </div>
       </div>
     </div>
   </div>
@@ -21,7 +28,7 @@ export default {
     };
   },
   methods: {
-    flipBook() {
+    flipPage() {
       this.isOpen = !this.isOpen;
     }
   }
@@ -46,7 +53,7 @@ export default {
   perspective: 1200px;
 }
 
-.cover {
+.page {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -66,17 +73,34 @@ export default {
   color: #fff;
 }
 
-/* Left cover (Stays still) */
+/* Left page (Stays still) */
 .left {
   background: #6a5acd;
   z-index: 1;
 }
 
-/* Right cover (Flips open) */
+/* Right page with flipping effect */
 .right {
   transform-origin: left;
   background: #b39ddb;
   z-index: 2;
+  transform-style: preserve-3d;
+}
+
+.right .front, .right .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+}
+
+.right .back {
+  transform: rotateY(180deg);
+  background: #d1c4e9;
 }
 
 .right.open {

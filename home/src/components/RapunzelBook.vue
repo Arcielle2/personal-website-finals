@@ -12,8 +12,7 @@
           <button class="continue-btn" @click="flipPage">Click to Continue</button>
         </div>
         <div class="back">
-          <h1>The Journey Begins!</h1>
-          <p>Once upon a time, in a faraway land...</p>
+          <p></p>
         </div>
       </div>
     </div>

@@ -57,9 +57,9 @@ const nextImage = () => {
   currentImage.value = (currentImage.value + 1) % images.value.length; // Cycle through images
 };
 
-// Auto-slide every 3 seconds
+// Auto-slide every 2 seconds
 onMounted(() => {
-  interval = setInterval(nextImage, 3000);
+  interval = setInterval(nextImage, 2000);
 });
 
 onUnmounted(() => {

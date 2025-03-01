@@ -4,12 +4,11 @@
       <div class="sidebar">
         <img :src="images[currentImage]" alt="Slideshow Image" class="slideshow-img" />
       </div>
-      <!-- Contact Section -->
       <div class="contact">
-        <a href="https://facebook.com" target="_blank" class="icon"><img src="@/components/facebook.svg" alt="Facebook" /></a>
-        <a href="https://instagram.com" target="_blank" class="icon"><img src="@/components/instagram.svg" alt="Instagram" /></a>
-        <a href="https://github.com" target="_blank" class="icon"><img src="@/components/github.svg" alt="GitHub" /></a>
-        <a href="https://linkedin.com" target="_blank" class="icon"><img src="@/components/linkedin.svg" alt="LinkedIn" /></a>
+        <a href="https://www.linkedin.com/in/arcielle-marie-gercan/"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://github.com/ArcielleGercan"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.facebook.com/arciellemcg/"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.instagram.com/arxchmvri/"><i class="fa-brands fa-instagram"></i></a>
       </div>
     </div>
 

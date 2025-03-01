@@ -255,4 +255,4 @@ const toggleBox = (index) => {
     width: 100%;
   }
 }
-</style>
+</style> 

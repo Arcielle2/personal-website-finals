@@ -37,6 +37,7 @@
 </template>
 
 <script setup>
+<script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 
 const openBoxes = ref([false, false, false, false, false]);
@@ -47,12 +48,12 @@ const toggleBox = (index) => {
 
 // Slideshow Logic
 const images = ref([
-  "/src/components/1.jfif",
-  "/src/components/2.jfif",
-  "/src/components/3.jfif",
-  "/src/components/4.jfif",
-  "/src/components/5.jfif",
-  "/src/components/6.jfif"
+  "/1.jfif",
+  "/2.jfif",
+  "/3.jfif",
+  "/4.jfif",
+  "/5.jfif",
+  "/6.jfif"
 ]);
 
 const currentImage = ref(0);

@@ -135,23 +135,19 @@ const toggleBox = (index) => {
 .contact {
   display: flex;
   justify-content: center;
-  align-items: center;
+  gap: 15px;
   margin-top: 15px;
-  gap: 10px;
-  padding: 10px;
-  height: 50px;
-  box-shadow: 0px 0px 20px rgba(138, 43, 226, 0.7);
 }
 
-.icon img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  transition: transform 0.3s ease-in-out;
+.contact a {
+  color: #fff;
+  font-size: 24px;
+  transition: all 0.3s ease-in-out;
 }
 
-.icon img:hover {
-  transform: scale(1.1);
+.contact a:hover {
+  color: #ffd700;
+  text-shadow: 0 0 10px #ffd700;
 }
 
 /* Main Content */

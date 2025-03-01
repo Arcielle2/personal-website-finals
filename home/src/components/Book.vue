@@ -67,7 +67,7 @@ const toggleBox = (index) => {
 }
 
 /* Sidebar */
-.sidebar {
+.main-sidebar {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -40,13 +40,85 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+document.addEventListener("DOMContentLoaded", () => {
+    const boxes = document.querySelectorAll(".box");
 
-const openBoxes = ref([false, false, false, false, false]);
+    boxes.forEach(box => {
+        if (!box.classList.contains("container")) { // Exclude the container itself
+            // Create the toggle button
+            const toggleButton = document.createElement("img");
+            toggleButton.classList.add("toggle-btn");
+            toggleButton.src = "/src/components/sun.jfif";
+            toggleButton.alt = "Sun Icon";
+            toggleButton.style.cursor = "pointer";
+            toggleButton.style.width = "40px";
+            toggleButton.style.position = "absolute";
+            toggleButton.style.top = "50%";
+            toggleButton.style.left = "50%";
+            toggleButton.style.transform = "translate(-50%, -50%) scale(0.8)";
+            toggleButton.style.transition = "box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out";
+            box.appendChild(toggleButton);
 
-const toggleBox = (index) => {
-  openBoxes.value[index] = !openBoxes.value[index];
-};
+            // Create hidden content
+            const hiddenContent = document.createElement("div");
+            hiddenContent.classList.add("hidden-content");
+            hiddenContent.style.position = "absolute";
+            hiddenContent.style.top = "0";
+            hiddenContent.style.left = "0";
+            hiddenContent.style.width = "100%";
+            hiddenContent.style.height = "100%";
+            hiddenContent.style.backgroundColor = "#e4d4fc";
+            hiddenContent.style.borderRadius = "15px";
+            hiddenContent.style.display = "flex";  // Set to flex but hidden initially
+            hiddenContent.style.justifyContent = "center";
+            hiddenContent.style.alignItems = "center";
+            hiddenContent.style.textAlign = "center";
+            hiddenContent.style.opacity = "0";  // Start invisible
+            hiddenContent.style.visibility = "hidden";  // Hide it from interactions
+            hiddenContent.style.transition = "opacity 0.5s ease-in-out, visibility 0s linear 0.5s";
+            hiddenContent.innerHTML = "<p>Additional Content</p>";
+
+            box.appendChild(hiddenContent);
+
+            // Toggle button event
+            toggleButton.addEventListener("click", (event) => {
+                event.stopPropagation(); // Prevent event bubbling
+                box.classList.toggle("open");
+
+                // Glow effect on click
+                toggleButton.style.boxShadow = "0 0 20px 8px rgba(255, 223, 0, 0.8)";
+
+                setTimeout(() => {
+                    toggleButton.style.boxShadow = "none"; // Remove glow after 0.5s
+                }, 500);
+
+                if (box.classList.contains("open")) {
+                    hiddenContent.style.visibility = "visible";
+                    hiddenContent.style.opacity = "1";
+                    hiddenContent.style.transition = "opacity 0.5s ease-in-out, visibility 0s linear 0s"; // Remove delay
+
+                    // Hide other content inside the box except the hidden content
+                    box.querySelectorAll(":scope > *:not(.hidden-content):not(.toggle-btn)").forEach(child => {
+                        child.style.display = "none";
+                    });
+                } else {
+                    hiddenContent.style.opacity = "0"; 
+                    hiddenContent.style.transition = "opacity 0.5s ease-in-out, visibility 0s linear 0.5s"; // Delay visibility hiding
+
+                    setTimeout(() => {
+                        hiddenContent.style.visibility = "hidden";
+
+                        // Restore other box content
+                        box.querySelectorAll(":scope > *:not(.hidden-content):not(.toggle-btn)").forEach(child => {
+                            child.style.display = "";
+                        });
+                    }, 500);
+                }
+            });
+        }
+    });
+});
+
 </script>
 
 <style scoped>

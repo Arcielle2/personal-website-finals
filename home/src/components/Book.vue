@@ -119,7 +119,6 @@ const toggleBox = (index) => {
 .slideshow-img {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
   object-fit: cover;
   position: absolute;
   transition: opacity 0.5s ease-in-out;

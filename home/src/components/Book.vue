@@ -75,6 +75,7 @@ const toggleBox = (index) => {
   background-color: #452981;
   padding: 10px;
   border-radius: 15px;
+  justify-content: center;
 }
 
 .sidebar{
@@ -83,9 +84,6 @@ const toggleBox = (index) => {
     border: .5rem solid #3b2565;
     border-radius: 10px;
     padding: 1rem;
-    background-image: url('src/components/sidebar.jfif');
-    background-size: cover;
-    background-position: center;
 }
 
 /* Main Content */

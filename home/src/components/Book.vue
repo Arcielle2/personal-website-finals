@@ -5,10 +5,12 @@
         <img :src="images[currentImage]" alt="Slideshow Image" class="slideshow-img" />
       </div>
       <div class="contact">
-        <a href="https://www.linkedin.com/in/arcielle-marie-gercan/"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://github.com/ArcielleGercan"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.facebook.com/arciellemcg/"><i class="fa-brands fa-facebook"></i></a>
-        <a href="https://www.instagram.com/arxchmvri/"><i class="fa-brands fa-instagram"></i></a>
+        <div class="logo">
+          <a href="https://www.linkedin.com/in/arcielle-marie-gercan/"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/ArcielleGercan"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.facebook.com/arciellemcg/"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/arxchmvri/"><i class="fa-brands fa-instagram"></i></a>
+        </div>
       </div>
     </div>
 
@@ -132,22 +134,17 @@ const toggleBox = (index) => {
 }
 
 /* Contact Section */
-.contact {
+.contact{
   display: flex;
+  height: 50px;
+  width: 355px;
   justify-content: center;
-  gap: 15px;
-  margin-top: 15px;
+  align-items: center;
 }
 
-.contact a {
-  color: #fff;
-  font-size: 24px;
-  transition: all 0.3s ease-in-out;
-}
-
-.contact a:hover {
-  color: #ffd700;
-  text-shadow: 0 0 10px #ffd700;
+.logo{
+  padding: .5rem;
+  border-radius:10px;
 }
 
 /* Main Content */

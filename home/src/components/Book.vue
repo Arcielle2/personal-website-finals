@@ -2,33 +2,36 @@
   <div class="container">
     <div class="main-sidebar">
       <div class="sidebar">
-      <div class="contact">Contact</div>
-      <div class="comment">Other</div>
+        <div class="contact">Contact</div>
+        <div class="comment">Other</div>
+      </div>
     </div>
 
     <div class="main-content">
-      <div class="box box1">
-        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(0)" />
-        <div class="hidden-content" v-if="openBoxes[0]">Additional Content</div>
-      </div>
-      <div class="box box2">
-        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(1)" />
-        <div class="hidden-content" v-if="openBoxes[1]">Additional Content</div>
-      </div>
-      <div class="box box3">
-        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(2)" />
-        <div class="hidden-content" v-if="openBoxes[2]">Additional Content</div>
-      </div>
-      <div class="box box4">
-        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(3)" />
-        <div class="hidden-content" v-if="openBoxes[3]">Additional Content</div>
+      <div v-for="(box, index) in 4" :key="index" class="box">
+        <img
+          class="toggle-btn"
+          src="/src/components/sun.jfif"
+          alt="Lock Icon"
+          @click="toggleBox(index)"
+        />
+        <div class="hidden-content" v-if="openBoxes[index]">
+          Additional Content
+        </div>
       </div>
     </div>
 
     <div class="sub-content">
-      <div class="box box5">
-        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(4)" />
-        <div class="hidden-content" v-if="openBoxes[4]">Additional Content</div>
+      <div class="box">
+        <img
+          class="toggle-btn"
+          src="/src/components/sun.jfif"
+          alt="Lock Icon"
+          @click="toggleBox(4)"
+        />
+        <div class="hidden-content" v-if="openBoxes[4]">
+          Additional Content
+        </div>
       </div>
     </div>
   </div>
@@ -64,21 +67,28 @@ const toggleBox = (index) => {
 /* Sidebar */
 .main-sidebar {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   width: 30%;
   background-color: #452981;
   padding: 10px;
   border-radius: 15px;
-  justify-content: center;
 }
 
-.sidebar{
-  width: 355px;
-    height: 200px;
-    border: .5rem solid #e4d4fc;
-    border-radius: 10px;
-    padding: 1rem;
+.sidebar {
+  width: 100%;
+  height: auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.contact,
+.comment {
+  padding: 10px;
+  background-color: #e4d4fc;
+  border-radius: 8px;
+  margin: 10px;
+  font-weight: bold;
 }
 
 /* Main Content */
@@ -104,14 +114,9 @@ const toggleBox = (index) => {
   font-weight: bold;
   position: relative;
   transition: transform 0.5s ease, opacity 0.5s ease, height 0.5s ease;
+  width: 100%;
+  height: 200px;
 }
-
-/* Box Sizes */
-.box1 { width: 48.8%; height: 150px; }
-.box2 { width: 48.8%; height: 150px; }
-.box3 { width: 100%; height: 200px; }
-.box4 { width: 100%; height: 200px; }
-.box5 { width: 100%; height: 570px; }
 
 /* Toggle Button - Centered */
 .toggle-btn {
@@ -131,7 +136,7 @@ const toggleBox = (index) => {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #e4d4fc;
+  background-color: #d4c3f2;
   border-radius: 15px;
   display: flex;
   justify-content: center;
@@ -149,11 +154,9 @@ const toggleBox = (index) => {
     height: auto;
   }
 
-  .sidebar {
-    width: 100%;
-  }
-
-  .main-content, .sub-content {
+  .main-sidebar,
+  .main-content,
+  .sub-content {
     width: 100%;
   }
 

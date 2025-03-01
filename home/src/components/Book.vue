@@ -67,9 +67,8 @@ const toggleBox = (index) => {
   flex-direction: column;
   width: 30%;
   background-color: #452981;
-  padding: 10px;
+  padding: 20px;
   border-radius: 15px;
-  justify-content: center;
   align-content: center;
 }
 

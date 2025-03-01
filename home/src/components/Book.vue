@@ -6,10 +6,18 @@
       </div>
       <div class="contact">
         <div class="logo">
-          <a href="https://www.linkedin.com/in/arcielle-marie-gercan/"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="https://github.com/ArcielleGercan"><i class="fa-brands fa-github"></i></a>
-          <a href="https://www.facebook.com/arciellemcg/"><i class="fa-brands fa-facebook"></i></a>
-          <a href="https://www.instagram.com/arxchmvri/"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/arcielle-marie-gercan/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/128/1384/1384014.png" alt="LinkedIn" class="social-icon" />
+          </a>
+          <a href="https://github.com/ArcielleGercan" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/128/733/733609.png" alt="GitHub" class="social-icon" />
+          </a>
+          <a href="https://www.facebook.com/arciellemcg/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/128/2175/2175193.png" alt="Facebook" class="social-icon" />
+          </a>
+          <a href="https://www.instagram.com/arxchmvri/" target="_blank">
+            <img src="https://www.flaticon.com/free-icon/instagram_717392" alt="Instagram" class="social-icon" />
+          </a>
         </div>
       </div>
     </div>
@@ -142,21 +150,15 @@ const toggleBox = (index) => {
   align-items: center;
 }
 
-.logo {
-  padding: .5rem;
-  border-radius: 10px;
+.social-icon {
+  width: 30px;
+  height: 30px;
+  margin: 0 5px;
+  transition: transform 0.3s ease-in-out;
 }
 
-.logo a {
-  margin: 0 10px;
-  color: #e4d4fc;
-  font-size: 24px;
-  transition: transform 0.3s ease, color 0.3s ease;
-}
-
-.logo a:hover {
+.social-icon:hover {
   transform: scale(1.2);
-  color: #fff;
 }
 
 /* Main Content */
@@ -255,4 +257,4 @@ const toggleBox = (index) => {
     width: 100%;
   }
 }
-</style> 
+</style>

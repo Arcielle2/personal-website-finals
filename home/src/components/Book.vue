@@ -65,12 +65,12 @@ const toggleBox = (index) => {
 .main-sidebar {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 30%;
   background-color: #452981;
   padding: 10px;
   border-radius: 15px;
   justify-content: center;
+  align-content: center;
 }
 
 .sidebar{

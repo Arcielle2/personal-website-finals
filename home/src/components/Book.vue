@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="main-sidebar">
-      <div class="sidebar">
+      <div class="sidebar"></div>
       <div class="contact">Contact</div>
       <div class="comment">Other</div>
     </div>
@@ -73,12 +73,12 @@ const toggleBox = (index) => {
   justify-content: center;
 }
 
-.sidebar{
+.sidebar {
   width: 355px;
-    height: 200px;
-    border: .5rem solid #e4d4fc;
-    border-radius: 10px;
-    padding: 1rem;
+  height: 200px;
+  border: 0.5rem solid #e4d4fc;
+  border-radius: 10px;
+  padding: 1rem;
 }
 
 /* Main Content */
@@ -107,11 +107,26 @@ const toggleBox = (index) => {
 }
 
 /* Box Sizes */
-.box1 { width: 48.8%; height: 150px; }
-.box2 { width: 48.8%; height: 150px; }
-.box3 { width: 100%; height: 200px; }
-.box4 { width: 100%; height: 200px; }
-.box5 { width: 100%; height: 570px; }
+.box1 {
+  width: 48.8%;
+  height: 150px;
+}
+.box2 {
+  width: 48.8%;
+  height: 150px;
+}
+.box3 {
+  width: 100%;
+  height: 200px;
+}
+.box4 {
+  width: 100%;
+  height: 200px;
+}
+.box5 {
+  width: 100%;
+  height: 570px;
+}
 
 /* Toggle Button - Centered */
 .toggle-btn {
@@ -153,7 +168,8 @@ const toggleBox = (index) => {
     width: 100%;
   }
 
-  .main-content, .sub-content {
+  .main-content,
+  .sub-content {
     width: 100%;
   }
 

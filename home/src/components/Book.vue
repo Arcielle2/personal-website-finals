@@ -78,10 +78,11 @@ const toggleBox = (index) => {
 }
 
 .sidebar{
-  width: 28%;
+  width: 80%;
   height: 100px;
   border: .5rem solid #3b2565;
-  border-radius: ;
+  border-radius: 10px;
+  padding: 2rem;
 }
 
 /* Main Content */

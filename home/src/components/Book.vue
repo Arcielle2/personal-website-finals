@@ -2,34 +2,32 @@
   <div class="container">
     <div class="main-sidebar">
       <div class="sidebar">
-        <img :src="images[currentImage]" alt="Slideshow" class="slideshow-img" @click="nextImage" />
+        <img :src="images[currentImage]" alt="Slideshow Image" class="slideshow-img" />
       </div>
-      <div class="contact">Contact</div>
-      <div class="comment">Other</div>
     </div>
 
     <div class="main-content">
       <div class="box box1">
-        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(0)" />
+        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(0)" />
         <div class="hidden-content" v-if="openBoxes[0]">Additional Content</div>
       </div>
       <div class="box box2">
-        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(1)" />
+        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(1)" />
         <div class="hidden-content" v-if="openBoxes[1]">Additional Content</div>
       </div>
       <div class="box box3">
-        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(2)" />
+        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(2)" />
         <div class="hidden-content" v-if="openBoxes[2]">Additional Content</div>
       </div>
       <div class="box box4">
-        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(3)" />
+        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(3)" />
         <div class="hidden-content" v-if="openBoxes[3]">Additional Content</div>
       </div>
     </div>
 
     <div class="sub-content">
       <div class="box box5">
-        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(4)" />
+        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(4)" />
         <div class="hidden-content" v-if="openBoxes[4]">Additional Content</div>
       </div>
     </div>
@@ -38,28 +36,25 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+import sunImage from "@/components/sun.jfif"; // Import sun image
 
-const openBoxes = ref([false, false, false, false, false]);
+// Importing Slideshow Images from src/components/
+import img1 from "@/components/1.jfif";
+import img2 from "@/components/2.jfif";
+import img3 from "@/components/3.jfif";
+import img4 from "@/components/4.jfif";
+import img5 from "@/components/5.jfif";
+import img6 from "@/components/6.jfif";
 
-const toggleBox = (index) => {
-  openBoxes.value[index] = !openBoxes.value[index];
-};
+// Store images in an array
+const images = ref([img1, img2, img3, img4, img5, img6]);
 
-// Slideshow Logic
-const images = ref([
-  "./src/components/1.png",
-  "./src/components/2.jfif",
-  "./src/components/3.jfif",
-  "./src/components/4.jfif",
-  "./src/components/5.jfif",
-  "./src/components/6.jfif"
-]);
-
+// Slideshow logic
 const currentImage = ref(0);
 let interval = null;
 
 const nextImage = () => {
-  currentImage.value = (currentImage.value + 1) % images.value.length;
+  currentImage.value = (currentImage.value + 1) % images.value.length; // Cycle through images
 };
 
 // Auto-slide every 3 seconds
@@ -70,6 +65,13 @@ onMounted(() => {
 onUnmounted(() => {
   clearInterval(interval);
 });
+
+// Toggle logic for boxes
+const openBoxes = ref([false, false, false, false, false]);
+
+const toggleBox = (index) => {
+  openBoxes.value[index] = !openBoxes.value[index];
+};
 </script>
 
 <style scoped>
@@ -97,26 +99,29 @@ onUnmounted(() => {
   background-color: #452981;
   padding: 20px;
   border-radius: 15px;
-  align-items: center;
+  align-content: center;
 }
 
 .sidebar {
   width: 355px;
   height: 200px;
-  border: .5rem solid #e4d4fc;
+  border: 0.5rem solid #e4d4fc;
   border-radius: 10px;
   padding: 1rem;
+  position: relative;
+  overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Slideshow Images */
 .slideshow-img {
   width: 100%;
   height: 100%;
   border-radius: 10px;
   object-fit: cover;
-  cursor: pointer;
+  position: absolute;
   transition: opacity 0.5s ease-in-out;
 }
 
@@ -146,11 +151,26 @@ onUnmounted(() => {
 }
 
 /* Box Sizes */
-.box1 { width: 48.8%; height: 150px; }
-.box2 { width: 48.8%; height: 150px; }
-.box3 { width: 100%; height: 200px; }
-.box4 { width: 100%; height: 200px; }
-.box5 { width: 100%; height: 570px; }
+.box1 {
+  width: 48.8%;
+  height: 150px;
+}
+.box2 {
+  width: 48.8%;
+  height: 150px;
+}
+.box3 {
+  width: 100%;
+  height: 200px;
+}
+.box4 {
+  width: 100%;
+  height: 200px;
+}
+.box5 {
+  width: 100%;
+  height: 570px;
+}
 
 /* Toggle Button - Centered */
 .toggle-btn {
@@ -192,7 +212,8 @@ onUnmounted(() => {
     width: 100%;
   }
 
-  .main-content, .sub-content {
+  .main-content,
+  .sub-content {
     width: 100%;
   }
 

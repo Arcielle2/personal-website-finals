@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="main-sidebar">
-      <div class="sidebar">
+      <div class="sidebar"></div>
       <div class="contact">Contact</div>
       <div class="comment">Other</div>
     </div>

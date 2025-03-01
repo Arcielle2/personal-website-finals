@@ -1,6 +1,10 @@
 <template>
   <div class="container">
     <div class="main-sidebar">
+      <div class="sidebar-header">
+        <h2>Arcielle Marie</h2>
+        <hr class="sidebar-divider" />
+      </div>
       <div class="sidebar">
         <img :src="images[currentImage]" alt="Slideshow Image" class="slideshow-img" />
       </div>
@@ -139,6 +143,22 @@ const toggleBox = (index) => {
   object-fit: cover;
   position: absolute;
   transition: opacity 0.5s ease-in-out;
+}
+
+.sidebar-header {
+  text-align: left;
+  padding: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.sidebar-divider {
+  width: 100%;
+  height: 5px;
+  background-color: white;
+  border: none;
+  margin-bottom: 15px;
 }
 
 /* Contact Section */

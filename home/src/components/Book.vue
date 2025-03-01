@@ -1,100 +1,56 @@
 <template>
-<div class="container">
-        <div class="sidebar">
-            <div class="sidebar">Sidebar Top</div>
-            <div class="contact">Contact</div>
-            <div class="comment">Other</div>
-        </div>
-
-        <div class="main-content">
-            <div class="box box1">E A ☀️</div>
-            <div class="box box2">P G</div>
-            <div class="box box3">H I ☀️</div>
-            <div class="box box4">C ☀️</div>
-        </div>
-
-        <div class="sub-content">
-            <div class="box box5">EX ☀️</div>
-        </div>
+  <div class="container">
+    <div class="sidebar">
+      <div class="sidebar">Sidebar Top</div>
+      <div class="contact">Contact</div>
+      <div class="comment">Other</div>
     </div>
+
+    <div class="main-content">
+      <div class="box box1">
+        E A ☀️
+        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(0)" />
+        <div class="hidden-content" v-if="openBoxes[0]">Additional Content</div>
+      </div>
+      <div class="box box2">
+        P G
+        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(1)" />
+        <div class="hidden-content" v-if="openBoxes[1]">Additional Content</div>
+      </div>
+      <div class="box box3">
+        H I ☀️
+        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(2)" />
+        <div class="hidden-content" v-if="openBoxes[2]">Additional Content</div>
+      </div>
+      <div class="box box4">
+        C ☀️
+        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(3)" />
+        <div class="hidden-content" v-if="openBoxes[3]">Additional Content</div>
+      </div>
+    </div>
+
+    <div class="sub-content">
+      <div class="box box5">
+        EX ☀️
+        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(4)" />
+        <div class="hidden-content" v-if="openBoxes[4]">Additional Content</div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
-document.addEventListener("DOMContentLoaded", () => {
-    const boxes = document.querySelectorAll(".box");
+import { ref } from "vue";
 
-    boxes.forEach(box => {
-        if (!box.classList.contains("container")) { // Exclude the container itself
-            // Create the toggle button
-            const toggleButton = document.createElement("img");
-            toggleButton.classList.add("toggle-btn");
-            toggleButton.src = "/src/components/sun.jfif";
-            toggleButton.alt = "Lock Icon";
-            toggleButton.style.cursor = "pointer";
-            toggleButton.style.width = "40px";
-            toggleButton.style.position = "absolute";
-            toggleButton.style.top = "10px";
-            toggleButton.style.left = "50%";
-            toggleButton.style.transform = "translateX(-50%) scale(0.8)";
-            toggleButton.style.transition = "opacity 0.5s ease-in-out, transform 0.5s ease-in-out";
-            box.appendChild(toggleButton);
+const openBoxes = ref([false, false, false, false, false]);
 
-            // Create hidden content
-            const hiddenContent = document.createElement("div");
-            hiddenContent.classList.add("hidden-content");
-            hiddenContent.style.position = "absolute";
-            hiddenContent.style.top = "0";
-            hiddenContent.style.left = "0";
-            hiddenContent.style.width = "100%";
-            hiddenContent.style.height = "100%";
-            hiddenContent.style.backgroundColor = "#e4d4fc";
-            hiddenContent.style.borderRadius = "15px";
-            hiddenContent.style.display = "flex";  // Set to flex but hidden initially
-            hiddenContent.style.justifyContent = "center";
-            hiddenContent.style.alignItems = "center";
-            hiddenContent.style.textAlign = "center";
-            hiddenContent.style.opacity = "0";  // Start invisible
-            hiddenContent.style.visibility = "hidden";  // Hide it from interactions
-            hiddenContent.style.transition = "opacity 0.5s ease-in-out, visibility 0s linear 0.5s";
-            hiddenContent.innerHTML = "<p>Additional Content</p>";
-
-            box.appendChild(hiddenContent);
-
-            // Toggle button event
-            toggleButton.addEventListener("click", (event) => {
-                event.stopPropagation(); // Prevent event bubbling
-                box.classList.toggle("open");
-
-                if (box.classList.contains("open")) {
-                    hiddenContent.style.visibility = "visible";
-                    hiddenContent.style.opacity = "1";
-                    hiddenContent.style.transition = "opacity 0.5s ease-in-out, visibility 0s linear 0s"; // Remove delay
-
-                    // Hide other content inside the box except the hidden content
-                    box.querySelectorAll(":scope > *:not(.hidden-content):not(.toggle-btn)").forEach(child => {
-                        child.style.display = "none";
-                    });
-                } else {
-                    hiddenContent.style.opacity = "0"; 
-                    hiddenContent.style.transition = "opacity 0.5s ease-in-out, visibility 0s linear 0.5s"; // Delay visibility hiding
-
-                    setTimeout(() => {
-                        hiddenContent.style.visibility = "hidden";
-
-                        // Restore other box content
-                        box.querySelectorAll(":scope > *:not(.hidden-content):not(.toggle-btn)").forEach(child => {
-                            child.style.display = "";
-                        });
-                    }, 500);
-                }
-            });
-        }
-    });
-});
+const toggleBox = (index) => {
+  openBoxes.value[index] = !openBoxes.value[index];
+};
 </script>
 
 <style scoped>
-    * {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -170,10 +126,30 @@ body {
 /* Toggle Button */
 .toggle-btn {
   cursor: pointer;
-  width: 30px;
+  width: 40px;
   position: absolute;
   top: 10px;
-  right: 10px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.8);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Hidden Content */
+.hidden-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e4d4fc;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out, visibility 0s linear 0s;
 }
 
 /* Responsive Design */

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="main-sidebar">
-      <div class="sidebar">Sidebar Top</div>
+      <div class="sidebar"></div>
       <div class="contact">Contact</div>
       <div class="comment">Other</div>
     </div>
@@ -78,11 +78,14 @@ const toggleBox = (index) => {
 }
 
 .sidebar{
-  width: 200px;
-  height: 100px;
-  border: .5rem solid #3b2565;
-  border-radius: 10px;
-  padding: 2rem;
+  width: 355px;
+    height: 200px;
+    border: .5rem solid #3b2565;
+    border-radius: 10px;
+    padding: 1rem;
+    background-image: url('src/components/sidebar.jfif');
+    background-size: cover;
+    background-position: center;
 }
 
 /* Main Content */

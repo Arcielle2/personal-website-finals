@@ -134,7 +134,7 @@ const toggleBox = (index) => {
 }
 
 /* Contact Section */
-.contact{
+.contact {
   display: flex;
   height: 50px;
   width: 355px;
@@ -142,9 +142,21 @@ const toggleBox = (index) => {
   align-items: center;
 }
 
-.logo{
+.logo {
   padding: .5rem;
-  border-radius:10px;
+  border-radius: 10px;
+}
+
+.logo a {
+  margin: 0 10px;
+  color: #e4d4fc;
+  font-size: 24px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.logo a:hover {
+  transform: scale(1.2);
+  color: #fff;
 }
 
 /* Main Content */

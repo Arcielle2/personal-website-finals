@@ -4,6 +4,13 @@
       <div class="sidebar">
         <img :src="images[currentImage]" alt="Slideshow Image" class="slideshow-img" />
       </div>
+      <!-- Contact Section -->
+      <div class="contact">
+        <a href="https://facebook.com" target="_blank" class="icon"><img src="@/components/facebook.svg" alt="Facebook" /></a>
+        <a href="https://instagram.com" target="_blank" class="icon"><img src="@/components/instagram.svg" alt="Instagram" /></a>
+        <a href="https://github.com" target="_blank" class="icon"><img src="@/components/github.svg" alt="GitHub" /></a>
+        <a href="https://linkedin.com" target="_blank" class="icon"><img src="@/components/linkedin.svg" alt="LinkedIn" /></a>
+      </div>
     </div>
 
     <div class="main-content">
@@ -102,6 +109,7 @@ const toggleBox = (index) => {
   align-content: center;
 }
 
+/* Slideshow */
 .sidebar {
   width: 355px;
   height: 200px;
@@ -113,15 +121,38 @@ const toggleBox = (index) => {
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 0px 20px rgba(138, 43, 226, 0.7);
 }
 
-/* Slideshow Images */
 .slideshow-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   position: absolute;
   transition: opacity 0.5s ease-in-out;
+}
+
+/* Contact Section */
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  gap: 10px;
+  padding: 10px;
+  height: 50px;
+  box-shadow: 0px 0px 20px rgba(138, 43, 226, 0.7);
+}
+
+.icon img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.icon img:hover {
+  transform: scale(1.1);
 }
 
 /* Main Content */
@@ -171,7 +202,7 @@ const toggleBox = (index) => {
   height: 570px;
 }
 
-/* Toggle Button - Centered */
+/* Toggle Button */
 .toggle-btn {
   cursor: pointer;
   width: 50px;

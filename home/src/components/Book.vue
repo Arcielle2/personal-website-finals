@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Create the toggle button
             const toggleButton = document.createElement("img");
             toggleButton.classList.add("toggle-btn");
-            toggleButton.src = new URL('@/assets/sun.jfif', import.meta.url).href;
+            toggleButton.src = "/sun.jfif";
             toggleButton.alt = "Lock Icon";
             toggleButton.style.cursor = "pointer";
             toggleButton.style.width = "40px";

@@ -1,29 +1,25 @@
 <template>
   <div class="container">
     <div class="main-sidebar">
-      <div class="sidebar"></div>
+      <div class="sidebar">
       <div class="contact">Contact</div>
       <div class="comment">Other</div>
     </div>
 
     <div class="main-content">
       <div class="box box1">
-        E A ☀️
         <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(0)" />
         <div class="hidden-content" v-if="openBoxes[0]">Additional Content</div>
       </div>
       <div class="box box2">
-        P G
         <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(1)" />
         <div class="hidden-content" v-if="openBoxes[1]">Additional Content</div>
       </div>
       <div class="box box3">
-        H I ☀️
         <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(2)" />
         <div class="hidden-content" v-if="openBoxes[2]">Additional Content</div>
       </div>
       <div class="box box4">
-        C ☀️
         <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(3)" />
         <div class="hidden-content" v-if="openBoxes[3]">Additional Content</div>
       </div>
@@ -31,7 +27,6 @@
 
     <div class="sub-content">
       <div class="box box5">
-        EX ☀️
         <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(4)" />
         <div class="hidden-content" v-if="openBoxes[4]">Additional Content</div>
       </div>
@@ -81,7 +76,7 @@ const toggleBox = (index) => {
 .sidebar{
   width: 355px;
     height: 200px;
-    border: .5rem solid #3b2565;
+    border: .5rem solid #e4d4fc;
     border-radius: 10px;
     padding: 1rem;
 }

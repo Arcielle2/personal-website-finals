@@ -7,33 +7,30 @@
     </div>
 
     <div class="main-content">
-      <div class="box box1">
-        E A ☀️
-        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(0)" />
-        <div class="hidden-content" v-if="openBoxes[0]">Additional Content</div>
-      </div>
-      <div class="box box2">
-        P G
-        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(1)" />
-        <div class="hidden-content" v-if="openBoxes[1]">Additional Content</div>
-      </div>
-      <div class="box box3">
-        H I ☀️
-        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(2)" />
-        <div class="hidden-content" v-if="openBoxes[2]">Additional Content</div>
-      </div>
-      <div class="box box4">
-        C ☀️
-        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(3)" />
-        <div class="hidden-content" v-if="openBoxes[3]">Additional Content</div>
+      <div v-for="(isOpen, index) in openBoxes" :key="index" class="box">
+        Box {{ index + 1 }}
+        <img 
+          class="toggle-btn" 
+          src="/src/components/sun.jfif" 
+          alt="Sun Icon"
+          :class="{ glow: isGlowing[index] }"
+          @click="toggleBox(index)"
+        />
+        <div class="hidden-content" v-if="isOpen">Additional Content</div>
       </div>
     </div>
 
     <div class="sub-content">
-      <div class="box box5">
+      <div class="box">
         EX ☀️
-        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(4)" />
-        <div class="hidden-content" v-if="openBoxes[4]">Additional Content</div>
+        <img 
+          class="toggle-btn" 
+          src="/src/components/sun.jfif" 
+          alt="Sun Icon"
+          :class="{ glow: isGlowing[openBoxes.length] }"
+          @click="toggleBox(openBoxes.length)"
+        />
+        <div class="hidden-content" v-if="openBoxes[openBoxes.length]">Additional Content</div>
       </div>
     </div>
   </div>
@@ -43,9 +40,18 @@
 import { ref } from "vue";
 
 const openBoxes = ref([false, false, false, false, false]);
+const isGlowing = ref([false, false, false, false, false]);
 
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];
+
+  // Glow effect trigger
+  isGlowing.value[index] = true;
+
+  // Remove glow after 0.5s
+  setTimeout(() => {
+    isGlowing.value[index] = false;
+  }, 500);
 };
 </script>
 
@@ -54,6 +60,13 @@ const toggleBox = (index) => {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  justify-content: center;
+  align-items: center;
+  background: #110222;
 }
 
 /* Main Layout */
@@ -102,13 +115,6 @@ const toggleBox = (index) => {
   transition: transform 0.5s ease, opacity 0.5s ease, height 0.5s ease;
 }
 
-/* Box Sizes */
-.box1 { width: 48.8%; height: 150px; }
-.box2 { width: 48.8%; height: 150px; }
-.box3 { width: 100%; height: 200px; }
-.box4 { width: 100%; height: 200px; }
-.box5 { width: 100%; height: 570px; }
-
 /* Toggle Button - Centered */
 .toggle-btn {
   cursor: pointer;
@@ -117,7 +123,13 @@ const toggleBox = (index) => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transition: box-shadow 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Glow Effect */
+.glow {
+  box-shadow: 0 0 20px 8px rgba(255, 223, 0, 0.8);
+  opacity: 1;
 }
 
 /* Hidden Content */

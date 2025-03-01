@@ -16,7 +16,7 @@
             <img src="https://cdn-icons-png.flaticon.com/128/2175/2175193.png" alt="Facebook" class="social-icon" />
           </a>
           <a href="https://www.instagram.com/arxchmvri/" target="_blank">
-            <img src="https://www.flaticon.com/free-icon/instagram_717392" alt="Instagram" class="social-icon" />
+            <img src="https://cdn-icons-png.flaticon.com/128/1384/1384015.png" alt="Instagram" class="social-icon" />
           </a>
         </div>
       </div>
@@ -143,12 +143,15 @@ const toggleBox = (index) => {
 
 /* Contact Section */
 .contact {
-  display: flex;
-  height: 50px;
-  width: 355px;
-  border: .5rem solid #e4d4fc;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    height: 50px;
+    width: 355px;
+    border: .5rem solid #3a0f96;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    margin-top: 10px;
 }
 
 .social-icon {

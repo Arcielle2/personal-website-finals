@@ -22,7 +22,7 @@
   </div>
 </template>
 
-<script>
+<script setup>
 document.addEventListener("DOMContentLoaded", () => {
     const boxes = document.querySelectorAll(".box");
 

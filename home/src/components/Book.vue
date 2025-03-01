@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <div class="main-sidebar">
-      <div class="sidebar"></div>
+      <div class="sidebar">
+        <img :src="images[currentImage]" alt="Slideshow" class="slideshow-img" @click="nextImage" />
+      </div>
       <div class="contact">Contact</div>
       <div class="comment">Other</div>
     </div>
@@ -35,13 +37,39 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
 const openBoxes = ref([false, false, false, false, false]);
 
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];
 };
+
+// Slideshow Logic
+const images = ref([
+  "/src/components/image1.jpg",
+  "/src/components/image2.jpg",
+  "/src/components/image3.jpg",
+  "/src/components/image4.jpg",
+  "/src/components/image5.jpg",
+  "/src/components/image6.jpg"
+]);
+
+const currentImage = ref(0);
+let interval = null;
+
+const nextImage = () => {
+  currentImage.value = (currentImage.value + 1) % images.value.length;
+};
+
+// Auto-slide every 3 seconds
+onMounted(() => {
+  interval = setInterval(nextImage, 3000);
+});
+
+onUnmounted(() => {
+  clearInterval(interval);
+});
 </script>
 
 <style scoped>
@@ -69,15 +97,27 @@ const toggleBox = (index) => {
   background-color: #452981;
   padding: 20px;
   border-radius: 15px;
-  align-content: center;
+  align-items: center;
 }
 
-.sidebar{
+.sidebar {
   width: 355px;
-    height: 200px;
-    border: .5rem solid #e4d4fc;
-    border-radius: 10px;
-    padding: 1rem;
+  height: 200px;
+  border: .5rem solid #e4d4fc;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slideshow-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: opacity 0.5s ease-in-out;
 }
 
 /* Main Content */

@@ -73,12 +73,12 @@ const toggleBox = (index) => {
   justify-content: center;
 }
 
-.sidebar{
+.sidebar {
   width: 355px;
-    height: 200px;
-    border: .5rem solid #e4d4fc;
-    border-radius: 10px;
-    padding: 1rem;
+  height: 200px;
+  border: 0.5rem solid #e4d4fc;
+  border-radius: 10px;
+  padding: 1rem;
 }
 
 /* Main Content */

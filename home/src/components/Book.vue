@@ -148,14 +148,14 @@ const toggleBox = (index) => {
 .sidebar-header {
   text-align: left;
   padding: 10px;
-  font-size: 1.5rem;
+  font-size: 10px;
   font-weight: bold;
   color: white;
 }
 
 .sidebar-divider {
   width: 100%;
-  height: 5px;
+  height: 3px;
   background-color: white;
   border: none;
   margin-bottom: 15px;

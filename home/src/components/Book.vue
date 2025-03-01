@@ -37,7 +37,6 @@
 </template>
 
 <script setup>
-<script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 
 const openBoxes = ref([false, false, false, false, false]);

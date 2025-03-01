@@ -47,12 +47,12 @@ const toggleBox = (index) => {
 
 // Slideshow Logic
 const images = ref([
-  "/1.jfif",
-  "/2.jfif",
-  "/3.jfif",
-  "/4.jfif",
-  "/5.jfif",
-  "/6.jfif"
+  "./src/components/1.jfif",
+  "./src/components/2.jfif",
+  "./src/components/3.jfif",
+  "./src/components/4.jfif",
+  "./src/components/5.jfif",
+  "./src/components/6.jfif"
 ]);
 
 const currentImage = ref(0);

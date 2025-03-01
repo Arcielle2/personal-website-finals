@@ -146,6 +146,7 @@ const toggleBox = (index) => {
   display: flex;
   height: 50px;
   width: 355px;
+  border: .5rem solid #e4d4fc;
   justify-content: center;
   align-items: center;
 }

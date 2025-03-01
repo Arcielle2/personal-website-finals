@@ -195,40 +195,4 @@ body {
     width: 100%;
   }
 }
-
-/* Fade Transition for Opening and Closing */
-.hidden-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #e4d4fc;
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  opacity: 0;
-  transform: scale(0.8);
-  pointer-events: none;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-}
-
-/* When active, smoothly fade in and scale up */
-.box.open .hidden-content {
-  opacity: 1;
-  transform: scale(1);
-  pointer-events: auto;
-}
-
-/* Fading effect for original box */
-.box {
-  transition: opacity 0.5s ease-in-out;
-}
-
-/* When opened, original box fades out */
-.box.open {
-  opacity: 0;
-}
 </style>

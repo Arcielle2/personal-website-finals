@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="sidebar">
+    <div class="main-sidebar">
       <div class="sidebar">Sidebar Top</div>
       <div class="contact">Contact</div>
       <div class="comment">Other</div>

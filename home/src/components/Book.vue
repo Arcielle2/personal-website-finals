@@ -7,38 +7,33 @@
     </div>
 
     <div class="main-content">
-      <div class="box" v-for="(isOpen, index) in openBoxes" :key="index">
-        <span class="box-text">{{ boxLabels[index] }}</span>
-        <img 
-          class="toggle-btn"
-          src="/src/components/sun.jfif"
-          alt="Sun Icon"
-          @click="toggleBox(index)"
-          :class="{ rotated: isOpen }"
-        />
-        <transition name="fade">
-          <div class="hidden-content" v-if="isOpen">
-            Additional Content
-          </div>
-        </transition>
+      <div class="box box1">
+        E A ☀️
+        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(0)" />
+        <div class="hidden-content" v-if="openBoxes[0]">Additional Content</div>
+      </div>
+      <div class="box box2">
+        P G
+        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(1)" />
+        <div class="hidden-content" v-if="openBoxes[1]">Additional Content</div>
+      </div>
+      <div class="box box3">
+        H I ☀️
+        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(2)" />
+        <div class="hidden-content" v-if="openBoxes[2]">Additional Content</div>
+      </div>
+      <div class="box box4">
+        C ☀️
+        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(3)" />
+        <div class="hidden-content" v-if="openBoxes[3]">Additional Content</div>
       </div>
     </div>
 
     <div class="sub-content">
-      <div class="box">
-        <span class="box-text">EX ☀️</span>
-        <img 
-          class="toggle-btn"
-          src="/src/components/sun.jfif"
-          alt="Sun Icon"
-          @click="toggleBox(openBoxes.length - 1)"
-          :class="{ rotated: openBoxes[openBoxes.length - 1] }"
-        />
-        <transition name="fade">
-          <div class="hidden-content" v-if="openBoxes[openBoxes.length - 1]">
-            Additional Content
-          </div>
-        </transition>
+      <div class="box box5">
+        EX ☀️
+        <img class="toggle-btn" src="/src/components/sun.jfif" alt="Lock Icon" @click="toggleBox(4)" />
+        <div class="hidden-content" v-if="openBoxes[4]">Additional Content</div>
       </div>
     </div>
   </div>
@@ -47,13 +42,8 @@
 <script setup>
 import { ref } from "vue";
 
-// State for each box's toggle status
 const openBoxes = ref([false, false, false, false, false]);
 
-// Labels for each box
-const boxLabels = ref(["E A ☀️", "P G", "H I ☀️", "C ☀️", "EX ☀️"]);
-
-// Toggle function
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];
 };
@@ -64,11 +54,6 @@ const toggleBox = (index) => {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background: #110222;
 }
 
 /* Main Layout */
@@ -115,17 +100,14 @@ body {
   font-weight: bold;
   position: relative;
   transition: transform 0.5s ease, opacity 0.5s ease, height 0.5s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 /* Box Sizes */
-.box {
-  width: 100%;
-  height: 150px;
-}
+.box1 { width: 48.8%; height: 150px; }
+.box2 { width: 48.8%; height: 150px; }
+.box3 { width: 100%; height: 200px; }
+.box4 { width: 100%; height: 200px; }
+.box5 { width: 100%; height: 570px; }
 
 /* Toggle Button - Centered */
 .toggle-btn {
@@ -135,12 +117,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: transform 0.5s ease-in-out;
-}
-
-/* Rotate Effect on Click */
-.toggle-btn.rotated {
-  transform: translate(-50%, -50%) rotate(180deg);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 /* Hidden Content */
@@ -156,15 +133,9 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-/* Transition for Showing and Hiding */
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.5s ease-in-out;
-}
-
-.fade-enter, .fade-leave-to {
-  opacity: 0;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease-in-out, visibility 0s linear 0s;
 }
 
 /* Responsive Design */

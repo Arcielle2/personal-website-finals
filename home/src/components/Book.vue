@@ -120,7 +120,7 @@ const toggleBox = (index) => {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0px 0px 20px rgba(138, 43, 226, 0.7);
+  box-shadow: 0px 0px 30px rgba(198, 171, 224, 0.7);
 }
 
 .slideshow-img {

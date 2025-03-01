@@ -77,6 +77,13 @@ const toggleBox = (index) => {
   border-radius: 15px;
 }
 
+.sidebar{
+  width: 28%;
+  height: 100px;
+  border: .5rem solid #3b2565;
+  border-radius: ;
+}
+
 /* Main Content */
 .main-content {
   display: flex;

@@ -109,13 +109,6 @@ body {
   transition: transform 0.5s ease, opacity 0.5s ease, height 0.5s ease;
 }
 
-.closed {
-  transform: scaleY(0);
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
-}
-
 /* Box Sizes */
 .box1 { width: 48.8%; height: 150px; }
 .box2 { width: 48.8%; height: 150px; }
@@ -123,14 +116,14 @@ body {
 .box4 { width: 100%; height: 200px; }
 .box5 { width: 100%; height: 570px; }
 
-/* Toggle Button */
+/* Toggle Button - Centered */
 .toggle-btn {
   cursor: pointer;
-  width: 40px;
+  width: 50px;
   position: absolute;
-  top: 10px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%) scale(0.8);
+  transform: translate(-50%, -50%);
   transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 

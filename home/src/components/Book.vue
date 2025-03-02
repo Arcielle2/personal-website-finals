@@ -3,7 +3,7 @@ You said:
 <template>
   <div class="main">
   <header class="header">
-    <a href="#home" class="logo"><span>Arcielle Marie</span></a>
+    <div class="logo"><span>Arcielle Marie</span></div>
     <i class="bx bx-menu" id="menu-icon"></i>
 
     <nav class="navbar">
@@ -241,6 +241,7 @@ span {
   border: 2px solid #b74b4b;
   transition: 0.3s ease;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .btn:hover {

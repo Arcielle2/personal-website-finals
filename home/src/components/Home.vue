@@ -47,7 +47,7 @@ You said:
           <img src="https://cdn-icons-png.flaticon.com/128/1384/1384015.png" alt="Instagram">
         </a>
     </div>
-      <a href="#education" class="btn">Get to know me more!</a>
+      <router-link to="/about" class="btn">Get to know me more!</router-link>
       <p class="quote">~ Venture outside your comfort zone. The rewards are worth it ~</p>
       <p class="quote-author">— Rapunzel, Tangled</p>
     </div>

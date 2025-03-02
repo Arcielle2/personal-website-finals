@@ -153,8 +153,8 @@ const toggleBox = (index) => {
   position: absolute;
   top: 10px;
   left: 10px;
-  width: 24px;
-  height: 24px;
+  width: 12px;
+  height: 12px;
   filter: invert(1);
   cursor: pointer;
 }

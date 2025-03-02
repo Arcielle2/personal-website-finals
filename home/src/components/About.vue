@@ -179,8 +179,8 @@ const toggleBox = (index) => {
 }
 
 .course-box {
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   background-color: white;
   display: flex;
   justify-content: center;

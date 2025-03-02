@@ -55,7 +55,7 @@
   }
   
   .navbar a {
-      font-size: 0.75rem;
+      font-size: 1.4rem;
   }
   
   #menu-icon {

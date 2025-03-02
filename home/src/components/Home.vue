@@ -16,7 +16,7 @@
 
 <section class="home">
   <div class="home-img">
-      <img src="/components/1.jfif" alt="Homepage Picture">
+      <img src="/components/Media (3).jfif" alt="Homepage Picture">
   </div>
   <div class="home-content">
       <h1>Hi, I'm <span>Arcielle!</span></h1>

@@ -37,8 +37,6 @@
 </section>
 </template>
 
-<script></script>
-
 <style scoped>
     header {
         position: fixed;

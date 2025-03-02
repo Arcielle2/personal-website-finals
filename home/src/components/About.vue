@@ -111,8 +111,7 @@ const toggleBox = (index) => {
 }
 
 .box:hover {
-  box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.8);
-  transform: scale(1.05);
+  box-shadow: 0px 0px 20px 5px #b74b4b;
 }
 
 .toggle-btn {

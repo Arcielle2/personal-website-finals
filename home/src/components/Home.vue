@@ -16,7 +16,7 @@
 
 <section class="home">
   <div class="home-img">
-    <img :src="homepageImage" alt="Homepage Picture">
+      <img src="https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/Media%20(3).jfif" alt="Homepage Picture">
   </div>
   <div class="home-content">
       <h1>Hi, I'm <span>Arcielle!</span></h1>
@@ -37,9 +37,7 @@
 </section>
 </template>
 
-<script setup>
-import homepageImage from '@/components/Media (3).jfif';
-</script>
+<script></script>
 
 <style scoped>
     header {

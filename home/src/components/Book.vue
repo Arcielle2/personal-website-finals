@@ -62,7 +62,7 @@ header {
 }
 
 .logo {
-    font-size: 3rem;
+    font-size: 18px;
     color: #b74b4b;
     font-weight: 800;
     cursor: pointer;
@@ -312,11 +312,11 @@ span {
     text-align: center;
     color: #b74b4b;
     font-style: italic;
-    font-size: 1.6rem;
+    font-size: 1.1rem;
 }
 
 .quote-author {
-    font-size: 1.4rem;
+    font-size: 1rem;
     text-align: center;
     color: #b74b4b;
     font-style: italic;

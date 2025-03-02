@@ -189,8 +189,8 @@ const toggleBox = (index) => {
   cursor: pointer;
 }
 .course-box1 {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   background-color: white;
   display: flex;
   justify-content: center;

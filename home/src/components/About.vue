@@ -6,10 +6,14 @@
 
     <div class="main-content">
       <div class="box box1">
-        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(0)" />
-        <div class="hidden-content" v-if="openBoxes[0]">
-          <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(0)" />
-          Additional Content
+        <div class="box-header">Course</div>
+        <div class="course-boxes">
+          <div class="course-box" @click="openCourse(0)">
+            <img src="https://cdn-icons-png.flaticon.com/128/11843/11843583.png" alt="Course 1" />
+          </div>
+          <div class="course-box" @click="openCourse(1)">
+            <img src="https://static.wikia.nocookie.net/logopedia/images/1/18/SM_2010_print.svg/revision/latest?cb=20240423092701" alt="Course 2" />
+          </div>
         </div>
       </div>
       <div class="box box2">
@@ -44,6 +48,13 @@
         </div>
       </div>
     </div>
+
+    <div class="overlay" v-if="selectedCourse !== null">
+      <div class="course-detail">
+        <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="closeCourse" />
+        <img :src="courseImages[selectedCourse]" alt="Selected Course" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -52,8 +63,18 @@ import { ref } from "vue";
 import sunImage from "@/assets/ribbon.jfif";
 
 const openBoxes = ref([false, false, false, false, false]);
+const selectedCourse = ref(null);
+
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];
+};
+
+const openCourse = (index) => {
+  selectedCourse.value = index;
+};
+
+const closeCourse = () => {
+  selectedCourse.value = null;
 };
 </script>
 
@@ -102,59 +123,60 @@ const toggleBox = (index) => {
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-.box1, .box2 {
-  width: 48.8%;
-  height: 150px;
+.box-header {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-.box3, .box4 {
-  width: 100%;
-  height: 200px;
+.course-boxes {
+  display: flex;
+  justify-content: space-between;
 }
 
-.box5 {
-  width: 100%;
-  height: 570px;
-}
-
-.box:hover {
-  box-shadow: 0px 0px 20px 6px #b74b4b;
-}
-
-.box:hover .toggle-btn {
-  filter: brightness(0.2);
-}
-
-.toggle-btn {
+.course-box {
+  width: 48%;
   cursor: pointer;
-  width: 50px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-.hidden-content {
-  position: absolute;
+.course-box img {
+  width: 100%;
+  display: block;
+}
+
+.overlay {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #b74b4b;
-  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.8);
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.course-detail {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  position: relative;
   text-align: center;
+}
+
+.course-detail img {
+  max-width: 100%;
+  border-radius: 10px;
 }
 
 .back-btn {
   position: absolute;
   top: 10px;
   left: 10px;
-  width: 12px;
-  height: 12px;
+  width: 24px;
+  height: 24px;
   filter: invert(1);
   cursor: pointer;
 }

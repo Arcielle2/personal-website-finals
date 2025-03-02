@@ -1,4 +1,5 @@
 <template>
+  <div class="main">
   <header class="header">
     <a href="#home" class="logo"><span>Arcielle Marie</span></a>
     <i class="bx bx-menu" id="menu-icon"></i>
@@ -41,9 +42,13 @@
       <p class="quote-author">— Rapunzel, *Tangled*</p>
     </div>
   </section>
+</div>
 </template>
 
 <style scoped>
+main{
+    font-size: 50%;
+}
 header {
     position: fixed;
     top: 0;

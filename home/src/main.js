@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
-import Home from './components/Home.vue'
+import Book from './components/Book.vue'
 
 const app = createApp(App)
-app.component('home', Home)
+app.component('book', Book)
 app.mount('#app')

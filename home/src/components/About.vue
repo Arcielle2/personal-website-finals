@@ -123,6 +123,10 @@ const toggleBox = (index) => {
   transform: translate(-50%, -50%);
 }
 
+.toggle-btn:hover {
+  filter: brightness(0.2);
+}
+
 .hidden-content {
   position: absolute;
   top: 0;

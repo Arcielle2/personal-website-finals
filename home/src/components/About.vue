@@ -110,6 +110,11 @@ const toggleBox = (index) => {
   height: 570px;
 }
 
+.box:hover {
+  box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.8);
+  transform: scale(1.05);
+}
+
 .toggle-btn {
   cursor: pointer;
   width: 50px;
@@ -133,8 +138,4 @@ const toggleBox = (index) => {
   text-align: center;
 }
 
-.hidden-content:hover {
-  box-shadow: 0px 0px 20px 5px rgba(255, 255, 255, 0.8);
-  transform: scale(1.05);
-}
 </style>

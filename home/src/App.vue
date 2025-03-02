@@ -1,5 +1,5 @@
 <template>
-<book/>
+<home/>
 </template>
 
 <script></script>

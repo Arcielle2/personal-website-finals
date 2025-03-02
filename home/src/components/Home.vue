@@ -1,5 +1,3 @@
-
-You said:
 <template>
   <div class="main">
   <header class="header">

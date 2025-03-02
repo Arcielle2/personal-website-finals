@@ -125,7 +125,7 @@ const toggleBox = (index) => {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #e4d4fc;
+  background-color: #b74b4b;
   border-radius: 15px;
   display: flex;
   justify-content: center;

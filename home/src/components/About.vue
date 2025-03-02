@@ -106,6 +106,10 @@ const toggleBox = (index) => {
   box-shadow: 0px 0px 20px 5px #b74b4b;
 }
 
+.box:hover .toggle-btn {
+  filter: brightness(0.2);
+}
+
 .toggle-btn {
   cursor: pointer;
   width: 50px;
@@ -113,10 +117,6 @@ const toggleBox = (index) => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-.toggle-btn:hover {
-  filter: brightness(0.2);
 }
 
 .hidden-content {

@@ -34,14 +34,22 @@ You said:
         Feel free to explore my page!
       </p>
       <div class="social-icons">
-        <a href="https://www.linkedin.com/in/arcielle-marie-gercan/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://github.com/ArcielleGercan" target="_blank"><i class="fa-brands fa-github"></i></a>
-        <a href="https://www.facebook.com/arciellemcg/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-        <a href="https://www.instagram.com/arxchmvri/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-      </div>
+        <a href="https://www.linkedin.com/in/arcielle-marie-gercan/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/128/1384/1384014.png" alt="LinkedIn">
+        </a>
+        <a href="https://github.com/ArcielleGercan" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/128/733/733609.png" alt="GitHub">
+        </a>
+        <a href="https://www.facebook.com/arciellemcg/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/128/2168/2168281.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/arxchmvri/" target="_blank">
+          <img src="https://cdn-icons-png.flaticon.com/128/1384/1384015.png" alt="Instagram">
+        </a>
+    </div>
       <a href="#education" class="btn">Get to know me more!</a>
       <p class="quote">~ Venture outside your comfort zone. The rewards are worth it ~</p>
-      <p class="quote-author">— Rapunzel, *Tangled*</p>
+      <p class="quote-author">— Rapunzel, Tangled</p>
     </div>
   </section>
 </div>
@@ -67,9 +75,8 @@ header {
   padding: 1rem;
   background-color: rgb(22, 22, 22);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   z-index: 5;
 }
 
@@ -95,9 +102,11 @@ header {
   margin-left: 2.2rem;
   font-weight: 450;
   transition: 0.3s ease;
-  border-bottom: 1px solid transparent;
+  text-decoration: none; /* Removed default underline */
+  border-bottom: 0px solid transparent; /* Ensures no underline when not active */
 }
 
+/* Fixed underline only appearing when hovered or active */
 .navbar a:hover,
 .navbar a.active {
   color: #b74b4b;
@@ -233,8 +242,9 @@ span {
   box-shadow: 0 0 25px #b74b4b;
 }
 
+/* Increased text animation size */
 .text-animation {
-  font-size: 1.8rem;
+  font-size: 2.2rem; /* Increased from 1.8rem */
   font-weight: 600;
   min-width: 280px;
 }
@@ -332,6 +342,6 @@ span {
   text-align: center;
   color: #b74b4b;
   font-style: italic;
-  margin-top:0;
+  margin-top: 0;
 }
 </style>

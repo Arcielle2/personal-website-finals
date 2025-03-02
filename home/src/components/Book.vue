@@ -339,7 +339,8 @@ span {
 }
 
 .quote {
-  margin-top: 1rem;
+  margin-top: 1rem; /* Space above the quote */
+  margin-bottom: 0; /* Remove margin between quote and author */
   text-align: center;
   color: #b74b4b;
   font-style: italic;
@@ -347,10 +348,11 @@ span {
 }
 
 .quote-author {
+  margin-top: 0; 
+  margin-bottom: 1.5rem;
   font-size: .7rem;
   text-align: center;
   color: #b74b4b;
   font-style: italic;
-  margin-top: 0;
 }
 </style>

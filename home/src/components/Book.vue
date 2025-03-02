@@ -95,7 +95,7 @@ header {
   margin-left: 2.2rem;
   font-weight: 450;
   transition: 0.3s ease;
-  border-bottom: 3px solid transparent;
+  border-bottom: 1px solid transparent;
 }
 
 .navbar a:hover,
@@ -143,7 +143,7 @@ header {
 }
 
 section {
-  min-height: 100vh;
+  min-height: 95vh;
   padding: 3rem 7%;
 }
 
@@ -181,7 +181,7 @@ span {
 
 .home-img img {
   position: relative;
-  width: 32vw;
+  width: 30vw;
   cursor: pointer;
   transition: 0.2s linear;
 }
@@ -200,7 +200,7 @@ span {
   border: 0.1rem solid #b74b4b;
   font-size: .9rem;
   border-radius: 50%;
-  margin: .5rem 1.5rem 1.5rem 0;
+  margin: .5rem 1rem 1.5rem 0;
   transition: 0.3s ease;
   color: #b74b4b;
 }

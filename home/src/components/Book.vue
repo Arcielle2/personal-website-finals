@@ -203,22 +203,30 @@ span {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   background-color: transparent;
   border: 0.1rem solid #b74b4b;
-  font-size: .9rem;
   border-radius: 50%;
-  margin: .5rem 1rem 1.5rem 0;
+  margin: 0.5rem 1rem 1.5rem 0;
   transition: 0.3s ease;
-  color: #b74b4b;
+}
+
+.social-icons a img {
+  width: 1.5rem; /* Adjust icon size */
+  height: 1.5rem;
+  filter: invert(42%) sepia(72%) saturate(748%) hue-rotate(315deg) brightness(90%) contrast(85%);
+  transition: 0.3s ease;
 }
 
 .social-icons a:hover {
-  color: black;
   transform: scale(1.3) translateY(-5px);
   background-color: #b74b4b;
   box-shadow: 0 0 25px #b74b4b;
+}
+
+.social-icons a:hover img {
+  filter: invert(0);
 }
 
 .btn {

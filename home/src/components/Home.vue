@@ -16,7 +16,7 @@
 
 <section class="home">
   <div class="home-img">
-      <img src="pictures/Media (3).jfif" alt="Homepage Picture">
+      <img src="src/pictures/Media (3).jfif" alt="Homepage Picture">
   </div>
   <div class="home-content">
       <h1>Hi, I'm <span>Arcielle!</span></h1>
@@ -40,28 +40,6 @@
 <script></script>
 
 <style scoped>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        text-decoration: none;
-        border: none;
-        outline: none;
-        font-family: 'Poppins', Arial, sans-serif;
-    }
-
-    html {
-        font-size: 50%;
-    }
-
-    body {
-        width: 100%;
-        height: 100vh;
-        overflow-x: hidden;
-        background-color: black;
-        color: white;
-    }
-
     header {
         position: fixed;
         top: 0;

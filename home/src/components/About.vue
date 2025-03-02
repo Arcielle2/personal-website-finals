@@ -7,26 +7,41 @@
     <div class="main-content">
       <div class="box box1">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(0)" />
-        <div class="hidden-content" v-if="openBoxes[0]">Additional Content</div>
+        <div class="hidden-content" v-if="openBoxes[0]">
+          <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(0)" />
+          Additional Content
+        </div>
       </div>
       <div class="box box2">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(1)" />
-        <div class="hidden-content" v-if="openBoxes[1]">Additional Content</div>
+        <div class="hidden-content" v-if="openBoxes[1]">
+          <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(1)" />
+          Additional Content
+        </div>
       </div>
       <div class="box box3">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(2)" />
-        <div class="hidden-content" v-if="openBoxes[2]">Additional Content</div>
+        <div class="hidden-content" v-if="openBoxes[2]">
+          <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(2)" />
+          Additional Content
+        </div>
       </div>
       <div class="box box4">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(3)" />
-        <div class="hidden-content" v-if="openBoxes[3]">Additional Content</div>
+        <div class="hidden-content" v-if="openBoxes[3]">
+          <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(3)" />
+          Additional Content
+        </div>
       </div>
     </div>
 
     <div class="sub-content">
       <div class="box box5">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(4)" />
-        <div class="hidden-content" v-if="openBoxes[4]">Additional Content</div>
+        <div class="hidden-content" v-if="openBoxes[4]">
+          <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(4)" />
+          Additional Content
+        </div>
       </div>
     </div>
   </div>
@@ -34,7 +49,7 @@
 
 <script setup>
 import { ref } from "vue";
-import sunImage from "@/assets/ribbon.jfif"; 
+import sunImage from "@/assets/ribbon.jfif";
 
 const openBoxes = ref([false, false, false, false, false]);
 const toggleBox = (index) => {
@@ -128,9 +143,19 @@ const toggleBox = (index) => {
   background-color: #b74b4b;
   border-radius: 15px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
+.back-btn {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 24px;
+  height: 24px;
+  filter: invert(1);
+  cursor: pointer;
+}
 </style>

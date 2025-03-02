@@ -65,7 +65,7 @@ header {
 }
 
 .logo {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     color: #b74b4b;
     font-weight: 800;
     cursor: pointer;
@@ -81,7 +81,7 @@ header {
 }
 
 .navbar a {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: white;
     margin-left: 4rem;
     font-weight: 500;
@@ -96,7 +96,7 @@ header {
 }
 
 #menu-icon {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     color: white;
     display: none;
 }
@@ -147,7 +147,7 @@ section {
 }
 
 .home .home-content h1 {
-    font-size: 4rem;
+    font-size: 2.3rem;
     font-weight: 700;
     line-height: 1.3;
 }
@@ -157,13 +157,13 @@ span {
 }
 
 .home-content h3 {
-    font-size: 3rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
     font-weight: 700;
 }
 
 .home-content p {
-    font-size: 1.3rem;
+    font-size: .8rem;
 }
 
 .home-img {
@@ -185,11 +185,11 @@ span {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 1rem;
+    height: 1rem;
     background-color: transparent;
     border: 0.2rem solid #b74b4b;
-    font-size: 1rem;
+    font-size: .9rem;
     border-radius: 50%;
     margin: 3rem 1.5rem 3rem 0;
     transition: 0.3s ease;
@@ -208,7 +208,7 @@ span {
     padding: 1rem 2.8rem;
     background-color: black;
     border-radius: 4rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #b74b4b;
     letter-spacing: 0.3rem;
     font-weight: 600;
@@ -225,7 +225,7 @@ span {
 }
 
 .text-animation {
-    font-size: 34px;
+    font-size: 1.4rem;
     font-weight: 600;
     min-width: 280px;
 }
@@ -311,7 +311,7 @@ span {
 }
 
 .quote {
-    margin-top: 2rem;
+    margin-top: .8rem;
     text-align: center;
     color: #b74b4b;
     font-style: italic;
@@ -319,7 +319,7 @@ span {
 }
 
 .quote-author {
-    font-size: 1rem;
+    font-size: .7rem;
     text-align: center;
     color: #b74b4b;
     font-style: italic;

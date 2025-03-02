@@ -5,12 +5,28 @@
     </div>
 
     <div class="main-content">
-      <div v-for="(box, index) in boxes" :key="index" class="box" @mouseover="hoverEffect(index, true)" @mouseleave="hoverEffect(index, false)">
-        <img v-if="!openBoxes[index]" class="toggle-btn" :src="ribbonImage" alt="Ribbon Icon" @click="toggleBox(index)" :class="{ 'black-ribbon': hoveredBoxes[index] }" />
-        <div class="hidden-content" v-if="openBoxes[index]">
-          <p>Additional Content</p>
-          <img class="back-btn" :src="backIcon" alt="Back Button" @click="toggleBox(index)" />
-        </div>
+      <div class="box box1">
+        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(0)" />
+        <div class="hidden-content" v-if="openBoxes[0]">Additional Content</div>
+      </div>
+      <div class="box box2">
+        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(1)" />
+        <div class="hidden-content" v-if="openBoxes[1]">Additional Content</div>
+      </div>
+      <div class="box box3">
+        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(2)" />
+        <div class="hidden-content" v-if="openBoxes[2]">Additional Content</div>
+      </div>
+      <div class="box box4">
+        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(3)" />
+        <div class="hidden-content" v-if="openBoxes[3]">Additional Content</div>
+      </div>
+    </div>
+
+    <div class="sub-content">
+      <div class="box box5">
+        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(4)" />
+        <div class="hidden-content" v-if="openBoxes[4]">Additional Content</div>
       </div>
     </div>
   </div>
@@ -18,18 +34,11 @@
 
 <script setup>
 import { ref } from "vue";
-import ribbonImage from "@/assets/ribbon.jfif";
-import backIcon from "https://cdn-icons-png.flaticon.com/128/271/271220.png";
+import sunImage from "@/assets/ribbon.jfif"; 
 
 const openBoxes = ref([false, false, false, false, false]);
-const hoveredBoxes = ref([false, false, false, false, false]);
-
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];
-};
-
-const hoverEffect = (index, isHovered) => {
-  hoveredBoxes.value[index] = isHovered;
 };
 </script>
 
@@ -71,6 +80,10 @@ const hoverEffect = (index, isHovered) => {
   width: 35%;
 }
 
+.sub-content {
+  width: 30%;
+}
+
 .box {
   background-color: #e4d4fc;
   border-radius: 15px;
@@ -79,11 +92,22 @@ const hoverEffect = (index, isHovered) => {
   font-size: 20px;
   font-weight: bold;
   position: relative;
-  transition: transform 0.5s ease, opacity 0.5s ease, box-shadow 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-.box:hover {
-  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
+.box1, .box2 {
+  width: 48.8%;
+  height: 150px;
+}
+
+.box3, .box4 {
+  width: 100%;
+  height: 200px;
+}
+
+.box5 {
+  width: 100%;
+  height: 570px;
 }
 
 .toggle-btn {
@@ -95,10 +119,6 @@ const hoverEffect = (index, isHovered) => {
   transform: translate(-50%, -50%);
 }
 
-.black-ribbon {
-  filter: brightness(0);
-}
-
 .hidden-content {
   position: absolute;
   top: 0;
@@ -108,15 +128,8 @@ const hoverEffect = (index, isHovered) => {
   background-color: #e4d4fc;
   border-radius: 15px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.back-btn {
-  cursor: pointer;
-  width: 30px;
-  margin-top: 10px;
 }
 </style>

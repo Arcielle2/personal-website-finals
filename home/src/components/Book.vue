@@ -48,280 +48,290 @@ You said:
 </template>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  background-color: black;
+  color: white;
+  font-family: 'Poppins', Arial, sans-serif;
+}
 
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 2rem 12%;
-    background-color: rgb(22, 22, 22);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background-color: rgb(22, 22, 22);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
 }
 
 .logo {
-    font-size: 1.3rem;
-    color: #b74b4b;
-    font-weight: 800;
-    cursor: pointer;
-    transition: 0.3s ease;
+  font-size: 1.5rem;
+  color: #b74b4b;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .logo:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .logo span {
-    text-shadow: 0 0 25px #b74b4b;
+  text-shadow: 0 0 25px #b74b4b;
 }
 
 .navbar a {
-    font-size: 1rem;
-    color: white;
-    margin-left: 4rem;
-    font-weight: 500;
-    transition: 0.3s ease;
-    border-bottom: 3px solid transparent;
+  font-size: .9rem;
+  color: white;
+  margin-left: 2.2rem;
+  font-weight: 450;
+  transition: 0.3s ease;
+  border-bottom: 3px solid transparent;
 }
 
 .navbar a:hover,
 .navbar a.active {
-    color: #b74b4b;
-    border-bottom: 3px solid #b74b4b;
+  color: #b74b4b;
+  border-bottom: 3px solid #b74b4b;
 }
 
 #menu-icon {
-    font-size: 1.5rem;
-    color: white;
-    display: none;
+  font-size: 1.5rem;
+  color: white;
+  display: none;
 }
 
 @media (max-width: 995px) {
-    nav {
-        position: absolute;
-        display: none;
-        top: 0;
-        right: 0;
-        width: 40%;
-        border-left: 3px solid #b74b4b;
-        border-bottom: 3px solid #b74b4b;
-        border-bottom-left-radius: 2rem;
-        padding: 1rem;
-        background-color: #161616;
-    }
+  nav {
+      position: absolute;
+      display: none;
+      top: 0;
+      right: 0;
+      width: 40%;
+      border-left: 3px solid #b74b4b;
+      border-bottom: 3px solid #b74b4b;
+      border-bottom-left-radius: 2rem;
+      padding: 1rem;
+      background-color: #161616;
+  }
 
-    nav.active {
-        display: block;
-    }
+  nav.active {
+      display: block;
+  }
 
-    nav a {
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-    }
+  nav a {
+      display: block;
+      font-size: 2rem;
+      margin: 3rem 0;
+  }
 
-    nav a:hover,
-    nav a.active {
-        padding: 1rem;
-        border-radius: 0.5rem;
-        border-bottom: 0.5rem solid #b74b4b;
-    }
+  nav a:hover,
+  nav a.active {
+      padding: 1rem;
+      border-radius: 0.5rem;
+      border-bottom: 0.5rem solid #b74b4b;
+  }
 }
 
 section {
-    min-height: 100vh;
-    padding: 5rem 9%;
+  min-height: 100vh;
+  padding: 3rem 7%;
 }
 
 .home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8rem;
-    background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  background-color: black;
 }
 
 .home .home-content h1 {
-    font-size: 2.3rem;
-    font-weight: 700;
-    line-height: 1.3;
+  font-size: 3rem;
+  font-weight: 550;
+  line-height: 0;
 }
 
 span {
-    color: #b74b4b;
+  color: #b74b4b;
 }
 
 .home-content h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
 
 .home-content p {
-    font-size: .8rem;
+  font-size: .8rem;
 }
 
 .home-img {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 .home-img img {
-    position: relative;
-    width: 32vw;
-    cursor: pointer;
-    transition: 0.2s linear;
+  position: relative;
+  width: 32vw;
+  cursor: pointer;
+  transition: 0.2s linear;
 }
 
 .home-img img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .social-icons a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 1rem;
-    height: 1rem;
-    background-color: transparent;
-    border: 0.2rem solid #b74b4b;
-    font-size: .9rem;
-    border-radius: 50%;
-    margin: 3rem 1.5rem 3rem 0;
-    transition: 0.3s ease;
-    color: #b74b4b;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border: 0.1rem solid #b74b4b;
+  font-size: .9rem;
+  border-radius: 50%;
+  margin: .5rem 1.5rem 1.5rem 0;
+  transition: 0.3s ease;
+  color: #b74b4b;
 }
 
 .social-icons a:hover {
-    color: black;
-    transform: scale(1.3) translateY(-5px);
-    background-color: #b74b4b;
-    box-shadow: 0 0 25px #b74b4b;
+  color: black;
+  transform: scale(1.3) translateY(-5px);
+  background-color: #b74b4b;
+  box-shadow: 0 0 25px #b74b4b;
 }
 
 .btn {
-    display: inline-block;
-    padding: 1rem 2.8rem;
-    background-color: black;
-    border-radius: 4rem;
-    font-size: 0.8rem;
-    color: #b74b4b;
-    letter-spacing: 0.3rem;
-    font-weight: 600;
-    border: 2px solid #b74b4b;
-    transition: 0.3s ease;
-    cursor: pointer;
+  display: inline-block;
+  padding: .6rem 2rem;
+  background-color: black;
+  border-radius: 4rem;
+  font-size: 0.8rem;
+  color: #b74b4b;
+  letter-spacing: .14rem;
+  font-weight: 800;
+  border: 2px solid #b74b4b;
+  transition: 0.3s ease;
+  cursor: pointer;
 }
 
 .btn:hover {
-    transform: scale(1.03);
-    background-color: #b74b4b;
-    color: black;
-    box-shadow: 0 0 25px #b74b4b;
+  transform: scale(1.03);
+  background-color: #b74b4b;
+  color: black;
+  box-shadow: 0 0 25px #b74b4b;
 }
 
 .text-animation {
-    font-size: 1.4rem;
-    font-weight: 600;
-    min-width: 280px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  min-width: 280px;
 }
 
 .text-animation span {
-    position: relative;
+  position: relative;
 }
 
 .text-animation span::before {
-    content: "Libra";
-    color: #b74b4b;
-    animation: words 20s infinite;
+  content: "Libra";
+  color: #b74b4b;
+  animation: words 20s infinite;
 }
 
 .text-animation span::after {
-    content: "";
-    background-color: black;
-    position: absolute;
-    width: calc(100% + 8px);
-    height: 100%;
-    border-left: 3px solid black;
-    right: -8px;
-    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+  content: "";
+  background-color: black;
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 3px solid black;
+  right: -8px;
+  animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
 }
 
 @keyframes cursor {
-    to {
-        border-left: 2px solid #b74b4b;
-    }
+  to {
+      border-left: 2px solid #b74b4b;
+  }
 }
 
 @keyframes words {
-    0%, 20% {
-        content: "INFJ";
-    }
-    21%, 40% {
-        content: "Libra";
-    }
-    41%, 60% {
-        content: "Computer Science student";
-    }
-    61%, 80% {
-        content: "Libra";
-    }
-    81%, 100% {
-        content: "INFJ";
-    }
+  0%, 20% {
+      content: "INFJ";
+  }
+  21%, 40% {
+      content: "Libra";
+  }
+  41%, 60% {
+      content: "Computer Science student";
+  }
+  61%, 80% {
+      content: "Libra";
+  }
+  81%, 100% {
+      content: "INFJ";
+  }
 }
 
 @keyframes typing {
-    0%, 10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
-        width: 0;
-    }
-    5%, 20%, 25%, 40%, 45%, 50%, 55%, 80%, 85% {
-        width: calc(100% + 8px);
-    }
+  0%, 10%, 15%, 30%, 35%, 50%, 55%, 70%, 75%, 90%, 95% {
+      width: 0;
+  }
+  5%, 20%, 25%, 40%, 45%, 50%, 55%, 80%, 85% {
+      width: calc(100% + 8px);
+  }
 }
 
 @media (max-width: 1000px) {
-    .home {
-        gap: 4rem;
-    }
+  .home {
+      gap: 4rem;
+  }
 }
 
 @media (max-width: 995px) {
-    .home {
-        flex-direction: column;
-        margin: 5rem 4rem;
-    }
+  .home {
+      flex-direction: column;
+      margin: 5rem 4rem;
+  }
 
-    .home .home-content h3 {
-        font-size: 2.5rem;
-    }
+  .home .home-content h3 {
+      font-size: 2.5rem;
+  }
 
-    .home-content h1 {
-        font-size: 5rem;
-    }
+  .home-content h1 {
+      font-size: 5rem;
+  }
 
-    .home-img img {
-        width: 70vw;
-        margin-top: 4rem;
-    }
+  .home-img img {
+      width: 70vw;
+      margin-top: 4rem;
+  }
 }
 
 .quote {
-    margin-top: .8rem;
-    text-align: center;
-    color: #b74b4b;
-    font-style: italic;
-    font-size: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: #b74b4b;
+  font-style: italic;
+  font-size: 1rem;
 }
 
 .quote-author {
-    font-size: .7rem;
-    text-align: center;
-    color: #b74b4b;
-    font-style: italic;
+  font-size: .7rem;
+  text-align: center;
+  color: #b74b4b;
+  font-style: italic;
+  margin-top:0;
 }
 </style>

@@ -1,32 +1,42 @@
 <template>
   <div class="container">
     <div class="main-sidebar">
-      <div class="sidebar-header">
-        <h2>Arcielle Marie</h2>
-        <hr class="sidebar-divider" />
-      </div>
+      <div class="sidebar"></div>
     </div>
 
     <div class="main-content">
-      <div class="box box1" @click="toggleBox(0)">Additional Content</div>
-      <div class="box box2" @click="toggleBox(1)">Additional Content</div>
-      <div class="box box3" @click="toggleBox(2)">Additional Content</div>
-      <div class="box box4" @click="toggleBox(3)">Additional Content</div>
+      <div class="box box1">
+        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(0)" />
+        <div class="hidden-content" v-if="openBoxes[0]">Additional Content</div>
+      </div>
+      <div class="box box2">
+        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(1)" />
+        <div class="hidden-content" v-if="openBoxes[1]">Additional Content</div>
+      </div>
+      <div class="box box3">
+        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(2)" />
+        <div class="hidden-content" v-if="openBoxes[2]">Additional Content</div>
+      </div>
+      <div class="box box4">
+        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(3)" />
+        <div class="hidden-content" v-if="openBoxes[3]">Additional Content</div>
+      </div>
     </div>
 
     <div class="sub-content">
-      <div class="box box5" @click="toggleBox(4)">Additional Content</div>
+      <div class="box box5">
+        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(4)" />
+        <div class="hidden-content" v-if="openBoxes[4]">Additional Content</div>
+      </div>
     </div>
   </div>
-  <router-link to="/" class="btn">Go Back Home</router-link>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import sunImage from "@/assets/ribbon.jfif"; 
 
-// Toggle logic for boxes
 const openBoxes = ref([false, false, false, false, false]);
-
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];
 };
@@ -49,37 +59,29 @@ const toggleBox = (index) => {
 }
 
 .main-sidebar {
-  display: flex;
-  flex-direction: column;
   width: 30%;
   background-color: #452981;
   padding: 20px;
   border-radius: 15px;
-  align-content: center;
 }
 
-.sidebar-header {
-  text-align: left;
-  padding: 10px;
-  font-size: 10px;
-  font-weight: bold;
-  color: white;
+.sidebar {
+  width: 355px;
+  height: 200px;
+  border: 0.5rem solid #e4d4fc;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px rgba(198, 171, 224, 0.7);
 }
 
-.sidebar-divider {
-  width: 100%;
-  height: 3px;
-  background-color: white;
-  border: none;
-  margin-bottom: 15px;
-}
-
-.main-content,
-.sub-content {
+.main-content {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   width: 35%;
+}
+
+.sub-content {
+  width: 30%;
 }
 
 .box {
@@ -89,20 +91,45 @@ const toggleBox = (index) => {
   text-align: center;
   font-size: 20px;
   font-weight: bold;
-  cursor: pointer;
+  position: relative;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    height: auto;
-  }
-  .main-content,
-  .sub-content {
-    width: 100%;
-  }
-  .box {
-    width: 100%;
-  }
+.box1, .box2 {
+  width: 48.8%;
+  height: 150px;
+}
+
+.box3, .box4 {
+  width: 100%;
+  height: 200px;
+}
+
+.box5 {
+  width: 100%;
+  height: 570px;
+}
+
+.toggle-btn {
+  cursor: pointer;
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hidden-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #e4d4fc;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 </style>

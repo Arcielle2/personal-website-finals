@@ -65,14 +65,6 @@ const toggleBox = (index) => {
   border-radius: 15px;
 }
 
-.sidebar {
-  width: 355px;
-  height: 200px;
-  border: 0.5rem solid #e4d4fc;
-  border-radius: 10px;
-  box-shadow: 0px 0px 30px rgba(198, 171, 224, 0.7);
-}
-
 .main-content {
   display: flex;
   flex-wrap: wrap;

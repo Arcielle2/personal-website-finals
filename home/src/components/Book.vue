@@ -62,7 +62,7 @@ header {
 }
 
 .logo {
-    font-size: 18px;
+    font-size: 20px;
     color: #b74b4b;
     font-weight: 800;
     cursor: pointer;
@@ -78,7 +78,7 @@ header {
 }
 
 .navbar a {
-    font-size: 1.8rem;
+    font-size: 18px;
     color: white;
     margin-left: 4rem;
     font-weight: 500;

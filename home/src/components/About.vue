@@ -11,10 +11,10 @@
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(0)" />
           <div class="course-label">Course</div>
           <div class="course-boxes">
-            <div class="course-box" @click="toggleBox(5)">
+            <div class="course-box1" @click="toggleBox(5)">
               <img src="https://cdn-icons-png.flaticon.com/128/11843/11843583.png" alt="Course 1" />
             </div>
-            <div class="course-box" @click="toggleBox(6)">
+            <div class="course-box2" @click="toggleBox(6)">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw-u2P46vBuUjw0FipSrLpFnrCx2068q3jNg&s" alt="Course 2" class="bw-img" />
             </div>
           </div>
@@ -178,7 +178,17 @@ const toggleBox = (index) => {
   gap: 10px;
 }
 
-.course-box {
+.course-box1 {
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.course-box1 {
   width: 40px;
   height: 40px;
   background-color: white;

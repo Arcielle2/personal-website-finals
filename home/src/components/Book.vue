@@ -47,53 +47,53 @@
   
   <style scoped>
   header {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
   }
   
   .logo {
-      font-size: 2.5rem;
+      font-size: 2rem;
   }
   
   .navbar a {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
   }
   
   #menu-icon {
-      font-size: 2.8rem;
+      font-size: 2.4rem;
   }
   
   .home-content h1 {
-      font-size: 4rem;
+      font-size: 3.5rem;
   }
   
   .home-content h3 {
-      font-size: 3rem;
+      font-size: 2.5rem;
   }
   
   .home-content p {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
   }
   
   .social-icons a {
-      font-size: 1.6rem;
-      width: 3.5rem;
-      height: 3.5rem;
+      font-size: 1.4rem;
+      width: 3rem;
+      height: 3rem;
   }
   
   .btn {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
   }
   
   .text-animation {
-      font-size: 2.8rem;
+      font-size: 2.4rem;
   }
   
   .quote {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
   }
   
   .quote-author {
-      font-size: 1.2rem;
+      font-size: 1rem;
   }
   </style>
   

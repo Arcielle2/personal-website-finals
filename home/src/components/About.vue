@@ -221,7 +221,7 @@ onUnmounted(() => {
 .box {
   background-color: black;
   border-radius: 15px;
-  border: 3px solid #1f2122;
+  border: 3px solid rgba(238, 238, 238, 0.2);
   padding: 20px;
   text-align: center;
   font-size: 20px;

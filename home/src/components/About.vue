@@ -2,11 +2,11 @@
   <div class="container">
     <div class="main-sidebar">
       <div class="sidebar">
-        <div class="image-container">
+        <div v-if="!courseDescription" class="image-container">
           <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />
           <img v-if="showHiImage" :src="hiImage" alt="Overlay Image" class="overlay-img" />
         </div>
-        <p class="sidebar-text">{{ courseDescription }}</p> <!-- Added this to show the text -->
+        <p v-else class="sidebar-text">{{ courseDescription }}</p> <!-- Shows only when clicked -->
       </div>
     </div>
     <div class="main-content">
@@ -84,6 +84,7 @@ const toggleBox = (index) => {
 
 const changeSidebarImage = (description) => {
   courseDescription.value = description;
+  selectedImage.value = null;
 };
 
 let interval;

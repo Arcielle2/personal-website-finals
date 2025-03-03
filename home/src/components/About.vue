@@ -304,7 +304,7 @@ onUnmounted(() => {
 }
 
 .bw-img {
-  filter: grayscale(1);
+  filter: brightness(0) invert(1);
 }
 
 </style>

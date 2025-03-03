@@ -15,11 +15,11 @@
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(0)" />
           <div class="course-label">Course</div>
           <div class="course-boxes">
-            <div class="course-box" @click="changeSidebarImage(course1)">
-              <img :src="course1" alt="Course 1" class="course-img" />
+            <div class="course-box" @click="changeSidebarImage(c1)">
+              <img :src="c1" alt="Course 1" class="course-img" />
             </div>
-            <div class="course-box" @click="changeSidebarImage(course2)">
-              <img :src="course2" alt="Course 2" class="course-img bw-img" />
+            <div class="course-box" @click="changeSidebarImage(c2)">
+              <img :src="c2" alt="Course 2" class="course-img bw-img" />
             </div>
           </div>
         </div>
@@ -65,28 +65,29 @@ import { ref, onMounted, onUnmounted } from "vue";
 import sunImage from "@/assets/ribbon.jfif";
 import defaultImage from "@/assets/bubu.jfif"; // Default sidebar image
 import hiImage from "@/assets/hi.jfif"; // Overlay image
+import c1 from "@/assets/c1.jfif";
+import c2 from "@/assets/c2.jfif";
 
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];
 };
 
 const changeSidebarImage = (newImage) => {
-  selectedImage.value = newImage; // Change sidebar image
+  selectedImage.value = newImage; 
 };
 
 const openBoxes = ref([false, false, false, false, false, false, false]);
-const selectedImage = ref(defaultImage); // Default sidebar image
-const showHiImage = ref(false); // Controls hi.jfif visibility
+const selectedImage = ref(defaultImage); 
+const showHiImage = ref(false); 
 
-// Toggle hi.jfif visibility in a 5s show / 10s hide cycle
 let interval;
 onMounted(() => {
   interval = setInterval(() => {
     showHiImage.value = true;
     setTimeout(() => {
       showHiImage.value = false;
-    }, 5000); // Show for 5 seconds
-  }, 15000); // Total cycle: 5s (show) + 10s (hide) = 15s
+    }, 10000);
+  }, 15000);
 });
 
 onUnmounted(() => {
@@ -217,6 +218,7 @@ onUnmounted(() => {
   font-weight: bold;
   position: relative;
   transition: transform 0.5s ease, opacity 0.5s ease;
+  box-shadow: 0px 0px 20px 6px #b74b4b;
 }
 
 .box1, .box2 {
@@ -234,10 +236,6 @@ onUnmounted(() => {
   height: 570px;
 }
 
-.box:hover {
-  box-shadow: 0px 0px 20px 6px #b74b4b;
-}
-
 .box:hover .toggle-btn {
   filter: brightness(0.2);
 }
@@ -249,6 +247,12 @@ onUnmounted(() => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  animation: clickMe 1s infinite;
+}
+
+@keyframes clickMe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
 }
 
 .hidden-content {

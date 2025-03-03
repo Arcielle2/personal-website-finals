@@ -2,10 +2,9 @@
   <div class="container">
     <div class="main-sidebar">
       <div class="sidebar">
+        Sidebar Content
       </div>
     </div>
-  </div>
-
     <div class="main-content">
       <div class="box box1">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(0)" />
@@ -54,6 +53,7 @@
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script setup>
@@ -87,21 +87,20 @@ const toggleBox = (index) => {
   background-color: #b74b4b;
   padding: 20px;
   border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .sidebar {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 33%;
-  height: 100%;
+  width: 100%;
   background: #15191d;
   color: white;
-  border-radius: 15px 0 0 15px;
+  border-radius: 15px;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   text-align: center;
 }
@@ -193,7 +192,7 @@ const toggleBox = (index) => {
 
 .course-boxes {
   display: flex;
-  gap: 15px
+  gap: 15px;
 }
 
 .course-box {
@@ -204,16 +203,15 @@ const toggleBox = (index) => {
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .course-img {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
 .bw-img {
   filter: grayscale(1);
 }
-
 </style>

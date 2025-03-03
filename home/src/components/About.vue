@@ -1,13 +1,10 @@
 <template>
   <div class="container">
-    <!-- Sidebar -->
     <div class="main-sidebar">
       <div class="sidebar">
-        <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />
+        Sidebar Content
       </div>
     </div>
-
-    <!-- Main Content -->
     <div class="main-content">
       <div class="box box1">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(0)" />
@@ -24,7 +21,7 @@
           </div>
         </div>
       </div>
-      
+
       <div class="box box2">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(1)" />
         <div class="hidden-content" v-if="openBoxes[1]">
@@ -32,7 +29,6 @@
           Additional Content
         </div>
       </div>
-      
       <div class="box box3">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(2)" />
         <div class="hidden-content" v-if="openBoxes[2]">
@@ -40,7 +36,6 @@
           Additional Content
         </div>
       </div>
-      
       <div class="box box4">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(3)" />
         <div class="hidden-content" v-if="openBoxes[3]">
@@ -50,7 +45,6 @@
       </div>
     </div>
 
-    <!-- Sub Content -->
     <div class="sub-content">
       <div class="box box5">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(4)" />
@@ -65,20 +59,11 @@
 
 <script setup>
 import { ref } from "vue";
-import sunImage from "@/assets/ribbon.jfif"; 
-import defaultImage from "@/assets/bubu.jfif"; 
-import course1 from "https://cdn-icons-png.flaticon.com/128/11843/11843583.png";
-import course2 from "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw-u2P46vBuUjw0FipSrLpFnrCx2068q3jNg&s";
+import sunImage from "@/assets/ribbon.jfif";
 
-const openBoxes = ref([false, false, false, false, false]);
-const selectedImage = ref(defaultImage);
-
+const openBoxes = ref([false, false, false, false, false, false, false]);
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];
-};
-
-const changeSidebarImage = (newImage) => {
-  selectedImage.value = newImage;
 };
 </script>
 
@@ -109,13 +94,17 @@ const changeSidebarImage = (newImage) => {
 
 .sidebar {
   width: 100%;
-  height: 18rem;
-  border: 10px solid #15191d;
-  background: #1f2122;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 15px;
+    height: 18rem;
+    border:10px solid #15191d;
+    background: #1f2122;
+    color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center
 }
 
 .sidebar-img {
@@ -123,6 +112,7 @@ const changeSidebarImage = (newImage) => {
   height: auto;
   border-radius: 10px;
 }
+
 
 .main-content {
   display: flex;

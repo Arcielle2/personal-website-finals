@@ -13,7 +13,7 @@
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(0)" />
         <div class="hidden-content" v-if="openBoxes[0]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(0)" />
-          <div class="course-label">Course</div>
+          <div class="course-label"><p>Course<p></p></div>
           <div class="course-boxes">
             <div class="course-box" @click="changeSidebarImage(c1, course1Text)">
               <img :src="c1" alt="Course 1" class="course-img" />
@@ -286,9 +286,11 @@ onUnmounted(() => {
   font-size: 20px;
   color: black;
   margin-bottom: 10px;
-  box-shadow: 0px 0px 20px 6px #b74b4b;
 }
 
+.course-label p {
+  box-shadow: 0px 0px 20px 6px #b74b4b;
+}
 .course-boxes {
   display: flex;
   gap: 15px;

@@ -118,29 +118,30 @@ const changeSidebarImage = (newImage) => {
   width: 60%;
   height: auto;
   border-radius: 10px;
-  transition: transform 0.3s ease-in-out;
   animation: moveAround 2s infinite alternate ease-in-out;
+  transition: transform 0.3s ease-in-out; /* Smooth transition on hover */
 }
 
 .sidebar-img:hover {
-  transform: scale(1.2);
+  transform: scale(1.4); /* Enlarges the image while keeping animation */
 }
 
+/* Keeps the movement active */
 @keyframes moveAround {
   0% {
-    transform: translate(0, 0) scale(1.2);
+    transform: translate(0, 0) scale(1);
   }
   25% {
-    transform: translate(10px, -10px) scale(1.2);
+    transform: translate(10px, -10px) scale(1);
   }
   50% {
-    transform: translate(-10px, 10px) scale(1.2);
+    transform: translate(-10px, 10px) scale(1);
   }
   75% {
-    transform: translate(5px, -5px) scale(1.2);
+    transform: translate(5px, -5px) scale(1);
   }
   100% {
-    transform: translate(-5px, 5px) scale(1.2);
+    transform: translate(-5px, 5px) scale(1);
   }
 }
 

@@ -168,30 +168,30 @@ const toggleBox = (index) => {
 }
 
 .course-label {
-  font-size: 24px;
+  font-size: 20px;
   color: white;
   margin-bottom: 10px;
 }
 
-.course-boxes {
+.course-boxes[data-v-486b97ac] {
   display: flex;
-  gap: 5px;
+  gap: 15px
 }
 
-.course-box {
-  width: 20px;
-  height: 20px;
-  background-color: #e4d4fc;
+.course-box[data-v-486b97ac] {
+  width: 90px;
+  height: 80px;
+  background: #e4d4fc;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  cursor: pointer;
+  cursor: pointer
 }
 
-.course-img {
-  width: 20px;
-  height: 20px;
+.course-img[data-v-486b97ac] {
+    width: 50px;
+    height: 50px;
 }
 
 .bw-img {

@@ -30,17 +30,10 @@
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(1)" />
         <div class="hidden-content" v-if="openBoxes[1]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(1)" />
-          <div class="experience-label"><p>IT Experience</p></div>
-          <div class="experience-container">
-            <button @click="prevExperience">❮</button>
-            <div class="experience-box">
-              <img :src="experiences[currentExperience].icon" alt="Experience Icon" class="experience-img" />
-              <p>{{ experiences[currentExperience].name }}</p>
-            </div>
-          <button @click="nextExperience">❯</button>
+          Additional Content
         </div>
       </div>
-
+      
       <div class="box box3">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(2)" />
         <div class="hidden-content" v-if="openBoxes[2]">
@@ -66,7 +59,6 @@
         </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
@@ -109,35 +101,6 @@ onMounted(() => {
 onUnmounted(() => {
   clearInterval(interval);
 });
-
-const experiences = ref([
-  { name: "Python", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968544.png" },
-  { name: "Java", icon: "https://cdn-icons-png.flaticon.com/128/226/226777.png" },
-  { name: "JavaScript", icon: "https://cdn-icons-png.flaticon.com/128/721/721671.png" },
-  { name: "HTML", icon: "https://cdn-icons-png.flaticon.com/128/1051/1051328.png" },
-  { name: "CSS", icon: "https://cdn-icons-png.flaticon.com/128/732/732007.png" },
-  { name: "Vue.js", icon: "https://cdn-icons-png.flaticon.com/128/16511/16511176.png" },
-  { name: "React.js", icon: "https://cdn-icons-png.flaticon.com/128/3393/3393920.png" },
-  { name: "Bootstrap", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968671.png" },
-  { name: "MySQL", icon: "https://cdn-icons-png.flaticon.com/128/274/274439.png" },
-  { name: "Supabase", icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUmXAGUcOzjy2xaAKISEG6ojczFz_KFn3iZA&s" },
-  { name: "Github", icon: "https://cdn-icons-png.flaticon.com/128/1051/1051326.png" },
-  { name: "Vercel", icon: "https://static.wikia.nocookie.net/logopedia/images/a/a7/Vercel_favicon.svg/revision/latest?cb=20221026155821" },
-  { name: "XAMPP", icon: "https://static-00.iconduck.com/assets.00/xampp-icon-1014x1024-czirhwu5.png" },
-  { name: "Eclipse", icon: "https://brandslogos.com/wp-content/uploads/images/large/eclipse-logo-black-and-white.png" },
-  { name: "Flowgorithm", icon: "https://lh3.googleusercontent.com/proxy/GEvQaA8UT24MO4Db7C2VYOmt-87UHO2omQIRSnRczYF1auqMd2z-uh2B-YG9fQ_wMhZ076k7ypVVZBkzvzx9DCw24Qos" },
-  { name: "Linux", icon: "https://cdn-icons-png.flaticon.com/128/16066/16066075.png" },
-  { name: "Figma", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968704.png" },
-  { name: "Canva", icon: "https://i.pinimg.com/736x/c1/b8/3a/c1b83ab03539d3eb6448148aa01c45a4.jpg" }
-]);
-
-const currentExperience = ref(0);
-const prevExperience = () => {
-  currentExperience.value = (currentExperience.value - 1 + experiences.value.length) % experiences.value.length;
-};
-const nextExperience = () => {
-  currentExperience.value = (currentExperience.value + 1) % experiences.value.length;
-};
 </script>
 
 <style scoped>
@@ -263,10 +226,6 @@ const nextExperience = () => {
   font-weight: bold;
   position: relative;
   transition: transform 0.5s ease, opacity 0.5s ease;
-  flex-shrink: 0; /* Prevents shrinking */
-  min-height: 150px; /* Ensures a minimum size */
-  max-height: 200px; /* Prevents excessive expansion */
-  overflow: hidden; /* Keeps extra content inside */
 }
 
 .box1, .box2 {
@@ -372,54 +331,5 @@ const nextExperience = () => {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-}
-
-.experience-label {
-  font-size: 20px;
-  color: black;
-  margin-bottom: 10px;
-}
-
-.experience-label p {
-  text-shadow:
-    0px 0px 10px #b74b4b,
-    0px 0px 20px #b74b4b,
-    0px 0px 30px #b74b4b,
-    0px 0px 40px #b74b4b,
-    0px 0px 50px #b74b4b;
-  font-weight: bold;
-}
-
-.experience-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-.experience-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: black;
-  padding: 15px;
-  border-radius: 10px;
-  color: white;
-  font-size: 18px;
-}
-
-.experience-img {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 5px;
-}
-
-button {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: black;
 }
 </style>

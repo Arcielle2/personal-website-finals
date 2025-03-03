@@ -208,8 +208,9 @@ onUnmounted(() => {
 }
 
 .box {
-  background-color: rgb(240, 231, 231);
+  background-color: black;
   border-radius: 15px;
+  border: 5px solid black;
   padding: 20px;
   text-align: center;
   font-size: 20px;

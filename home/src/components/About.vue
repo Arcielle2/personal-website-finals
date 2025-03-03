@@ -304,7 +304,9 @@ onUnmounted(() => {
 }
 
 .bw-img {
-  filter: brightness(1000%) contrast(1000%);
+  filter: grayscale(1) brightness(1000%);
+  background-color: white;
+  mix-blend-mode: screen;
 }
 
 </style>

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="main-sidebar">
       <div class="sidebar">
-        Sidebar Content
+        <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />
       </div>
     </div>
     <div class="main-content">

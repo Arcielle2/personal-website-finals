@@ -81,8 +81,7 @@ const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];
 };
 
-const changeSidebarImage = (newImage, description) => {
-  selectedImage.value = newImage;
+const changeSidebarImage = (description) => {
   courseDescription.value = description;
 };
 

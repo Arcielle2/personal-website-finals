@@ -30,8 +30,7 @@
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(1)" />
         <div class="hidden-content" v-if="openBoxes[1]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(1)" />
-          <div class="experience-label"><p>IT Experience</p></div>
-          </div>
+          Additional Content
         </div>
       </div>
       
@@ -60,6 +59,7 @@
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script setup>
@@ -156,6 +156,7 @@ onUnmounted(() => {
   transition: transform 0.3s ease-in-out;
 }
 
+/* Styling for the hi.jfif image */
 .overlay-img {
   position: absolute;
   top: 20px; /* Adjust closer to bubu */
@@ -330,21 +331,5 @@ onUnmounted(() => {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-}
-
-.experience-label {
-  font-size: 20px;
-  color: black;
-  margin-bottom: 10px;
-}
-
-.experience-label p {
-  text-shadow: 
-    0px 0px 10px #b74b4b,  
-    0px 0px 20px #b74b4b,  
-    0px 0px 30px #b74b4b,
-    0px 0px 40px #b74b4b,
-    0px 0px 50px #b74b4b; /* Adjust blur effect */
-  font-weight: bold;
 }
 </style>

@@ -386,4 +386,4 @@ const prevItem = () => {
     0px 0px 50px #b74b4b; /* Adjust blur effect */
   font-weight: bold;
 }
-</style>
+</style> 

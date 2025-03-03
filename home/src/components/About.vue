@@ -436,5 +436,4 @@ const prevItem = () => {
   opacity: 0.5;
   cursor: not-allowed;
 }
-
 </style>

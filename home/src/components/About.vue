@@ -2,7 +2,7 @@
   <div class="container">
     <div class="main-sidebar">
       <div class="sidebar">
-        Sidebar Content
+        <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />
       </div>
     </div>
     <div class="main-content">
@@ -12,44 +12,13 @@
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(0)" />
           <div class="course-label">Course</div>
           <div class="course-boxes">
-            <div class="course-box" @click="toggleBox(5)">
+            <div class="course-box" @click="changeSidebarImage('https://cdn-icons-png.flaticon.com/128/11843/11843583.png')">
               <img src="https://cdn-icons-png.flaticon.com/128/11843/11843583.png" alt="Course 1" class="course-img" />
             </div>
-            <div class="course-box" @click="toggleBox(6)">
+            <div class="course-box" @click="changeSidebarImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw-u2P46vBuUjw0FipSrLpFnrCx2068q3jNg&s')">
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw-u2P46vBuUjw0FipSrLpFnrCx2068q3jNg&s" alt="Course 2" class="course-img bw-img" />
             </div>
           </div>
-        </div>
-      </div>
-      <div class="box box2">
-        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(1)" />
-        <div class="hidden-content" v-if="openBoxes[1]">
-          <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(1)" />
-          Additional Content
-        </div>
-      </div>
-      <div class="box box3">
-        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(2)" />
-        <div class="hidden-content" v-if="openBoxes[2]">
-          <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(2)" />
-          Additional Content
-        </div>
-      </div>
-      <div class="box box4">
-        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(3)" />
-        <div class="hidden-content" v-if="openBoxes[3]">
-          <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(3)" />
-          Additional Content
-        </div>
-      </div>
-    </div>
-
-    <div class="sub-content">
-      <div class="box box5">
-        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(4)" />
-        <div class="hidden-content" v-if="openBoxes[4]">
-          <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(4)" />
-          Additional Content
         </div>
       </div>
     </div>
@@ -59,10 +28,17 @@
 <script setup>
 import { ref } from "vue";
 import sunImage from "@/assets/ribbon.jfif";
+import defaultImage from "@/assets/bubu.jfif"; // Default sidebar image
 
 const openBoxes = ref([false, false, false, false, false, false, false]);
+const selectedImage = ref(defaultImage); // Set default image
+
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];
+};
+
+const changeSidebarImage = (newImage) => {
+  selectedImage.value = newImage; // Change sidebar image
 };
 </script>
 
@@ -104,6 +80,12 @@ const toggleBox = (index) => {
     justify-content: center;
     align-items: center;
     text-align: center
+}
+
+.sidebar-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 .main-content {

@@ -402,7 +402,7 @@ const prevItem = () => {
 .experience-label {
   font-size: 20px;
   color: black;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 
 .experience-label p {

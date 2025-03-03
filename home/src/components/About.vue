@@ -399,41 +399,42 @@ const prevItem = () => {
   text-align: center;
 }
 
-.experience-label {
-  font-size: 20px;
-  color: black;
-  margin-bottom: 5px;
-}
- 
-.experience-label p {
-  text-shadow:
-    0px 0px 10px #b74b4b,
-    0px 0px 20px #b74b4b,
-    0px 0px 30px #b74b4b,
-    0px 0px 40px #b74b4b,
-    0px 0px 50px #b74b4b;
-  font-weight: bold;
+.b {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 150px; /* Set a fixed height to prevent shifting */
 }
 
-.icon {
-  width: 50px;
-  height: 50px;
-  margin: 5px 0;
+.experience-label {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-button {
+.buttons button {
   background: none;
   border: none;
   cursor: pointer;
 }
 
-button img {
-  width: 20px;
+.buttons button img {
+  width: 30px;
+  height: 30px;
 }
+
+.buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 </style>

@@ -290,6 +290,7 @@ const prevItem = () => {
   font-weight: bold;
   position: relative;
   transition: transform 0.5s ease, opacity 0.5s ease;
+  color: black;
 }
 
 .box1, .box2 {
@@ -414,21 +415,24 @@ const prevItem = () => {
 }
 
 .icon {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   margin: 10px 0;
 }
+
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
 }
+
 button {
   background: none;
   border: none;
   cursor: pointer;
 }
+
 button img {
-  width: 30px;
+  width: 20px;
 }
 </style>

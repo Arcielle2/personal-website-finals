@@ -62,6 +62,7 @@
   </div>
 </template>
 
+
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 import sunImage from "@/assets/ribbon.jfif";

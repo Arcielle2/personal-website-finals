@@ -286,6 +286,7 @@ onUnmounted(() => {
   font-size: 20px;
   color: black;
   margin-bottom: 10px;
+  box-shadow: 0px 0px 20px 6px #b74b4b;
 }
 
 .course-boxes {

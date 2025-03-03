@@ -279,13 +279,12 @@ onUnmounted(() => {
   left: 10px;
   width: 12px;
   height: 12px;
-  filter: invert(1);
   cursor: pointer;
 }
 
 .course-label {
   font-size: 20px;
-  color: white;
+  color: black;
   margin-bottom: 10px;
 }
 

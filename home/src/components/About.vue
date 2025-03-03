@@ -228,7 +228,6 @@ onUnmounted(() => {
   font-weight: bold;
   position: relative;
   transition: transform 0.5s ease, opacity 0.5s ease;
-  box-shadow: 0px 0px 20px 6px #b74b4b;
 }
 
 .box1, .box2 {

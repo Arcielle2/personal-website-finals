@@ -255,7 +255,7 @@ onUnmounted(() => {
 
 .toggle-btn {
   cursor: pointer;
-  width: 40px; /* Adjust size if necessary */
+  width: 50px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -336,22 +336,22 @@ onUnmounted(() => {
 
 .tooltip-text {
   visibility: hidden;
-  width: 60px; /* Make it smaller */
-  font-size: 12px; /* Adjust font size */
-  padding: 3px;
+  width: 100px;
   background-color: black;
   color: white;
   text-align: center;
   font-family: "Poppins", sans-serif;
-  border: 1px solid #b74b4b;
-  border-radius: 6px;
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 5px;
   position: absolute;
   z-index: 1;
-  top: -30px; /* Adjust to move it above the ribbon */
+  bottom: 150%; /* Position above the image */
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+  font-size: 14px;
 }
 
 .tooltip-container:hover .tooltip-text {

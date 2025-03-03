@@ -258,19 +258,14 @@ onUnmounted(() => {
   transform: translate(-50%, -50%);
 }
 
-@keyframes clickMe {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-}
-
 .hidden-content {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #b74b4b;
-  border-radius: 5px;
+  background-color: whitesmoke;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -302,7 +297,6 @@ onUnmounted(() => {
 .course-box {
   width: 90px;
   height: 80px;
-  background: #e4d4fc;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -311,8 +305,8 @@ onUnmounted(() => {
 }
 
 .course-img {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
 }
 
 .course-description {

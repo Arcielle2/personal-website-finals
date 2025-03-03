@@ -243,7 +243,7 @@ onUnmounted(() => {
 }
 
 .box:hover {
-  text-shadow: 0px 0px 20px 6px #b74b4b;
+  box-shadow: 0px 0px 20px 6px #b74b4b;
 }
 
 .box:hover .toggle-btn {
@@ -290,7 +290,7 @@ onUnmounted(() => {
 }
 
 .course-label p {
-  box-shadow: 0px 0px 20px 6px #b74b4b;
+  text-shadow: 0px 0px 20px 6px #b74b4b;
 }
 
 .course-boxes {

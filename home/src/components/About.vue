@@ -346,5 +346,5 @@ onUnmounted(() => {
     0px 0px 40px #b74b4b,
     0px 0px 50px #b74b4b; /* Adjust blur effect */
   font-weight: bold;
-} 
+}
 </style>

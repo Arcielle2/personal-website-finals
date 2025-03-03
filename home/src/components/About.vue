@@ -208,13 +208,14 @@ onUnmounted(() => {
 }
 
 .box {
-  background-color: #e4d4fc;
+  background-color: black;
   border-radius: 15px;
   padding: 20px;
   text-align: center;
   font-size: 20px;
   font-weight: bold;
   position: relative;
+  border: 10px solid #b74b4b;
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
@@ -303,6 +304,6 @@ onUnmounted(() => {
 }
 
 .bw-img {
-  filter: grayscale(1);
+  filter: brightness(0) invert(1);
 }
 </style>

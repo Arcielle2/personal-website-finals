@@ -115,9 +115,34 @@ const changeSidebarImage = (newImage) => {
 }
 
 .sidebar-img {
-  width: 60%; 
+  width: 60%;
   height: auto;
   border-radius: 10px;
+  border: 5px solid white; /* Added white border */
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar-img:hover {
+  transform: scale(1.2);
+  animation: moveAround 2s infinite alternate ease-in-out;
+}
+
+@keyframes moveAround {
+  0% {
+    transform: translate(0, 0) scale(1.2);
+  }
+  25% {
+    transform: translate(10px, -10px) scale(1.2);
+  }
+  50% {
+    transform: translate(-10px, 10px) scale(1.2);
+  }
+  75% {
+    transform: translate(5px, -5px) scale(1.2);
+  }
+  100% {
+    transform: translate(-5px, 5px) scale(1.2);
+  }
 }
 
 .main-content {

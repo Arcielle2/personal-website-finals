@@ -120,11 +120,11 @@ const changeSidebarImage = (newImage) => {
   border-radius: 10px;
   border: 5px solid white; /* Added white border */
   transition: transform 0.3s ease-in-out;
+  animation: moveAround 2s infinite alternate ease-in-out;
 }
 
 .sidebar-img:hover {
   transform: scale(1.2);
-  animation: moveAround 2s infinite alternate ease-in-out;
 }
 
 @keyframes moveAround {

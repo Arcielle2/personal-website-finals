@@ -2,7 +2,10 @@
   <div class="container">
     <div class="main-sidebar">
       <div class="sidebar">
-        <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />
+        <div class="image-container">
+          <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />
+          <img v-if="showHiImage" :src="hiImage" alt="Overlay Image" class="overlay-img" />
+        </div>
       </div>
     </div>
     <div class="main-content">
@@ -58,20 +61,34 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 import sunImage from "@/assets/ribbon.jfif";
 import defaultImage from "@/assets/bubu.jfif"; // Default sidebar image
+import hiImage from "@/assets/hi.jfif"; // Overlay image
 
 const openBoxes = ref([false, false, false, false, false, false, false]);
-const selectedImage = ref(defaultImage); // Set default image
+const selectedImage = ref(defaultImage); // Default sidebar image
+const showHiImage = ref(false); // Controls hi.jfif visibility
 
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];
 };
 
 const changeSidebarImage = (newImage) => {
-  selectedImage.value = newImage; // Change sidebar image
+  selectedImage.value = newImage;
 };
+
+// Toggle hi.jfif every 10 seconds
+let interval;
+onMounted(() => {
+  interval = setInterval(() => {
+    showHiImage.value = !showHiImage.value;
+  }, 10000); // 10 seconds
+});
+
+onUnmounted(() => {
+  clearInterval(interval);
+});
 </script>
 
 <style scoped>
@@ -114,19 +131,29 @@ const changeSidebarImage = (newImage) => {
     text-align: center
 }
 
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
 .sidebar-img {
   width: 60%;
   height: auto;
   border-radius: 10px;
   animation: moveAround 2s infinite alternate ease-in-out;
-  transition: transform 0.3s ease-in-out; /* Smooth transition on hover */
+  transition: transform 0.3s ease-in-out;
 }
 
-.sidebar-img:hover {
-  transform: scale(1.4); /* Enlarges the image while keeping animation */
+.overlay-img {
+  position: absolute;
+  top: -5px; /* Adjust to position it properly */
+  right: -5px;
+  width: 40px; /* Adjust size */
+  height: 40px;
+  border-radius: 50%; /* Optional */
+  transition: opacity 0.3s ease-in-out;
 }
 
-/* Keeps the movement active */
 @keyframes moveAround {
   0% {
     transform: translate(0, 0) scale(1);

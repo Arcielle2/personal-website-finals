@@ -89,20 +89,21 @@ const toggleBox = (index) => {
   border-radius: 15px;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .sidebar {
   width: 100%;
-  background: #15191d;
-  color: white;
-  border-radius: 15px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+    height: 18rem;
+    border:#15191d;
+    background: #1f2122;
+    color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center
 }
 
 .main-content {

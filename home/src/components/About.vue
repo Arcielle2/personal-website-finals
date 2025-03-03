@@ -6,6 +6,7 @@
           <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />
           <img v-if="showHiImage" :src="hiImage" alt="Overlay Image" class="overlay-img" />
         </div>
+        <p class="sidebar-text">{{ courseDescription }}</p> <!-- Added this to show the text -->
       </div>
     </div>
     <div class="main-content">

@@ -11,9 +11,7 @@
     </div>
     <div class="main-content">
       <div class="box box1">
-        <div class="tooltip-container">
           <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(0)" />
-          <span class="tooltip-text">Click me!</span>
         </div>
         <div class="hidden-content" v-if="openBoxes[0]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(0)" />
@@ -328,35 +326,4 @@ onUnmounted(() => {
   font-weight: bold;
   text-align: center;
 }
-
-.tooltip-container {
-  position: relative;
-  display: inline-block;
-}
-
-.tooltip-text {
-  visibility: hidden;
-  width: 100px;
-  background-color: black;
-  color: white;
-  text-align: center;
-  font-family: "Poppins", sans-serif;
-  border: 2px solid red;
-  border-radius: 5px;
-  padding: 5px;
-  position: absolute;
-  z-index: 1;
-  bottom: 150%; /* Position above the image */
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  font-size: 14px;
-}
-
-.tooltip-container:hover .tooltip-text {
-  visibility: visible;
-  opacity: 1;
-}
-
 </style>

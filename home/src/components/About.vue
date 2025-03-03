@@ -11,11 +11,11 @@
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(0)" />
           <div class="course-label">Course</div>
           <div class="course-boxes">
-            <div class="course-box1" @click="toggleBox(5)">
-              <img src="https://cdn-icons-png.flaticon.com/128/11843/11843583.png" alt="Course 1" />
+            <div class="course-box" @click="toggleBox(5)">
+              <img src="https://cdn-icons-png.flaticon.com/128/11843/11843583.png" alt="Course 1" class="course-img" />
             </div>
-            <div class="course-box2" @click="toggleBox(6)">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw-u2P46vBuUjw0FipSrLpFnrCx2068q3jNg&s" alt="Course 2" class="bw-img" />
+            <div class="course-box" @click="toggleBox(6)">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw-u2P46vBuUjw0FipSrLpFnrCx2068q3jNg&s" alt="Course 2" class="course-img bw-img" />
             </div>
           </div>
         </div>
@@ -178,25 +178,20 @@ const toggleBox = (index) => {
   gap: 5px;
 }
 
-.course-box1 {
+.course-box {
   width: 20px;
   height: 20px;
-  background: #e4d4fc;
+  background-color: #e4d4fc;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
   cursor: pointer;
 }
-.course-box1 {
-  width: 10px;
-  height: 10px;
-  background: #e4d4fc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  cursor: pointer;
+
+.course-img {
+  width: 20px;
+  height: 20px;
 }
 
 .bw-img {

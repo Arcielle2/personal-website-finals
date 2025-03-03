@@ -271,7 +271,7 @@ const prevItem = () => {
   height: 150px;
 }
 
-.box3, .box4 {
+.box3, .box4 { 
   width: 100%;
   height: 200px;
 }

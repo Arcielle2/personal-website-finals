@@ -70,20 +70,15 @@ const openBoxes = ref([false, false, false, false, false, false, false]);
 const selectedImage = ref(defaultImage); // Default sidebar image
 const showHiImage = ref(false); // Controls hi.jfif visibility
 
-const toggleBox = (index) => {
-  openBoxes.value[index] = !openBoxes.value[index];
-};
-
-const changeSidebarImage = (newImage) => {
-  selectedImage.value = newImage;
-};
-
-// Toggle hi.jfif every 10 seconds
+// Toggle hi.jfif visibility in a 5s show / 10s hide cycle
 let interval;
 onMounted(() => {
   interval = setInterval(() => {
-    showHiImage.value = !showHiImage.value;
-  }, 10000); // 10 seconds
+    showHiImage.value = true;
+    setTimeout(() => {
+      showHiImage.value = false;
+    }, 5000); // Show for 5 seconds
+  }, 15000); // Total cycle: 5s (show) + 10s (hide) = 15s
 });
 
 onUnmounted(() => {
@@ -144,14 +139,35 @@ onUnmounted(() => {
   transition: transform 0.3s ease-in-out;
 }
 
+/* Styling for the hi.jfif image */
 .overlay-img {
   position: absolute;
-  top: -5px; /* Adjust to position it properly */
-  right: -5px;
-  width: 40px; /* Adjust size */
-  height: 40px;
+  top: -10px; /* Adjust position */
+  right: -10px;
+  width: 60px; /* Slightly bigger */
+  height: 60px;
   border-radius: 50%; /* Optional */
   transition: opacity 0.3s ease-in-out;
+  animation: moveAroundSmall 1.5s infinite alternate ease-in-out;
+}
+
+/* Movement animation for hi.jfif */
+@keyframes moveAroundSmall {
+  0% {
+    transform: translate(0, 0) scale(1.1);
+  }
+  25% {
+    transform: translate(8px, -8px) scale(1.15);
+  }
+  50% {
+    transform: translate(-8px, 8px) scale(1.2);
+  }
+  75% {
+    transform: translate(5px, -5px) scale(1.15);
+  }
+  100% {
+    transform: translate(-5px, 5px) scale(1.1);
+  }
 }
 
 @keyframes moveAround {

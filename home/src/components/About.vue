@@ -175,13 +175,13 @@ const toggleBox = (index) => {
 
 .course-boxes {
   display: flex;
-  gap: 10px;
+  gap: 5px;
 }
 
 .course-box1 {
-  width: 40px;
-  height: 40px;
-  background-color: white;
+  width: 20px;
+  height: 20px;
+  background: #e4d4fc;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,9 +189,9 @@ const toggleBox = (index) => {
   cursor: pointer;
 }
 .course-box1 {
-  width: 20px;
-  height: 20px;
-  background-color: white;
+  width: 10px;
+  height: 10px;
+  background: #e4d4fc;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -60,10 +60,17 @@
 <script setup>
 import { ref } from "vue";
 import sunImage from "@/assets/ribbon.jfif";
+import defaultImage from "@/assets/bubu.jfif"; // Default sidebar image
 
 const openBoxes = ref([false, false, false, false, false, false, false]);
+const selectedImage = ref(defaultImage); // Set default image
+
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];
+};
+
+const changeSidebarImage = (newImage) => {
+  selectedImage.value = newImage; // Change sidebar image
 };
 </script>
 
@@ -112,7 +119,6 @@ const toggleBox = (index) => {
   height: auto;
   border-radius: 10px;
 }
-
 
 .main-content {
   display: flex;

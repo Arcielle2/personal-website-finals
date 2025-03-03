@@ -31,7 +31,21 @@
         <div class="hidden-content" v-if="openBoxes[1]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(1)" />
           <div class="experience-label"><p>IT Experience</p></div>
+          <div class="wrap">
+            <div class="b">
+              <h2>{{ items[currentIndex].name }}</h2>
+              <img :src="items[currentIndex].icon" alt="Icon" class="icon" v-if="items[currentIndex].icon" />
+              <div class="buttons">
+                <button @click="prevItem" :disabled="currentIndex === 0">
+                  <img src="https://cdn-icons-png.flaticon.com/128/318/318477.png" alt="Previous" />
+                </button>
+                <button @click="nextItem" :disabled="currentIndex === items.length - 1">
+                  <img src="https://cdn-icons-png.flaticon.com/128/318/318476.png" alt="Next" />
+                </button>
+              </div>
+            </div>
           </div>
+        </div>
         </div>
       </div>
       
@@ -42,6 +56,7 @@
           Additional Content
         </div>
       </div>
+
       <div class="box box4">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(3)" />
         <div class="hidden-content" v-if="openBoxes[3]">
@@ -101,6 +116,58 @@ onMounted(() => {
 onUnmounted(() => {
   clearInterval(interval);
 });
+
+const items = [
+  // Programming & Scripting
+  { name: "Programming & Scripting" },
+  { name: "Python", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968544.png" },
+  { name: "Java", icon: "https://www.flaticon.com/free-icon/java_152760" },
+  { name: "JavaScript", icon: "https://cdn-icons-png.flaticon.com/128/721/721671.png" },
+
+  // Web Development & Frameworks
+  { name: "Web Development & Frameworks" },
+  { name: "HTML", icon: "https://cdn-icons-png.flaticon.com/128/1051/1051328.png" },
+  { name: "CSS", icon: "https://cdn-icons-png.flaticon.com/128/732/732007.png" },
+  { name: "Vue.js", icon: "https://cdn-icons-png.flaticon.com/128/16511/16511176.png" },
+  { name: "React.js", icon: "https://cdn-icons-png.flaticon.com/128/3393/3393920.png" },
+  { name: "Bootstrap", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968671.png" },
+
+  // Databases & Backend Services
+  { name: "Databases & Backend Services" },
+  { name: "MySQL", icon: "https://cdn-icons-png.flaticon.com/128/274/274439.png" },
+  { name: "Supabase", icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUmXAGUcOzjy2xaAKISEG6ojczFz_KFn3iZA&s" },
+
+  // Version Control & Deployment
+  { name: "Version Control & Deployment" },
+  { name: "GitHub", icon: "https://cdn-icons-png.flaticon.com/128/1051/1051326.png" },
+  { name: "Vercel", icon: "https://static.wikia.nocookie.net/logopedia/images/a/a7/Vercel_favicon.svg/revision/latest?cb=20221026155821" },
+
+  // Development Tools & Environments
+  { name: "Development Tools & Environments" },
+  { name: "XAMPP", icon: "https://static-00.iconduck.com/assets.00/xampp-icon-1014x1024-czirhwu5.png" },
+  { name: "Eclipse", icon: "https://brandslogos.com/wp-content/uploads/images/large/eclipse-logo-black-and-white.png" },
+  { name: "Flowgorithm", icon: "https://lh3.googleusercontent.com/proxy/GEvQaA8UT24MO4Db7C2VYOmt-87UHO2omQIRSnRczYF1auqMd2z-uh2B-YG9fQ_wMhZ076k7ypVVZBkzvzx9DCw24Qos" },
+  { name: "Linux (Ubuntu)", icon: "https://cdn-icons-png.flaticon.com/128/16066/16066075.png" },
+
+  // Design & UI/UX
+  { name: "Design & UI/UX" },
+  { name: "Figma", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968704.png" },
+  { name: "Canva", icon: "https://i.pinimg.com/736x/c1/b8/3a/c1b83ab03539d3eb6448148aa01c45a4.jpg" },
+];
+
+const currentIndex = ref(0);
+
+const nextItem = () => {
+  if (currentIndex.value < items.length - 1) {
+    currentIndex.value++;
+  }
+};
+
+const prevItem = () => {
+  if (currentIndex.value > 0) {
+    currentIndex.value--;
+  }
+};
 </script>
 
 <style scoped>
@@ -346,5 +413,37 @@ onUnmounted(() => {
     0px 0px 40px #b74b4b,
     0px 0px 50px #b74b4b; /* Adjust blur effect */
   font-weight: bold;
+}
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.b {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 300px;
+}
+.icon {
+  width: 80px;
+  height: 80px;
+  margin: 10px 0;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+button img {
+  width: 30px;
 }
 </style>

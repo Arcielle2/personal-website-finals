@@ -15,14 +15,18 @@
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(0)" />
           <div class="course-label">Course</div>
           <div class="course-boxes">
-            <div class="course-box" @click="changeSidebarImage(c1)">
+            <div class="course-box" @click="changeSidebarImage(c1, course1Text)">
               <img :src="c1" alt="Course 1" class="course-img" />
             </div>
-            <div class="course-box" @click="changeSidebarImage(c2)">
+            <div class="course-box" @click="changeSidebarImage(c2, course2Text)">
               <img :src="c2" alt="Course 2" class="course-img bw-img" />
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="sub-content">
+      <div class="course-description" v-if="courseDescription">{{ courseDescription }}</div>
       </div>
 
       <div class="box box2">
@@ -68,17 +72,23 @@ import hiImage from "@/assets/hi.jfif"; // Overlay image
 import c1 from "@/assets/c1.jfif";
 import c2 from "@/assets/c2.jfif";
 
+const openBoxes = ref([false]);
+const selectedImage = ref(defaultImage);
+const showHiImage = ref(false);
+const courseDescription = ref("");
+
+const course1Text = "Bachelor of Science in Computer Science with specialization in Cybersecurity and Forensics. I’m currently studying for a Bachelor of Science in Computer Science with a specialization in Cybersecurity and Forensics at Asia Pacific College. This program allows me to dive deep into the exciting world of computer science while focusing on protecting systems, preventing cyberattacks, and investigating digital crimes. I’m thrilled to explore this dynamic field and develop skills that are vital in today’s digital landscape!";
+
+const course2Text = "SM Foundation Scholar. I’m also proud to be an SM scholar at Asia Pacific College, which has helped me pursue my academic goals with a little extra support.";
+
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];
 };
 
-const changeSidebarImage = (newImage) => {
-  selectedImage.value = newImage; 
+const changeSidebarImage = (newImage, description) => {
+  selectedImage.value = newImage;
+  courseDescription.value = description;
 };
-
-const openBoxes = ref([false, false, false, false, false, false, false]);
-const selectedImage = ref(defaultImage); 
-const showHiImage = ref(false); 
 
 let interval;
 onMounted(() => {
@@ -236,8 +246,12 @@ onUnmounted(() => {
   height: 570px;
 }
 
+.box:hover {
+  box-shadow: 0px 0px 20px 6px gray;
+}
+
 .box:hover .toggle-btn {
-  filter: brightness(0.2);
+  filter: brightness(0) invert(1);
 }
 
 .toggle-btn {
@@ -247,7 +261,6 @@ onUnmounted(() => {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: clickMe 1s infinite;
 }
 
 @keyframes clickMe {
@@ -307,10 +320,15 @@ onUnmounted(() => {
   height: 50px;
 }
 
-.bw-img {
-  filter: grayscale(1) brightness(1000%);
-  background-color: white;
-  mix-blend-mode: screen;
+.course-description {
+  width: 50%;
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid gray;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px gray;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
 }
-
 </style>

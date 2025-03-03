@@ -25,10 +25,6 @@
         </div>
       </div>
 
-      <div class="sub-content">
-      <div class="course-description" v-if="courseDescription">{{ courseDescription }}</div>
-      </div>
-
       <div class="box box2">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(1)" />
         <div class="hidden-content" v-if="openBoxes[1]">

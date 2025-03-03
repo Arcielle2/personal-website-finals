@@ -291,6 +291,7 @@ const prevItem = () => {
   position: relative;
   transition: transform 0.5s ease, opacity 0.5s ease;
   color: black;
+  font-size: 12px;
 }
 
 .box1, .box2 {
@@ -401,7 +402,7 @@ const prevItem = () => {
 .experience-label {
   font-size: 20px;
   color: black;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .experience-label p {
@@ -417,7 +418,7 @@ const prevItem = () => {
 .icon {
   width: 50px;
   height: 50px;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 .buttons {

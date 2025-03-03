@@ -26,13 +26,21 @@
         </div>
       </div>
 
-      <div class="box box2">
-        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(1)" />
-        <div class="hidden-content" v-if="openBoxes[1]">
-          <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(1)" />
-          Additional Content
+      <div class="skills-container">
+        <h2 class="section-title">IT Experience</h2>
+        <div class="skills-grid">
+          <div v-for="(category, index) in itExperience" :key="index" class="skill-category">
+            <h3 class="category-title">{{ category.category }}</h3>
+            <ul class="skills-list">
+              <li v-for="(skill, skillIndex) in category.skills" :key="skillIndex" class="skill-item">
+                <img :src="skill.icon" :alt="skill.name" class="skill-icon" />
+                <span>{{ skill.name }}</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
+      
       <div class="box box3">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(2)" />
         <div class="hidden-content" v-if="openBoxes[2]">
@@ -100,6 +108,44 @@ onMounted(() => {
 onUnmounted(() => {
   clearInterval(interval);
 });
+
+const itExperience = ref([
+  {
+    category: "Programming & Scripting",
+    skills: [
+      { name: "Python", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968350.png" },
+      { name: "Java", icon: "https://cdn-icons-png.flaticon.com/128/152/152760.png" },
+      { name: "JavaScript", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png" },
+      { name: "HTML", icon: "https://cdn-icons-png.flaticon.com/128/174/174854.png" },
+      { name: "CSS", icon: "https://cdn-icons-png.flaticon.com/128/732/732190.png" }
+    ]
+  },
+  {
+    category: "Databases & Backend",
+    skills: [
+      { name: "MySQL", icon: "https://cdn-icons-png.flaticon.com/128/528/528260.png" },
+      { name: "Supabase", icon: "https://seeklogo.com/images/S/supabase-logo-DCC676FFE2-seeklogo.com.png" },
+      { name: "XAMPP", icon: "https://upload.wikimedia.org/wikipedia/commons/7/7b/XAMPP_logo.svg" }
+    ]
+  },
+  {
+    category: "Development Tools",
+    skills: [
+      { name: "Eclipse", icon: "https://cdn-icons-png.flaticon.com/128/226/226777.png" },
+      { name: "Flowgorithm", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Flowgorithm_icon.png/120px-Flowgorithm_icon.png" },
+      { name: "Linux (Ubuntu)", icon: "https://cdn-icons-png.flaticon.com/128/6124/6124995.png" },
+      { name: "Wireshark", icon: "https://cdn-icons-png.flaticon.com/128/5969/5969203.png" }
+    ]
+  },
+  {
+    category: "Web & UI/UX Design",
+    skills: [
+      { name: "Figma", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968705.png" },
+      { name: "Bootstrap", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968672.png" },
+      { name: "Canva", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968525.png" }
+    ]
+  }
+]);
 </script>
 
 <style scoped>
@@ -330,5 +376,51 @@ onUnmounted(() => {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
+}
+
+.skills-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.skill-category {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.category-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+}
+
+.skill-icon {
+  width: 24px;
+  height: 24px;
 }
 </style>

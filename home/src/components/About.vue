@@ -11,8 +11,7 @@
     </div>
     <div class="main-content">
       <div class="box box1">
-          <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(0)" />
-        </div>
+        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(0)" />
         <div class="hidden-content" v-if="openBoxes[0]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(0)" />
           <div class="course-label"><p>Course</p></div>
@@ -59,6 +58,7 @@
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script setup>
@@ -243,7 +243,7 @@ onUnmounted(() => {
 }
 
 .box:hover {
-  box-shadow: 0px 0px 20px 6px #b74b4b;
+  text-shadow: 0px 0px 20px 6px #b74b4b;
 }
 
 .box:hover .toggle-btn {
@@ -290,7 +290,7 @@ onUnmounted(() => {
 }
 
 .course-label p {
-  text-shadow: 0px 0px 20px 6px #b74b4b;
+  box-shadow: 0px 0px 20px 6px #b74b4b;
 }
 
 .course-boxes {

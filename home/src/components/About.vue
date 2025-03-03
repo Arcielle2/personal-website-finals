@@ -291,7 +291,7 @@ const prevItem = () => {
   position: relative;
   transition: transform 0.5s ease, opacity 0.5s ease;
   color: black;
-  font-size: 12px;
+  font-size: 8px;
 }
 
 .box1, .box2 {

@@ -1,8 +1,10 @@
 <template>
   <div class="container">
     <div class="main-sidebar">
-      <div class="sidebar"></div>
+      <div class="sidebar">
+      </div>
     </div>
+  </div>
 
     <div class="main-content">
       <div class="box box1">
@@ -52,7 +54,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script setup>
@@ -86,6 +87,23 @@ const toggleBox = (index) => {
   background-color: #b74b4b;
   padding: 20px;
   border-radius: 15px;
+}
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 33%;
+  height: 100%;
+  background: #15191d;
+  color: white;
+  border-radius: 15px 0 0 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
 }
 
 .main-content {
@@ -198,20 +216,4 @@ const toggleBox = (index) => {
   filter: grayscale(1);
 }
 
-.sidebar {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 33%;
-  height: 100%;
-  background: #2c3e50;
-  color: white;
-  border-radius: 15px 0 0 15px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: center;
-}
 </style>

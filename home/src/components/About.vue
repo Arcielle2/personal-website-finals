@@ -195,7 +195,6 @@ const prevItem = () => {
   transition: transform 0.3s ease-in-out;
 }
 
-/* Styling for the hi.jfif image */
 .overlay-img {
   position: absolute;
   top: 20px; /* Adjust closer to bubu */

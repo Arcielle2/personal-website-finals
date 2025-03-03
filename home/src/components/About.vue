@@ -66,6 +66,14 @@ import sunImage from "@/assets/ribbon.jfif";
 import defaultImage from "@/assets/bubu.jfif"; // Default sidebar image
 import hiImage from "@/assets/hi.jfif"; // Overlay image
 
+const toggleBox = (index) => {
+  openBoxes.value[index] = !openBoxes.value[index];
+};
+
+const changeSidebarImage = (newImage) => {
+  selectedImage.value = newImage; // Change sidebar image
+};
+
 const openBoxes = ref([false, false, false, false, false, false, false]);
 const selectedImage = ref(defaultImage); // Default sidebar image
 const showHiImage = ref(false); // Controls hi.jfif visibility
@@ -139,6 +147,7 @@ onUnmounted(() => {
   transition: transform 0.3s ease-in-out;
 }
 
+/* Styling for the hi.jfif image */
 .overlay-img {
   position: absolute;
   top: 20px; /* Adjust closer to bubu */
@@ -146,20 +155,27 @@ onUnmounted(() => {
   width: 60px; /* Slightly bigger */
   height: 60px;
   border-radius: 50%;
-  animation: fadeInOut 10s infinite, moveAroundSmall 1.5s infinite alternate ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+  animation: moveAroundSmall 1.5s infinite alternate ease-in-out;
 }
 
-/* Fade in for 5s, stay, then fade out for 5s */
-@keyframes fadeInOut {
-  0%, 50% { opacity: 1; }  /* Visible for 5 seconds */
-  51%, 100% { opacity: 0; } /* Hidden for 5 seconds */
-}
-
-/* Slight movement effect */
+/* Movement animation for hi.jfif */
 @keyframes moveAroundSmall {
-  0% { transform: translate(0, 0); }
-  50% { transform: translate(5px, -5px); }
-  100% { transform: translate(-5px, 5px); }
+  0% {
+    transform: translate(0, 0) scale(1.1);
+  }
+  25% {
+    transform: translate(8px, -8px) scale(1.15);
+  }
+  50% {
+    transform: translate(-8px, 8px) scale(1.2);
+  }
+  75% {
+    transform: translate(5px, -5px) scale(1.15);
+  }
+  100% {
+    transform: translate(-5px, 5px) scale(1.1);
+  }
 }
 
 @keyframes moveAround {

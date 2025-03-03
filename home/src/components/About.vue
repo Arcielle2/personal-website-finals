@@ -414,4 +414,36 @@ const prevItem = () => {
     0px 0px 50px #b74b4b; /* Adjust blur effect */
   font-weight: bold;
 }
+
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.b {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 300px;
+}
+.icon {
+  width: 80px;
+  height: 80px;
+  margin: 10px 0;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+button img {
+  width: 30px;
+}
 </style>

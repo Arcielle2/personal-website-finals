@@ -15,11 +15,11 @@
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(0)" />
           <div class="course-label"><p>Course</p></div>
           <div class="course-boxes">
-            <div class="course-box" @click="changeSidebarImage(c1, course1Text)">
+            <div class="course-box" @click="changeSidebarImage(course1Text)">
               <img :src="c1" alt="Course 1" class="course-img" />
             </div>
-            <div class="course-box" @click="changeSidebarImage(c2, course2Text)">
-              <img :src="c2" alt="Course 2" class="course-img bw-img" />
+            <div class="course-box" @click="changeSidebarImage(course2Text)">
+              <img :src="c2" alt="Course 2" class="course-img" />
             </div>
           </div>
         </div>

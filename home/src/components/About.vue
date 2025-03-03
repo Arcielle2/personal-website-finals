@@ -263,6 +263,10 @@ const nextExperience = () => {
   font-weight: bold;
   position: relative;
   transition: transform 0.5s ease, opacity 0.5s ease;
+  flex-shrink: 0; /* Prevents shrinking */
+  min-height: 150px; /* Ensures a minimum size */
+  max-height: 200px; /* Prevents excessive expansion */
+  overflow: hidden; /* Keeps extra content inside */
 }
 
 .box1, .box2 {

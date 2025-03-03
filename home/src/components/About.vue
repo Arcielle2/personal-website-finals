@@ -290,7 +290,8 @@ onUnmounted(() => {
 }
 
 .course-label p {
-  text-shadow: 0px 0px 20px 6px #b74b4b;
+  text-shadow: 0px 0px 10px #b74b4b; /* Adjust blur effect */
+  font-weight: bold; /* Optional: Make text stand out more */
 }
 
 .course-boxes {

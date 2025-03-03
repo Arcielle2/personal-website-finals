@@ -221,7 +221,7 @@ onUnmounted(() => {
 .box {
   background-color: black;
   border-radius: 15px;
-  border: 5px solid #b74b4b;
+  border: 2px solid #15191d;
   padding: 20px;
   text-align: center;
   font-size: 20px;
@@ -247,7 +247,7 @@ onUnmounted(() => {
 }
 
 .box:hover {
-  box-shadow: 0px 0px 20px 6px gray;
+  box-shadow: 0px 0px 20px 6px #b74b4b;
 }
 
 .box:hover .toggle-btn {

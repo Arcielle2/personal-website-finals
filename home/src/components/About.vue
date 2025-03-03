@@ -139,35 +139,27 @@ onUnmounted(() => {
   transition: transform 0.3s ease-in-out;
 }
 
-/* Styling for the hi.jfif image */
 .overlay-img {
   position: absolute;
-  top: -10px; /* Adjust position */
-  right: -10px;
+  top: 20px; /* Adjust closer to bubu */
+  right: 20px; /* Adjust closer to bubu */
   width: 60px; /* Slightly bigger */
   height: 60px;
-  border-radius: 50%; /* Optional */
-  transition: opacity 0.3s ease-in-out;
-  animation: moveAroundSmall 1.5s infinite alternate ease-in-out;
+  border-radius: 50%;
+  animation: fadeInOut 10s infinite, moveAroundSmall 1.5s infinite alternate ease-in-out;
 }
 
-/* Movement animation for hi.jfif */
+/* Fade in for 5s, stay, then fade out for 5s */
+@keyframes fadeInOut {
+  0%, 50% { opacity: 1; }  /* Visible for 5 seconds */
+  51%, 100% { opacity: 0; } /* Hidden for 5 seconds */
+}
+
+/* Slight movement effect */
 @keyframes moveAroundSmall {
-  0% {
-    transform: translate(0, 0) scale(1.1);
-  }
-  25% {
-    transform: translate(8px, -8px) scale(1.15);
-  }
-  50% {
-    transform: translate(-8px, 8px) scale(1.2);
-  }
-  75% {
-    transform: translate(5px, -5px) scale(1.15);
-  }
-  100% {
-    transform: translate(-5px, 5px) scale(1.1);
-  }
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(5px, -5px); }
+  100% { transform: translate(-5px, 5px); }
 }
 
 @keyframes moveAround {

@@ -305,4 +305,5 @@ onUnmounted(() => {
 .bw-img {
   filter: grayscale(1);
 }
+
 </style>

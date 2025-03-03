@@ -118,7 +118,6 @@ const changeSidebarImage = (newImage) => {
   width: 60%; 
   height: auto;
   border-radius: 10px;
-  border: 10px solid white; 
 }
 
 .main-content {

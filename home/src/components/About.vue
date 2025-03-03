@@ -31,7 +31,21 @@
         <div class="hidden-content" v-if="openBoxes[1]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(1)" />
           <div class="experience-label"><p>IT Experience</p></div>
-          Additional Content
+          <div class="wrap">
+            <div class="b">
+              <h2>{{ items[currentIndex].name }}</h2>
+              <img :src="items[currentIndex].icon" alt="Icon" class="icon" v-if="items[currentIndex].icon" />
+                <div class="buttons">
+                  <button @click="prevItem" :disabled="currentIndex === 0">
+                    <img src="https://cdn-icons-png.flaticon.com/128/318/318477.png" alt="Previous" />
+                  </button>
+                  <button @click="nextItem" :disabled="currentIndex === items.length - 1">
+                    <img src="https://cdn-icons-png.flaticon.com/128/318/318476.png" alt="Next" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       
@@ -60,7 +74,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script setup>
@@ -102,6 +115,31 @@ onMounted(() => {
 onUnmounted(() => {
   clearInterval(interval);
 });
+
+const items = [
+  { name: "Programming & Scripting" },
+  { name: "Python", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968544.png" },
+  { name: "Java", icon: "https://www.flaticon.com/free-icon/java_152760" },
+  { name: "JavaScript", icon: "https://cdn-icons-png.flaticon.com/128/721/721671.png" },
+  { name: "Web Development & Frameworks" },
+  { name: "HTML", icon: "https://cdn-icons-png.flaticon.com/128/1051/1051328.png" },
+  { name: "CSS", icon: "https://cdn-icons-png.flaticon.com/128/732/732007.png" },
+  { name: "Vue.js", icon: "https://cdn-icons-png.flaticon.com/128/16511/16511176.png" },
+];
+
+const currentIndex = ref(0);
+
+const nextItem = () => {
+  if (currentIndex.value < items.length - 1) {
+    currentIndex.value++;
+  }
+};
+
+const prevItem = () => {
+  if (currentIndex.value > 0) {
+    currentIndex.value--;
+  }
+};
 </script>
 
 <style scoped>

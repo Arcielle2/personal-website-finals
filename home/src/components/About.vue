@@ -173,12 +173,12 @@ const toggleBox = (index) => {
   margin-bottom: 10px;
 }
 
-.course-boxes[data-v-486b97ac] {
+.course-boxes {
   display: flex;
   gap: 15px
 }
 
-.course-box[data-v-486b97ac] {
+.course-box {
   width: 90px;
   height: 80px;
   background: #e4d4fc;
@@ -189,7 +189,7 @@ const toggleBox = (index) => {
   cursor: pointer
 }
 
-.course-img[data-v-486b97ac] {
+.course-img {
     width: 50px;
     height: 50px;
 }

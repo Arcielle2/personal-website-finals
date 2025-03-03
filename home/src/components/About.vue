@@ -404,7 +404,7 @@ const prevItem = () => {
   color: black;
   margin-bottom: 5px;
 }
-
+ 
 .experience-label p {
   text-shadow:
     0px 0px 10px #b74b4b,

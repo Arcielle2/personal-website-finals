@@ -300,7 +300,7 @@ const resetItems = () => {
   position: relative;
   transition: transform 0.5s ease, opacity 0.5s ease;
   color: black;
-  font-size: 5px;
+  font-size: 8px;
 }
 
 .box1, .box2 {
@@ -466,7 +466,7 @@ const resetItems = () => {
   width: 40px;
   height: 40px;
   display: block;
-  margin: 10px auto;
+  margin: 5px auto;
 }
 
 .exp-container{

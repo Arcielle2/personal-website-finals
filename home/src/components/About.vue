@@ -41,6 +41,9 @@
               <button @click="nextItem" :disabled="currentIndex === items.length - 1">
                 <img src="https://cdn-icons-png.flaticon.com/128/318/318476.png" alt="Next" />
               </button>
+              <button @click="resetItems">
+                Reset
+              </button>
             </div>
           </div>
         </div>
@@ -164,6 +167,10 @@ const prevItem = () => {
   if (currentIndex.value > 0) {
     currentIndex.value--;
   }
+};
+
+const resetItems = () => {
+  currentIndex.value = 0;
 };
 </script>
 
@@ -425,30 +432,30 @@ const prevItem = () => {
 }
 
 .buttons {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 8px;
 }
 
 .buttons button {
-  background: none;
+  background-color: #b74b4b;
+  color: white;
   border: none;
+  padding: 10px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
-.buttons button img {
-  width: 30px;
-  height: 30px;
+.buttons button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
 }
 
-.buttons button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-} 
-
 .icon {
-  width: 20px; /* Adjust the size as needed */
+  width: 35px; /* Adjust the size as needed */
   height: auto; /* Maintain aspect ratio */
 }
 </style>

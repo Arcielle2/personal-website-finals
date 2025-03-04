@@ -474,6 +474,6 @@ const prevItem = () => {
   display: flex;
   align-items: center;
   gap: 10px;
-  width: 80px;
+  width: 100px;
 }
 </style>

@@ -149,9 +149,7 @@ const items = [
   // Design & UI/UX
   { name: "Design & UI/UX" },
   { name: "Figma", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968704.png" },
-  { name: "Canva", icon: "https://i.pinimg.com/736x/c1/b8/3a/c1b83ab03539d3eb6448148aa01c45a4.jpg" },
-
-  { name: "Reset", icon: null }
+  { name: "Canva", icon: "https://i.pinimg.com/736x/c1/b8/3a/c1b83ab03539d3eb6448148aa01c45a4.jpg" }
 ];
 
 const currentIndex = ref(0);

@@ -553,7 +553,7 @@ const prevItem = () => {
   width: 80px;
   height: 60px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .hobby-description {

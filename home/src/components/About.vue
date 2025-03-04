@@ -42,7 +42,7 @@
                 <img src="https://cdn-icons-png.flaticon.com/128/318/318476.png" alt="Next" />
               </button>
               <button @click="resetItems">
-                R
+                <strong>R</strong>
               </button>
             </div>
           </div>
@@ -419,6 +419,7 @@ const resetItems = () => {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
+  padding-top: 14px;
 }
 
 .experience-label {
@@ -438,21 +439,20 @@ const resetItems = () => {
   display: flex;
   justify-content: center;
   gap: 10px;
-  font-style: bold;
 }
 
 .buttons button {
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
+  border: .5px solid black;
+  padding-top: 2.5px;
+  border-radius: 10px;
   cursor: pointer;
   width: 30px;
-  height: 30px;
+  height: 30px
 }
 
 .buttons img {
-  width: 30px;
-  height: 30px;
+  width: 21px;
+  height: 21px
 }
 
 .buttons button:disabled {
@@ -460,9 +460,8 @@ const resetItems = () => {
   cursor: not-allowed;
 }
 
-
 .icon {
-  width: 35px; /* Adjust the size as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 35px;
+  height: auto; 
 }
 </style>

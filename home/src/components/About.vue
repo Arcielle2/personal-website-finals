@@ -592,6 +592,7 @@ const prevItem = () => {
 .hobby-img {
   width: 40px;
   height: 40px;
+  border-radius: 15px;
 }
 
 .hobby-description {
@@ -612,8 +613,8 @@ const prevItem = () => {
 }
 
 .group-box {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   display: flex;
   background: black;
   justify-content: center;

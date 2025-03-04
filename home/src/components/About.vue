@@ -53,11 +53,7 @@
         <div class="hidden-content" v-if="openBoxes[2]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(2)" />
           <div class="hobbies-label"><p>Hobbies & Interests</p></div>
-          <div class="hobbies-grid">
-            <div v-for="hobby in hobbies" :key="hobby.title" class="hobby-box" @click="changeSidebarHobby(hobby)">
-              <img :src="hobby.image" alt="Hobby" class="hobby-img" />
-            </div>
-          </div>
+          
           </div>
         </div>
       </div>
@@ -100,69 +96,13 @@ const course1Text = "Bachelor of Science in Computer Science with specialization
 
 const course2Text = "SM Foundation Scholar. I’m also proud to be an SM scholar at Asia Pacific College, which has helped me pursue my academic goals with a little extra support.";
 
-const hobbies = ref([
-  {
-    title: "Playing Instrument",
-    description: "I love playing the ukulele and keyboard; music brings joy and relaxation to my everyday life.",
-    image: "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/Media%20(10).jfif",
-  },
-  {
-    title: "Singing",
-    description: "Singing allows me to express myself and connect with my emotions through melodies and lyrics.",
-    image: "https://i.pinimg.com/736x/ed/da/bf/eddabf1355cd6aa1da7eb89c84f24f17.jpg",
-  },
-  {
-    title: "Listening to Music",
-    description: "Music is my constant companion—it energizes me, soothes my soul, and inspires creativity.",
-    image: "https://i.pinimg.com/736x/55/36/4d/55364dbe7efe7052c33df1e3a7a9614f.jpg",
-  },
-  {
-    title: "Reading Books",
-    description: "Diving into books is like exploring a new world; it fuels my imagination and broadens my perspective.",
-    image: "https://i.pinimg.com/736x/88/5d/c6/885dc6bac43aaf18105b43cb681734a3.jpg",
-  },
-  {
-    title: "Playing Online Games",
-    description: "I enjoy playing online games as they challenge my strategy skills and are a fun way to unwind.",
-    image: "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/Media%20(3b).jfif",
-  },
-  {
-    title: "Eating Foods",
-    description: "I enjoy discovering new flavors and indulging in comfort food.",
-    image: "https://i.pinimg.com/736x/d8/48/83/d84883f6e9847ff87943cbe3e8ff6f24.jpg",
-  },
-  {
-    title: "Watching Movies",
-    description: "Movies transport me to new adventures, letting me experience stories from diverse perspectives.",
-    image: "https://i.pinimg.com/736x/b8/ac/52/b8ac52f4741264179dc27a64c6434e1e.jpg",
-  },
-  {
-    title: "Designing",
-    description: "Designing allows me to channel my creativity and bring ideas to life in a visually appealing way.",
-    image: "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/Media%20(9).jfif",
-  },
-]);
-
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];
 };
 
 const changeSidebarImage = (description) => {
   courseDescription.value = description;
-  hobbyDescription.value = "";
   selectedImage.value = null;
-};
-
-const changeSidebarHobby = (hobby) => {
-  hobbyDescription.value = `${hobby.title}: ${hobby.description}`;
-  courseDescription.value = "";
-  selectedImage.value = null;
-};
-
-const resetSidebar = () => {
-  courseDescription.value = "";
-  hobbyDescription.value = "";
-  selectedImage.value = defaultImage;
 };
 
 let interval;
@@ -541,46 +481,5 @@ const selectHobby = (hobby) => {
   align-items: center;
   gap: 10px;
   width: 100px;
-}
-.hobbies-container {
-  text-align: center;
-  color: black;
-  padding: 20px;
-}
-
-.glow-text {
-  font-size: 20px;
-  font-weight: bold;
-  text-shadow: 
-    0px 0px 10px #b74b4b,  
-    0px 0px 20px #b74b4b,  
-    0px 0px 30px #b74b4b,
-    0px 0px 40px #b74b4b,
-    0px 0px 50px #b74b4b;
-}
-
-.hobbies-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
-
-.hobby-box {
-  background-color: black;
-  border-radius: 10px;
-  padding: 10px;
-  cursor: pointer;
-  transition: background 0.3s ease-in-out;
-  height: 80px;
-}
-
-.hobby-box:hover {
-  background-color: #b74b4b;
-}
-
-.hobby-box img {
-  width: 100%;
-  border-radius: 8px;
-  height: 65px;
 }
 </style>

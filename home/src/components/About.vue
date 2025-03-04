@@ -60,25 +60,25 @@
                 <img :src="'https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/Media%20(10).jfif'" alt="Hobby 1" class="hobby-img" />
               </div>
               <div class="hobby-box" @click="changeSidebarImage(hobby2Text)">
-                <img :src="c2" alt="Hobby 2" class="hobby-img" />
+                <img :src="'https://i.pinimg.com/736x/ed/da/bf/eddabf1355cd6aa1da7eb89c84f24f17.jpg'" alt="Hobby 2" class="hobby-img" />
               </div>
               <div class="hobby-box" @click="changeSidebarImage(hobby3Text)">
-                <img :src="c3" alt="Hobby 3" class="hobby-img" />
+                <img :src="'https://i.pinimg.com/736x/55/36/4d/55364dbe7efe7052c33df1e3a7a9614f.jpg'" alt="Hobby 3" class="hobby-img" />
               </div>
               <div class="hobby-box" @click="changeSidebarImage(hobby4Text)">
-                <img :src="c4" alt="Hobby 4" class="hobby-img" />
+                <img :src="'https://i.pinimg.com/736x/88/5d/c6/885dc6bac43aaf18105b43cb681734a3.jpg'" alt="Hobby 4" class="hobby-img" />
               </div>
               <div class="hobby-box" @click="changeSidebarImage(hobby5Text)">
-                <img :src="c5" alt="Hobby 5" class="hobby-img" />
+                <img :src="'https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/Media%20(3b).jfif'" alt="Hobby 5" class="hobby-img" />
               </div>
               <div class="hobby-box" @click="changeSidebarImage(hobby6Text)">
-                <img :src="c6" alt="Hobby 6" class="hobby-img" />
+                <img :src="'https://i.pinimg.com/736x/d8/48/83/d84883f6e9847ff87943cbe3e8ff6f24.jpg'" alt="Hobby 6" class="hobby-img" />
               </div>
               <div class="hobby-box" @click="changeSidebarImage(hobby7Text)">
-                <img :src="c7" alt="Hobby 7" class="hobby-img" />
+                <img :src="'https://i.pinimg.com/736x/b8/ac/52/b8ac52f4741264179dc27a64c6434e1e.jpg'" alt="Hobby 7" class="hobby-img" />
               </div>
               <div class="hobby-box" @click="changeSidebarImage(hobby8Text)">
-                <img :src="c8" alt="Hobby 8" class="hobby-img" />
+                <img :src="'https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/Media%20(9).jfif'" alt="Hobby 8" class="hobby-img" />
               </div>
             </div>
           </div>
@@ -529,7 +529,8 @@ const prevItem = () => {
 }
 
 .hobby-boxes {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 15px;
 }
 
@@ -544,9 +545,15 @@ const prevItem = () => {
   cursor: pointer;
 }
 
+.hobby-box:hover {
+  background: #b74b4b;
+}
+
 .hobby-img {
   width: 70px;
   height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .hobby-description {

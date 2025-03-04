@@ -308,6 +308,11 @@ const resetItems = () => {
   height: 150px;
 }
 
+.box2{
+  justify-content: center;
+  align-items: center;
+}
+
 .box3, .box4 {
   width: 100%;
   height: 200px;
@@ -470,8 +475,6 @@ const resetItems = () => {
 }
 
 .exp-container{
-  margin-top:0;
-  padding-top:0;
   display: flex;
   align-items: center;
   gap: 10px;

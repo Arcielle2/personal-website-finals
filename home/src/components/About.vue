@@ -228,6 +228,7 @@ const prevItem = () => {
   height: 91.8vh;
   justify-content: center;
   margin-top: 1.7rem;
+  gap: 10px;
 }
 
 .main-sidebar {

@@ -409,10 +409,12 @@ const resetItems = () => {
 .b {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  height: 120px; /* Set a fixed height to prevent shifting */
+  width: 100%;
+  height: 100%;
+  position: relative; /* Ensures absolute children like .buttons are positioned correctly */
 }
 
 .experience-label {
@@ -420,16 +422,12 @@ const resetItems = () => {
   font-weight: bold;
   margin-bottom: 10px;
   padding-top: 14px;
-}
-
-.experience-label {
   text-shadow: 
     0px 0px 10px #b74b4b,  
     0px 0px 20px #b74b4b,  
     0px 0px 30px #b74b4b,
     0px 0px 40px #b74b4b,
     0px 0px 50px #b74b4b;
-  font-weight: bold;
 }
 
 .buttons {
@@ -442,17 +440,21 @@ const resetItems = () => {
 }
 
 .buttons button {
-  border: .5px solid black;
+  border: 0.5px solid black;
   padding-top: 2.5px;
   border-radius: 10px;
   cursor: pointer;
   width: 30px;
-  height: 30px
+  height: 30px;
+  background-color: white; /* Add background to avoid transparency issues */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.buttons img {
+.buttons button img {
   width: 21px;
-  height: 21px
+  height: 21px;
 }
 
 .buttons button:disabled {
@@ -461,7 +463,10 @@ const resetItems = () => {
 }
 
 .icon {
-  width: 35px;
-  height: auto; 
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: 10px auto;
 }
+
 </style>

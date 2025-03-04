@@ -436,4 +436,9 @@ const prevItem = () => {
   opacity: 0.5;
   cursor: not-allowed;
 } 
+
+.icon {
+  width: 20px; /* Adjust the size as needed */
+  height: auto; /* Maintain aspect ratio */
+}
 </style>

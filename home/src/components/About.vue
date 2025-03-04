@@ -120,7 +120,7 @@ const items = [
   // Programming & Scripting
   { name: "Programming & Scripting" },
   { name: "Python", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968544.png" },
-  { name: "Java", icon: "https://www.flaticon.com/free-icon/java_152760" },
+  { name: "Java", icon: "https://cdn-icons-png.flaticon.com/512/14/14427.png" },
   { name: "JavaScript", icon: "https://cdn-icons-png.flaticon.com/128/721/721671.png" },
 
   // Web Development & Frameworks
@@ -134,17 +134,17 @@ const items = [
   // Databases & Backend Services
   { name: "Databases & Backend Services" },
   { name: "MySQL", icon: "https://cdn-icons-png.flaticon.com/128/274/274439.png" },
-  { name: "Supabase", icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUmXAGUcOzjy2xaAKISEG6ojczFz_KFn3iZA&s" },
+  { name: "Supabase", icon: "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/logos/supabase-pr0yrzxeug5s365cm8rwm.png/supabase-j1jz44w1wcovb099lhra7.png?_a=DAJFJtWIZAAC" },
 
   // Version Control & Deployment
   { name: "Version Control & Deployment" },
   { name: "GitHub", icon: "https://cdn-icons-png.flaticon.com/128/1051/1051326.png" },
-  { name: "Vercel", icon: "https://static.wikia.nocookie.net/logopedia/images/a/a7/Vercel_favicon.svg/revision/latest?cb=20221026155821" },
+  { name: "Vercel", icon: "https://static-00.iconduck.com/assets.00/vercel-icon-512x449-3422jidz.png" },
 
   // Development Tools & Environments
   { name: "Development Tools & Environments" },
   { name: "XAMPP", icon: "https://static-00.iconduck.com/assets.00/xampp-icon-1014x1024-czirhwu5.png" },
-  { name: "Eclipse", icon: "https://brandslogos.com/wp-content/uploads/images/large/eclipse-logo-black-and-white.png" },
+  { name: "Eclipse", icon: "https://static-00.iconduck.com/assets.00/eclipse-icon-2048x1917-1gxxm36r.png" },
   { name: "Flowgorithm", icon: "https://lh3.googleusercontent.com/proxy/GEvQaA8UT24MO4Db7C2VYOmt-87UHO2omQIRSnRczYF1auqMd2z-uh2B-YG9fQ_wMhZ076k7ypVVZBkzvzx9DCw24Qos" },
   { name: "Linux (Ubuntu)", icon: "https://cdn-icons-png.flaticon.com/128/16066/16066075.png" },
 

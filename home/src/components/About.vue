@@ -42,7 +42,7 @@
                 <img src="https://cdn-icons-png.flaticon.com/128/318/318476.png" alt="Next" />
               </button>
               <button @click="resetItems">
-                Reset
+                R
               </button>
             </div>
           </div>
@@ -438,6 +438,7 @@ const resetItems = () => {
   display: flex;
   justify-content: center;
   gap: 10px;
+  font-style: bold;
 }
 
 .buttons button {
@@ -449,7 +450,7 @@ const resetItems = () => {
   height: 30px;
 }
 
-.button img {
+.buttons img {
   width: 30px;
   height: 30px;
 }

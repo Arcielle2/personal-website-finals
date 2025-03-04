@@ -256,7 +256,7 @@ const prevItem = () => {
   background: #1f2122;
   font-family: 'Public Pixel', sans-serif;
   font-size: 24px;
-  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .sidebar {

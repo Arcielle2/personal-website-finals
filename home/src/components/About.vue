@@ -441,11 +441,12 @@ const resetItems = () => {
 }
 
 .buttons button {
-  color: white;
   border: none;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+  width: 30px;
+  height: 30px;
 }
 
 .button img {

@@ -42,7 +42,6 @@
               </button>
               <button @click="nextItem" :disabled="currentIndex === items.length - 1">
                 <img src="https://cdn-icons-png.flaticon.com/128/318/318476.png" alt="Next" />
-                <strong>R</strong>
               </button>
             </div>
           </div>

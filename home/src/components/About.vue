@@ -587,6 +587,7 @@ const prevItem = () => {
 
 .hobby-box:hover {
   background: #b74b4b;
+  filter: grayscale(1);
 }
 
 .hobby-img {
@@ -613,8 +614,8 @@ const prevItem = () => {
 }
 
 .group-box {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
   display: flex;
   background: black;
   justify-content: center;

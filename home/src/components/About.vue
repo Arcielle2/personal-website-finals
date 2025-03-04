@@ -42,8 +42,6 @@
               </button>
               <button @click="nextItem" :disabled="currentIndex === items.length - 1">
                 <img src="https://cdn-icons-png.flaticon.com/128/318/318476.png" alt="Next" />
-              </button>
-              <button @click="resetItems">
                 <strong>R</strong>
               </button>
             </div>
@@ -155,6 +153,8 @@ const items = [
   { name: "Design & UI/UX" },
   { name: "Figma", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968704.png" },
   { name: "Canva", icon: "https://i.pinimg.com/736x/c1/b8/3a/c1b83ab03539d3eb6448148aa01c45a4.jpg" },
+
+  { name: "Reset", icon: null }
 ];
 
 const currentIndex = ref(0);
@@ -162,6 +162,11 @@ const currentIndex = ref(0);
 const nextItem = () => {
   if (currentIndex.value < items.length - 1) {
     currentIndex.value++;
+  } else {
+    // If the last item is clicked, reset
+    setTimeout(() => {
+      currentIndex.value = 0;
+    }, 1000); // Delay for effect
   }
 };
 
@@ -171,9 +176,6 @@ const prevItem = () => {
   }
 };
 
-const resetItems = () => {
-  currentIndex.value = 0;
-};
 </script>
 
 <style scoped>

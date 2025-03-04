@@ -119,12 +119,12 @@
               <h2>{{ items[currentPIndex].name }}</h2>
               <img :src="items[currentPIndex].icon" alt="Icon" class="pgicon" v-if="items[currentPIndex].icon" />
             </div>
-            <div class="buttons">
-              <button @click="prevItem" :disabled="currentIndex === 0">
-                <img src="https://cdn-icons-png.flaticon.com/128/318/318477.png" alt="Previous" />
+            <div class="Pbuttons">
+              <button @click="prevPItem" :disabled="currentPIndex === 0">
+                <img src="https://cdn-icons-png.flaticon.com/128/318/318477.png" alt="PPrevious" />
               </button>
-              <button @click="nextItem" :disabled="currentIndex === items.length - 1">
-                <img src="https://cdn-icons-png.flaticon.com/128/318/318476.png" alt="Next" />
+              <button @click="nextPItem" :disabled="currentPIndex === items.length - 1">
+                <img src="https://cdn-icons-png.flaticon.com/128/318/318476.png" alt="PNext" />
               </button>
             </div>
             </div>

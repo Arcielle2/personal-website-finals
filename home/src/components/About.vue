@@ -1,7 +1,6 @@
 <template>
   <div class="container">
     <div class="main-sidebar">
-      <p>...</p><br>
       <div class="main-header">
 
       </div>
@@ -239,14 +238,6 @@ const prevItem = () => {
   display: flex;
   flex-direction: column;
   align-content: center;
-}
-
-.main-sidebar p{
-  color: #751c1c;
-  letter-spacing: 10px;
-  font-style: bold;
-  font-size: 24px;
-  text-align: center;
 }
 
 .main-header{

@@ -531,12 +531,12 @@ const prevItem = () => {
 .hobby-boxes {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  gap: 5px;
 }
 
 .hobby-box {
   width: 90px;
-  height: 80px;
+  height: 70px;
   display: flex;
   background: black;
   justify-content: center;
@@ -550,8 +550,8 @@ const prevItem = () => {
 }
 
 .hobby-img {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 60px;
   object-fit: cover;
   border-radius: 10px;
 }

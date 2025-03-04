@@ -587,7 +587,10 @@ const prevItem = () => {
 
 .hobby-box:hover {
   background: #b74b4b;
-  filter: grayscale(1);
+}
+
+.hobby-img:hover {
+  filter: brightness(0);
 }
 
 .hobby-img {

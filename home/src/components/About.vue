@@ -52,13 +52,9 @@
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(2)" />
         <div class="hidden-content" v-if="openBoxes[2]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(2)" />
-          <div class="hobbies-label"><p>Hobbies & Interests</p></div>
-          
-          </div>
+          Additional Content
         </div>
       </div>
-
-
       <div class="box box4">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(3)" />
         <div class="hidden-content" v-if="openBoxes[3]">
@@ -77,6 +73,7 @@
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script setup>
@@ -176,11 +173,6 @@ const prevItem = () => {
   }
 };
 
-const selectedHobby = ref(null);
-
-const selectHobby = (hobby) => {
-  selectedHobby.value = hobby;
-};
 </script>
 
 <style scoped>

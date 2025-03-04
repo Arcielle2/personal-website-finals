@@ -42,9 +42,7 @@
               </button>
               <button @click="nextItem" :disabled="currentIndex === items.length - 1">
                 <img src="https://cdn-icons-png.flaticon.com/128/318/318476.png" alt="Next" />
-              </button>
-              <button @click="resetItems">
-                <strong>R</strong>
+                <p v-if="currentIndex === slides.length - 1" class="reset" @click="resetSlides">Reset</p>
               </button>
             </div>
           </div>
@@ -171,7 +169,7 @@ const prevItem = () => {
   }
 };
 
-const resetItems = () => {
+const resetSlides = () => {
   currentIndex.value = 0;
 };
 </script>
@@ -445,7 +443,8 @@ const resetItems = () => {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  align-content: center;
+  gap: 60px;
 }
 
 .buttons button {
@@ -468,8 +467,8 @@ const resetItems = () => {
 }
 
 .icon {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   display: block;
   margin: 5px auto;
 }

@@ -437,7 +437,7 @@ const prevItem = () => {
 
 .buttons {
   position: absolute;
-  bottom: 30px;
+  bottom: 40px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -474,5 +474,6 @@ const prevItem = () => {
   display: flex;
   align-items: center;
   gap: 10px;
+  width: 50px;
 }
 </style>

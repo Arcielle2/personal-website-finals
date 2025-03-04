@@ -620,7 +620,7 @@ const prevItem = () => {
   width: 130px;
   height: 130px;
   display: flex;
-  background: black;
+  background: white;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
@@ -630,5 +630,7 @@ const prevItem = () => {
 .group-img {
   width: 80px;
   height: 60px;
+  background: black;
+  border-radius: 10px;
 }
 </style>

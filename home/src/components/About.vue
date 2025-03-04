@@ -236,6 +236,7 @@ const prevItem = () => {
   padding: 20px;
   border-radius: 15px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap:10px;
 }

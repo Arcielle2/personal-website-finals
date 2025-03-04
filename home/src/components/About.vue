@@ -441,7 +441,6 @@ const resetItems = () => {
 }
 
 .buttons button {
-  background-color: #b74b4b;
   color: white;
   border: none;
   padding: 10px;
@@ -449,10 +448,16 @@ const resetItems = () => {
   cursor: pointer;
 }
 
+.button img {
+  width: 30px;
+  height: 30px;
+}
+
 .buttons button:disabled {
   background-color: gray;
   cursor: not-allowed;
 }
+
 
 .icon {
   width: 35px; /* Adjust the size as needed */

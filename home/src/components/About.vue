@@ -441,7 +441,7 @@ const prevItem = () => {
   width: 100%;
   display: flex;
   justify-content: center;
-  gap: 70px;
+  gap: 90px;
 }
 
 .buttons button {

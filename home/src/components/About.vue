@@ -32,8 +32,10 @@
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(1)" />
           <div class="experience-label"><p>IT Experience</p></div>
           <div class="b">
-            <h2>{{ items[currentIndex].name }}</h2>
-            <img :src="items[currentIndex].icon" alt="Icon" class="icon" v-if="items[currentIndex].icon" />
+            <div class="exp-container">
+              <h2>{{ items[currentIndex].name }}</h2>
+              <img :src="items[currentIndex].icon" alt="Icon" class="icon" v-if="items[currentIndex].icon" />
+            </div>
             <div class="buttons">
               <button @click="prevItem" :disabled="currentIndex === 0">
                 <img src="https://cdn-icons-png.flaticon.com/128/318/318477.png" alt="Previous" />
@@ -298,7 +300,7 @@ const resetItems = () => {
   position: relative;
   transition: transform 0.5s ease, opacity 0.5s ease;
   color: black;
-  font-size: 8px;
+  font-size: 5px;
 }
 
 .box1, .box2 {
@@ -465,5 +467,11 @@ const resetItems = () => {
   height: 40px;
   display: block;
   margin: 10px auto;
+}
+
+.exp-container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 </style>

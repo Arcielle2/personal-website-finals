@@ -61,10 +61,10 @@
               <div class="group-box" @click="changeSidebarImage(Education)">
                 <img :src="g3" alt="Education" class="group-img" />
               </div>
-              <div class="hobby-box" @click="changeSidebarImage(Goals)">
+              <div class="group-box" @click="changeSidebarImage(Goals)">
                 <img :src="g2" alt="Goals" class="group-img" />
               </div>
-              <div class="hobby-box" @click="changeSidebarImage(Achievements)">
+              <div class="group-box" @click="changeSidebarImage(Achievements)">
                 <img :src="g1" alt="Achievements" class="group-img" />
               </div>
             </div>
@@ -590,10 +590,8 @@ const prevItem = () => {
 }
 
 .hobby-img {
-  width: 60px;
-  height: 40px;
-  object-fit: cover;
-  border-radius: 8px;
+  width: 30px;
+  height: 30px;
 }
 
 .hobby-description {
@@ -614,8 +612,8 @@ const prevItem = () => {
 }
 
 .group-box {
-  width: 120px;
-  height: 100px;
+  width: 250px;
+  height: 250px;
   display: flex;
   background: black;
   justify-content: center;
@@ -627,7 +625,5 @@ const prevItem = () => {
 .group-img {
   width: 80px;
   height: 60px;
-  object-fit: cover;
-  border-radius: 8px;
 }
 </style>

@@ -3,7 +3,7 @@
     <div class="main-sidebar">
       <div class="main-header">
 
-      </div>
+      </div> <br>
       <div class="sidebar">
         <div v-if="!courseDescription" class="image-container">
           <div v-if="!hobbyDescription" class="image-container">

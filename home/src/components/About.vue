@@ -556,12 +556,12 @@ const selectHobby = (hobby) => {
 }
 .hobbies-container {
   text-align: center;
-  color: white;
+  color: black;
   padding: 20px;
 }
 
 .glow-text {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
   text-shadow: 0 0 10px #b74b4b, 0 0 20px #b74b4b;
 }
@@ -569,8 +569,7 @@ const selectHobby = (hobby) => {
 .hobbies-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  margin-top: 20px;
+  gap: 10px;
 }
 
 .hobby-box {
@@ -579,6 +578,7 @@ const selectHobby = (hobby) => {
   padding: 10px;
   cursor: pointer;
   transition: background 0.3s ease-in-out;
+  height: 15px;
 }
 
 .hobby-box:hover {

@@ -30,8 +30,8 @@
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(1)" />
         <div class="hidden-content" v-if="openBoxes[1]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(1)" />
+          <div class="experience-label"><p>IT Experience</p></div>
           <div class="b">
-            <div class="experience-label"><p>IT Experience</p></div>
             <div class="exp-container">
               <h2>{{ items[currentIndex].name }}</h2>
               <img :src="items[currentIndex].icon" alt="Icon" class="icon" v-if="items[currentIndex].icon" />
@@ -415,7 +415,7 @@ const resetItems = () => {
   align-items: center;
   text-align: center;
   width: 100%;
-  height: 100%;
+  height: 70%;
 }
 
 .experience-label {

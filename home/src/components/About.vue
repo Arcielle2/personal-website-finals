@@ -124,6 +124,8 @@ import { ref, onMounted, onUnmounted } from "vue";
 import sunImage from "@/assets/ribbon.jfif";
 import defaultImage from "@/assets/bubu.jfif"; // Default sidebar image
 import hiImage from "@/assets/hi.jfif"; // Overlay image
+import c1 from "@/assets/c1.jfif";
+import c2 from "@/assets/c2.jfif";
 import h1 from "@/assets/h1.jfif";
 import h2 from "@/assets/h2.jfif";
 import h3 from "@/assets/h3.jfif";
@@ -588,8 +590,8 @@ const prevItem = () => {
 }
 
 .hobby-img {
-  width: 80px;
-  height: 60px;
+  width: 60px;
+  height: 40px;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -604,5 +606,28 @@ const prevItem = () => {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
+}
+
+.group-boxes {
+  display: flex;
+  gap: 15px;
+}
+
+.group-box {
+  width: 120px;
+  height: 100px;
+  display: flex;
+  background: black;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.group-img {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 </style>

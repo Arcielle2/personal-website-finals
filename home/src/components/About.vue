@@ -1,6 +1,9 @@
 <template>
   <div class="container">
     <div class="main-sidebar">
+      <div class="main-header">
+
+      </div>
       <div class="sidebar">
         <div v-if="!courseDescription" class="image-container">
           <div v-if="!hobbyDescription" class="image-container">
@@ -54,7 +57,15 @@
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(2)" />
         <div class="hidden-content" v-if="openBoxes[2]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(2)" />
-            <div class="hobby-label"><p>Hobbies and Interests</p></div>
+          </div>
+        </div>
+
+
+      <div class="box box4">
+        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(3)" />
+        <div class="hidden-content" v-if="openBoxes[3]">
+          <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(3)" />
+          <div class="hobby-label"><p>Hobbies and Interests</p></div>
             <div class="hobby-boxes">
               <div class="hobby-box" @click="changeSidebarImage(hobby1Text)">
                 <img :src="'https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/Media%20(10).jfif'" alt="Hobby 1" class="hobby-img" />
@@ -81,15 +92,6 @@
                 <img :src="'https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/Media%20(9).jfif'" alt="Hobby 8" class="hobby-img" />
               </div>
             </div>
-          </div>
-        </div>
-
-
-      <div class="box box4">
-        <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(3)" />
-        <div class="hidden-content" v-if="openBoxes[3]">
-          <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(3)" />
-          Additional Content
         </div>
       </div>
     </div>
@@ -235,6 +237,15 @@ const prevItem = () => {
   border-radius: 15px;
   display: flex;
   justify-content: center;
+}
+
+.main-header{
+  width: 100%;
+  height: 4rem;
+  border:10px solid #15191d;
+  background: #1f2122;
+  font-family: 'Public Pixel', sans-serif;
+  font-size: 24px;
 }
 
 .sidebar {

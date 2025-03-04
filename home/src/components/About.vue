@@ -405,7 +405,7 @@ const prevItem = () => {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: 150px; /* Set a fixed height to prevent shifting */
+  height: 120px; /* Set a fixed height to prevent shifting */
 }
 
 .experience-label {
@@ -414,11 +414,21 @@ const prevItem = () => {
   margin-bottom: 10px;
 }
 
+.experience-label {
+  text-shadow: 
+    0px 0px 10px #b74b4b,  
+    0px 0px 20px #b74b4b,  
+    0px 0px 30px #b74b4b,
+    0px 0px 40px #b74b4b,
+    0px 0px 50px #b74b4b;
+  font-weight: bold;
+}
+
 .buttons {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .buttons button {

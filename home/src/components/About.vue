@@ -112,7 +112,49 @@
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(4)" />
         <div class="hidden-content" v-if="openBoxes[4]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(4)" />
-          Additional Content
+          <div class="pg-label"><p>Picture Gallery</p></div>
+          <div class="last-box">
+            <div class="pg">
+            <div class="pg-container">
+              <h2>{{ items[currentPIndex].name }}</h2>
+              <img :src="items[currentPIndex].icon" alt="Icon" class="pgicon" v-if="items[currentPIndex].icon" />
+            </div>
+            <div class="buttons">
+              <button @click="prevItem" :disabled="currentIndex === 0">
+                <img src="https://cdn-icons-png.flaticon.com/128/318/318477.png" alt="Previous" />
+              </button>
+              <button @click="nextItem" :disabled="currentIndex === items.length - 1">
+                <img src="https://cdn-icons-png.flaticon.com/128/318/318476.png" alt="Next" />
+              </button>
+            </div>
+            </div>
+            <div class="comment-section">
+              <div class="cm-label"><p>Leave A Comment here!!!</p></div>
+              <div class="mb-4">
+                <input v-model="newComment.name" type="text" placeholder="Your Name" class="border p-2 w-full rounded mb-2" />
+                <input v-model="newComment.avatar" type="text" placeholder="Avatar URL (optional)" class="border p-2 w-full rounded mb-2" />
+                <textarea v-model="newComment.message" placeholder="Your Comment" class="border p-2 w-full rounded mb-2"></textarea>
+                <button @click="addComment" class="bg-blue-500 text-white p-2 rounded">Post Comment</button>
+              </div>
+              <div>
+                <div v-for="comment in comments" :key="comment.id" class="mb-3 p-3 border rounded">
+                  <div class="flex gap-3">
+                    <img :src="comment.avatar || 'https://via.placeholder.com/40'" alt="Avatar" class="w-10 h-10 rounded-full" />
+                    <div class="w-full">
+                      <h4 class="font-bold">{{ comment.name }}</h4>
+                      <textarea v-model="comment.message" class="w-full border p-2 rounded"></textarea>
+                      <div class="flex items-center gap-2 mt-2">
+                        <button @click="reactToComment(comment.id, 'heart')">❤️ {{ comment.reactions.heart }}</button>
+                        <button @click="reactToComment(comment.id, 'haha')">😂 {{ comment.reactions.haha }}</button>
+                        <button @click="reactToComment(comment.id, 'sad')">😢 {{ comment.reactions.sad }}</button>
+                        <button @click="deleteComment(comment.id)" class="text-red-500">🗑️</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -238,6 +280,30 @@ const prevItem = () => {
   }
 };
 
+const comments = ref([]);
+const newComment = ref({ name: '', avatar: '', message: '' });
+
+const addComment = () => {
+  if (newComment.value.name && newComment.value.message) {
+    comments.value.push({
+      ...newComment.value,
+      id: Date.now(),
+      reactions: { heart: 0, haha: 0, sad: 0 }
+    });
+    newComment.value = { name: '', avatar: '', message: '' };
+  }
+};
+
+const deleteComment = (id) => {
+  comments.value = comments.value.filter(c => c.id !== id);
+};
+
+const reactToComment = (id, type) => {
+  const comment = comments.value.find(c => c.id === id);
+  if (comment) {
+    comment.reactions[type] += 1;
+  }
+};
 </script>
 
 <style scoped>
@@ -274,7 +340,7 @@ const prevItem = () => {
   background: #1f2122;
   font-family: 'Public Pixel', sans-serif;
   font-size: 24px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .sidebar {
@@ -633,5 +699,16 @@ const prevItem = () => {
   height: 60px;
   background: whitesmoke;
   border-radius: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  opacity: 0.8;
 }
 </style>

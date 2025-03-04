@@ -415,7 +415,7 @@ const resetItems = () => {
   align-items: center;
   text-align: center;
   width: 100%;
-  height: 70%;
+  height: 50%;
 }
 
 .experience-label {

@@ -57,6 +57,17 @@
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(2)" />
         <div class="hidden-content" v-if="openBoxes[2]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(2)" />
+            <div class="group-boxes">
+              <div class="group-box" @click="changeSidebarImage(Education)">
+                <img :src="g3" alt="Education" class="group-img" />
+              </div>
+              <div class="hobby-box" @click="changeSidebarImage(Goals)">
+                <img :src="g2" alt="Goals" class="group-img" />
+              </div>
+              <div class="hobby-box" @click="changeSidebarImage(Achievements)">
+                <img :src="g1" alt="Achievements" class="group-img" />
+              </div>
+            </div>
           </div>
         </div>
 
@@ -68,28 +79,28 @@
           <div class="hobby-label"><p>Hobbies and Interests</p></div>
             <div class="hobby-boxes">
               <div class="hobby-box" @click="changeSidebarImage(hobby1Text)">
-                <img :src="'https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/Media%20(10).jfif'" alt="Hobby 1" class="hobby-img" />
+                <img :src="h1" alt="Hobby 1" class="hobby-img" />
               </div>
               <div class="hobby-box" @click="changeSidebarImage(hobby2Text)">
-                <img :src="'https://i.pinimg.com/736x/ed/da/bf/eddabf1355cd6aa1da7eb89c84f24f17.jpg'" alt="Hobby 2" class="hobby-img" />
+                <img :src="h2" alt="Hobby 2" class="hobby-img" />
               </div>
               <div class="hobby-box" @click="changeSidebarImage(hobby3Text)">
-                <img :src="'https://i.pinimg.com/736x/55/36/4d/55364dbe7efe7052c33df1e3a7a9614f.jpg'" alt="Hobby 3" class="hobby-img" />
+                <img :src="h3" alt="Hobby 3" class="hobby-img" />
               </div>
               <div class="hobby-box" @click="changeSidebarImage(hobby4Text)">
-                <img :src="'https://i.pinimg.com/736x/88/5d/c6/885dc6bac43aaf18105b43cb681734a3.jpg'" alt="Hobby 4" class="hobby-img" />
+                <img :src="h4" alt="Hobby 4" class="hobby-img" />
               </div>
               <div class="hobby-box" @click="changeSidebarImage(hobby5Text)">
-                <img :src="'https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/Media%20(3b).jfif'" alt="Hobby 5" class="hobby-img" />
+                <img :src="h5" alt="Hobby 5" class="hobby-img" />
               </div>
               <div class="hobby-box" @click="changeSidebarImage(hobby6Text)">
-                <img :src="'https://i.pinimg.com/736x/d8/48/83/d84883f6e9847ff87943cbe3e8ff6f24.jpg'" alt="Hobby 6" class="hobby-img" />
+                <img :src="h6" alt="Hobby 6" class="hobby-img" />
               </div>
               <div class="hobby-box" @click="changeSidebarImage(hobby7Text)">
-                <img :src="'https://i.pinimg.com/736x/b8/ac/52/b8ac52f4741264179dc27a64c6434e1e.jpg'" alt="Hobby 7" class="hobby-img" />
+                <img :src="h7" alt="Hobby 7" class="hobby-img" />
               </div>
               <div class="hobby-box" @click="changeSidebarImage(hobby8Text)">
-                <img :src="'https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/Media%20(9).jfif'" alt="Hobby 8" class="hobby-img" />
+                <img :src="h8" alt="Hobby 8" class="hobby-img" />
               </div>
             </div>
         </div>
@@ -113,8 +124,17 @@ import { ref, onMounted, onUnmounted } from "vue";
 import sunImage from "@/assets/ribbon.jfif";
 import defaultImage from "@/assets/bubu.jfif"; // Default sidebar image
 import hiImage from "@/assets/hi.jfif"; // Overlay image
-import c1 from "@/assets/c1.jfif";
-import c2 from "@/assets/c2.jfif";
+import h1 from "@/assets/h1.jfif";
+import h2 from "@/assets/h2.jfif";
+import h3 from "@/assets/h3.jfif";
+import h4 from "@/assets/h4.jfif";
+import h5 from "@/assets/h5.jfif";
+import h6 from "@/assets/h6.jfif";
+import h7 from "@/assets/h7.jfif";
+import h8 from "@/assets/h8.jfif";
+import g1 from "@/assets/g1.jfif";
+import g2 from "@/assets/g2.jfif";
+import g3 from "@/assets/g3.jfif";
 
 const openBoxes = ref([false]);
 const selectedImage = ref(defaultImage);
@@ -133,6 +153,10 @@ const hobby5Text = "Playing Online Games. I enjoy playing online games as they c
 const hobby6Text = "Eating Foods. I enjoy discovering new flavors and indulging in comfort food.";
 const hobby7Text = "Watching Movies. Movies transport me to new adventures, letting me experience stories from diverse perspectives.";
 const hobby8Text = "Designing. Designing allows me to channel my creativity and bring ideas to life in a visually appealing way.";
+
+const Education = "Eating Foods. I enjoy discovering new flavors and indulging in comfort food.";
+const Achievements = "Watching Movies. Movies transport me to new adventures, letting me experience stories from diverse perspectives.";
+const Goals = "Designing. Designing allows me to channel my creativity and bring ideas to life in a visually appealing way.";
 
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];

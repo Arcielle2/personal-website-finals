@@ -1,9 +1,10 @@
 <template>
   <div class="container">
     <div class="main-sidebar">
+      <p>...</p><br>
       <div class="main-header">
 
-      </div> <br>
+      </div>
       <div class="sidebar">
         <div v-if="!courseDescription" class="image-container">
           <div v-if="!hobbyDescription" class="image-container">
@@ -11,7 +12,7 @@
           <img v-if="showHiImage" :src="hiImage" alt="Overlay Image" class="overlay-img" />
           </div>
         </div>
-        <p v-else class="sidebar-text">{{ courseDescription }}</p> <!-- Shows only when clicked -->
+        <p v-else class="sidebar-text">{{ courseDescription }}</p>
       </div>
     </div>
     <div class="main-content">
@@ -223,7 +224,6 @@ const prevItem = () => {
 
 .container {
   display: flex;
-  gap: 10px;
   padding: 10px;
   height: 91.8vh;
   justify-content: center;
@@ -237,14 +237,19 @@ const prevItem = () => {
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  gap:10px;
+  align-content: center;
+}
+
+.main-sidebar p{
+  color: #751c1c;
+  letter-spacing: 10px;
 }
 
 .main-header{
   width: 100%;
   height: 4rem;
   border:10px solid #15191d;
+  border-radius: 10px;
   background: #1f2122;
   font-family: 'Public Pixel', sans-serif;
   font-size: 24px;

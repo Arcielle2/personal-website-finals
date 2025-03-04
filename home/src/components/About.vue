@@ -571,7 +571,7 @@ const prevItem = () => {
 .hobby-boxes {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
+  gap: 10px;
 }
 
 .hobby-box {
@@ -625,12 +625,13 @@ const prevItem = () => {
   align-items: center;
   border-radius: 10px;
   cursor: pointer;
+  box-shadow: 0px 0px 20px 6px #b74b4b;
 }
 
 .group-img {
   width: 80px;
   height: 60px;
-  background: black;
+  background: whitesmoke;
   border-radius: 10px;
 }
 </style>

@@ -3,8 +3,10 @@
     <div class="main-sidebar">
       <div class="sidebar">
         <div v-if="!courseDescription" class="image-container">
+          <div v-if="!hobbyDescription" class="image-container">
           <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />
           <img v-if="showHiImage" :src="hiImage" alt="Overlay Image" class="overlay-img" />
+          </div>
         </div>
         <p v-else class="sidebar-text">{{ courseDescription }}</p> <!-- Shows only when clicked -->
       </div>
@@ -52,9 +54,37 @@
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(2)" />
         <div class="hidden-content" v-if="openBoxes[2]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(2)" />
-          Additional Content
+            <div class="hobby-label"><p>Hobbies and Interests</p></div>
+            <div class="hobby-boxes">
+              <div class="hobby-box" @click="changeSidebarImage(hobby1Text)">
+                <img :src="'https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/Media%20(10).jfif'" alt="Hobby 1" class="hobby-img" />
+              </div>
+              <div class="hobby-box" @click="changeSidebarImage(hobby2Text)">
+                <img :src="c2" alt="Hobby 2" class="hobby-img" />
+              </div>
+              <div class="hobby-box" @click="changeSidebarImage(hobby3Text)">
+                <img :src="c3" alt="Hobby 3" class="hobby-img" />
+              </div>
+              <div class="hobby-box" @click="changeSidebarImage(hobby4Text)">
+                <img :src="c4" alt="Hobby 4" class="hobby-img" />
+              </div>
+              <div class="hobby-box" @click="changeSidebarImage(hobby5Text)">
+                <img :src="c5" alt="Hobby 5" class="hobby-img" />
+              </div>
+              <div class="hobby-box" @click="changeSidebarImage(hobby6Text)">
+                <img :src="c6" alt="Hobby 6" class="hobby-img" />
+              </div>
+              <div class="hobby-box" @click="changeSidebarImage(hobby7Text)">
+                <img :src="c7" alt="Hobby 7" class="hobby-img" />
+              </div>
+              <div class="hobby-box" @click="changeSidebarImage(hobby8Text)">
+                <img :src="c8" alt="Hobby 8" class="hobby-img" />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+
+
       <div class="box box4">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(3)" />
         <div class="hidden-content" v-if="openBoxes[3]">
@@ -88,10 +118,19 @@ const openBoxes = ref([false]);
 const selectedImage = ref(defaultImage);
 const showHiImage = ref(false);
 const courseDescription = ref("");
+const hobbyDescription = ref("")
 
 const course1Text = "Bachelor of Science in Computer Science with specialization in Cybersecurity and Forensics. I’m currently studying for a Bachelor of Science in Computer Science with a specialization in Cybersecurity and Forensics at Asia Pacific College. This program allows me to dive deep into the exciting world of computer science while focusing on protecting systems, preventing cyberattacks, and investigating digital crimes. I’m thrilled to explore this dynamic field and develop skills that are vital in today’s digital landscape!";
-
 const course2Text = "SM Foundation Scholar. I’m also proud to be an SM scholar at Asia Pacific College, which has helped me pursue my academic goals with a little extra support.";
+
+const hobby1Text = "Playing Instrument. I love playing the ukulele and keyboard; music brings joy and relaxation to my everyday life.";
+const hobby2Text = "Singing.Singing allows me to express myself and connect with my emotions through melodies and lyrics.";
+const hobby3Text = "Listening to Music. Music is my constant companion—it energizes me, soothes my soul, and inspires creativity.";
+const hobby4Text = "Reading Books. Diving into books is like exploring a new world; it fuels my imagination and broadens my perspective.";
+const hobby5Text = "Playing Online Games. I enjoy playing online games as they challenge my strategy skills and are a fun way to unwind.";
+const hobby6Text = "Eating Foods. I enjoy discovering new flavors and indulging in comfort food.";
+const hobby7Text = "Watching Movies. Movies transport me to new adventures, letting me experience stories from diverse perspectives.";
+const hobby8Text = "Designing. Designing allows me to channel my creativity and bring ideas to life in a visually appealing way.";
 
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];
@@ -471,5 +510,54 @@ const prevItem = () => {
   align-items: center;
   gap: 10px;
   width: 100px;
+}
+
+.hobby-label {
+  font-size: 20px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.hobby-label p {
+  text-shadow: 
+    0px 0px 10px #b74b4b,  
+    0px 0px 20px #b74b4b,  
+    0px 0px 30px #b74b4b,
+    0px 0px 40px #b74b4b,
+    0px 0px 50px #b74b4b; /* Adjust blur effect */
+  font-weight: bold; /* Optional: Make text stand out more */
+}
+
+.hobby-boxes {
+  display: flex;
+  gap: 15px;
+}
+
+.hobby-box {
+  width: 90px;
+  height: 80px;
+  display: flex;
+  background: black;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hobby-img {
+  width: 70px;
+  height: 70px;
+}
+
+.hobby-description {
+  width: 50%;
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid gray;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px gray;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
 }
 </style>

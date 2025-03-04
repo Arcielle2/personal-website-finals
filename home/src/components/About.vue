@@ -112,22 +112,8 @@
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(4)" />
         <div class="hidden-content" v-if="openBoxes[4]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(4)" />
-          <div class="pg-label"><p>Picture Gallery</p></div>
           <div class="last-box">
-            <div class="pg">
-            <div class="pg-container">
-              <h2>{{ items[currentPIndex].name }}</h2>
-              <img :src="items[currentPIndex].icon" alt="Icon" class="pgicon" v-if="items[currentPIndex].icon" />
-            </div>
-            <div class="Pbuttons">
-              <button @click="prevPItem" :disabled="currentPIndex === 0">
-                <img src="https://cdn-icons-png.flaticon.com/128/318/318477.png" alt="PPrevious" />
-              </button>
-              <button @click="nextPItem" :disabled="currentPIndex === items.length - 1">
-                <img src="https://cdn-icons-png.flaticon.com/128/318/318476.png" alt="PNext" />
-              </button>
-            </div>
-            </div>
+            <div class="pg-label"><p>Picture Gallery</p></div>
             <div class="comment-section">
               <div class="cm-label"><p>Leave A Comment here!!!</p></div>
               <div class="mb-4">

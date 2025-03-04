@@ -237,6 +237,7 @@ const prevItem = () => {
   border-radius: 15px;
   display: flex;
   justify-content: center;
+  gap:10px;
 }
 
 .main-header{

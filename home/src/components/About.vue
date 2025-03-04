@@ -243,6 +243,9 @@ const prevItem = () => {
 .main-sidebar p{
   color: #751c1c;
   letter-spacing: 10px;
+  font-style: bold;
+  font-size: 24px;
+  text-align: center;
 }
 
 .main-header{
@@ -253,6 +256,7 @@ const prevItem = () => {
   background: #1f2122;
   font-family: 'Public Pixel', sans-serif;
   font-size: 24px;
+  margin-top: 5px;
 }
 
 .sidebar {

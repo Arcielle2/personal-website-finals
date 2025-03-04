@@ -144,8 +144,6 @@ const items = [
   // Development Tools & Environments
   { name: "Development Tools & Environments" },
   { name: "XAMPP", icon: "https://static-00.iconduck.com/assets.00/xampp-icon-1014x1024-czirhwu5.png" },
-  { name: "Eclipse", icon: "https://static-00.iconduck.com/assets.00/eclipse-icon-2048x1917-1gxxm36r.png" },
-  { name: "Flowgorithm", icon: "https://lh3.googleusercontent.com/proxy/GEvQaA8UT24MO4Db7C2VYOmt-87UHO2omQIRSnRczYF1auqMd2z-uh2B-YG9fQ_wMhZ076k7ypVVZBkzvzx9DCw24Qos" },
   { name: "Linux (Ubuntu)", icon: "https://cdn-icons-png.flaticon.com/128/16066/16066075.png" },
 
   // Design & UI/UX

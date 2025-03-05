@@ -861,23 +861,17 @@ onMounted(() => {
 }
 
 /* Scrollbar Styling */
-.comment-list::-webkit-scrollbar {
+.comment-container::-webkit-scrollbar {
   width: 8px;
 }
 
-.comment-list::-webkit-scrollbar-thumb {
+.comment-container::-webkit-scrollbar-thumb {
   background: #b74b4b;
   border-radius: 10px;
 }
 
-.comment-list::-webkit-scrollbar-track {
+.comment-container::-webkit-scrollbar-track {
   background: whitesmoke;
-}
-
-/* Extra fix for Firefox */
-.comment-list {
-  scrollbar-width: thin;
-  scrollbar-color: #b74b4b whitesmoke;
 }
 
 </style>

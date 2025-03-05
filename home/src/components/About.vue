@@ -291,21 +291,21 @@ const prevItem = () => {
 };
 
 const galleryImages = ref([
-  "https://source.unsplash.com/random/400x300?sig=1",
-  "https://source.unsplash.com/random/400x300?sig=2",
-  "https://source.unsplash.com/random/400x300?sig=3",
-  "https://source.unsplash.com/random/400x300?sig=4",
-  "https://source.unsplash.com/random/400x300?sig=5",
-  "https://source.unsplash.com/random/400x300?sig=6",
-  "https://source.unsplash.com/random/400x300?sig=7",
-  "https://source.unsplash.com/random/400x300?sig=8",
-  "https://source.unsplash.com/random/400x300?sig=9",
-  "https://source.unsplash.com/random/400x300?sig=10",
-  "https://source.unsplash.com/random/400x300?sig=11",
-  "https://source.unsplash.com/random/400x300?sig=12",
-  "https://source.unsplash.com/random/400x300?sig=13",
-  "https://source.unsplash.com/random/400x300?sig=14",
-  "https://source.unsplash.com/random/400x300?sig=15",
+  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic1.jfif=1",
+  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic2.jfif=2",
+  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic3.jfif=3",
+  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic4.jfif=4",
+  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic5.jfif=5",
+  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic6.jfif=6",
+  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic7.jfif=7",
+  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic8.jfif=8",
+  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic9.jfif=9",
+  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic10.jfif=10",
+  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic11.jfif=11",
+  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic12.jfif=12",
+  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic13.jfif=13",
+  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic14.jfif=14",
+  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic15.jfif=15",
 ]);
 
 const currentImageIndex = ref(0);

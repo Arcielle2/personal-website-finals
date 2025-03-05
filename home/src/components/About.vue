@@ -777,6 +777,22 @@ onMounted(() => {
   border-radius: 10px;
 }
 
+.pg-label {
+  font-size: 20px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.pg-label p {
+  text-shadow: 
+    0px 0px 10px #b74b4b,  
+    0px 0px 20px #b74b4b,  
+    0px 0px 30px #b74b4b,
+    0px 0px 40px #b74b4b,
+    0px 0px 50px #b74b4b; /* Adjust blur effect */
+  font-weight: bold; /* Optional: Make text stand out more */
+}
+
 .gallery-img {
   width: 250px;
   height: 150px;
@@ -814,22 +830,40 @@ button:disabled img {
   cursor: not-allowed;
 }
 
+.last-page {
+  font-size: 20px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.last-page h1 {
+  text-shadow: 
+    0px 0px 10px #b74b4b,  
+    0px 0px 20px #b74b4b,  
+    0px 0px 30px #b74b4b,
+    0px 0px 40px #b74b4b,
+    0px 0px 50px #b74b4b; /* Adjust blur effect */
+  font-weight: bold; /* Optional: Make text stand out more */
+}
+
+
 .comment-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   width: 100%;
   background: whitesmoke;
   padding: 20px;
   border-radius: 10px;
   gap: 15px;
-  height: 100px;
+  height: 250px;
   overflow-y: auto;
+  font-family: 'Poppins', sans-serif;
 }
 
 .avatar-selection {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   margin-bottom: 15px;
   width: 80px;

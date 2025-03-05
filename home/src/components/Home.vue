@@ -53,7 +53,6 @@
 </div>
 <footer class="footer">
     <p>Inspired by <span class="highlight">ChatGPT</span> and <span class="highlight">Pierre Louis' Webflow</span></p>
-    <p>&copy; 2025 Arcielle Marie Gercan. All rights reserved.</p>
   </footer>
 </template>
 

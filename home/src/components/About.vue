@@ -774,7 +774,7 @@ onMounted(() => {
 }
 
 .group-box:hover{
-  transform: scale(1.1);
+  transform: scale(1.1) ease 0.5s;
 }
 
 .group-img {
@@ -981,7 +981,8 @@ button:disabled img {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  align-items: left;
+  align-items: flex-start;
+  justify-items: center;
 }
 
 /* Scrollbar Styling */

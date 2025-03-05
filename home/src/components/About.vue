@@ -382,8 +382,10 @@ onMounted(() => {
 const mainHeader = ref(""); // Empty by default
 const currentView = ref(""); // Tracks sidebar content
 const isSurprise = ref(false);
-const selectedImage = ref("https://via.placeholder.com/150"); // Example image
 const showHiImage = ref(true);
+
+// Rename if selectedImage already exists elsewhere
+const sidebarImage = ref("https://via.placeholder.com/150");
 
 const showSource = () => {
   mainHeader.value = "Sources"; 
@@ -402,7 +404,6 @@ const triggerSurprise = () => {
     currentView.value = ""; // Resets sidebar to normal
   }, 10000);
 };
-
 </script>
 
 <style scoped>

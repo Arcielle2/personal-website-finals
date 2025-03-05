@@ -746,6 +746,7 @@ onMounted(() => {
   background: whitesmoke;
   padding: 20px;
   border-radius: 10px;
+  gap: 15px;
 }
 
 .avatar-selection {
@@ -753,6 +754,7 @@ onMounted(() => {
   flex-direction: column;
   align-items: flex-start;
   margin-bottom: 15px;
+  width: 80px;
 }
 
 .avatar-container {

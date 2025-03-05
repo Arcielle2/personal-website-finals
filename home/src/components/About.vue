@@ -772,16 +772,17 @@ onMounted(() => {
 
 .group-img {
   width: 50px;
-  height: 30px;
+  height: 50px;
   background: whitesmoke;
   border-radius: 10px;
 }
 
 .gallery-img {
-  width: 120px;
-  height: 100px;
+  width: 250px;
+  height: 150px;
+  position: cover;
   border-radius: 10px;
-  border: 1rem solid #b74b4b;
+  border: 10px solid #b74b4b;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 

@@ -105,6 +105,7 @@
             </div>
         </div>
       </div>
+    </div>
 
     <div class="sub-content">
       <div class="box box5">
@@ -155,7 +156,6 @@
       </div>
     </div>
   </div>
-</div>
 </div>
 </template>
 
@@ -347,7 +347,7 @@ onMounted(() => {
 .container {
   display: flex;
   padding: 10px;
-  height: 91.8vh;
+  height: 90vh;
   justify-content: center;
   align-content: center;
   margin-top: 1.7rem;

@@ -114,39 +114,38 @@
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(4)" />
           <div class="last-box">
             <div class="pg-label"><p>Picture Gallery</p></div>
-            <div class="flex gap-4">
-              <div class="flex gap-4">
-    <div class="w-3/4 p-4 border rounded-lg">
-      <h2 class="text-xl font-bold">Comments</h2>
-      <div class="mb-4">
-        <input class="border p-2 w-full" placeholder="Your name" v-model="name" />
-        <select class="border p-2 w-full mt-2" v-model="avatar">
-          <option v-for="a in avatars" :key="a" :value="a">{{ a }}</option>
-        </select>
-        <textarea class="border p-2 w-full mt-2" placeholder="Write a comment..." v-model="comment"></textarea>
-        <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded" @click="handleCommentSubmit">Submit</button>
-      </div>
-      <div>
-        <div v-for="(c, index) in comments" :key="index" class="border p-2 mb-2 rounded-lg flex items-center">
-          <img :src="c.avatar" alt="avatar" class="w-10 h-10 rounded-full mr-2" />
-          <div>
-            <p class="font-bold">{{ c.name }}</p>
-            <p>{{ c.comment }}</p>
+            <div class="comment-container">
+              <h1 class="title">Comments</h1>
+              <div class="comment-form">
+                <input v-model="newComment.name" placeholder="Your Name" class="input" />
+                <textarea v-model="newComment.comment" placeholder="Write a comment..." class="input"></textarea>
+                <div class="avatar-selection">
+                  <label v-for="avatar in avatars" :key="avatar">
+                    <input type="radio" v-model="newComment.avatar" :value="avatar" />
+                    <img :src="avatar" class="avatar-option" />
+                  </label>
+                </div>
+                <button @click="submitComment" class="submit-button">Submit</button>
+              </div>
+              <ul class="comment-list">
+                <li v-for="comment in comments" :key="comment.id" class="comment-item">
+                  <div class="comment-header">
+                    <img :src="comment.avatar" alt="Avatar" class="avatar" />
+                    <strong>{{ comment.name }}:</strong>
+                  </div>
+                  <p>{{ comment.comment }}</p>
+                  <div class="reactions">
+                    <button v-for="reaction in reactionsList" :key="reaction" @click="handleReaction(comment.id, reaction)">
+                      {{ reactionEmojis[reaction] }} ({{ comment.reactions[reaction] || 0 }})
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="w-1/4 flex flex-col gap-2">
-      <reaction-button v-for="reaction in reactionsList" :key="reaction" @click="handleReaction(reaction)" class="bg-gray-300 p-2 rounded">
-        {{ reaction === "heart" ? "❤️" : reaction === "wow" ? "😲" : reaction === "sad" ? "😢" : "👍" }} ({{ reactions[reaction] || 0 }})
-      </reaction-button>
-    </div>
-  </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   </div>
 </template>
 
@@ -269,88 +268,63 @@ const prevItem = () => {
   }
 };
 
+import { ref, onMounted } from 'vue';
+import { supabase } from '../lib/supabaseClient';
+
 const comments = ref([]);
-const newComment = ref({ name: '', avatar: '', message: '' });
+const reactionsList = ['like', 'heart', 'wow', 'sad'];
+const reactionEmojis = { like: '👍', heart: '❤️', wow: '😲', sad: '😢' };
+const avatars = ref([
+  'avatar1.png', 'avatar2.png', 'avatar3.png',
+  'avatar4.png', 'avatar5.png', 'avatar6.png'
+]);
+const newComment = ref({ name: '', comment: '', avatar: avatars.value[0] });
 
-const addComment = () => {
-  if (newComment.value.name && newComment.value.message) {
-    comments.value.push({
-      ...newComment.value,
-      id: Date.now(),
-      reactions: { heart: 0, haha: 0, sad: 0 }
-    });
-    newComment.value = { name: '', avatar: '', message: '' };
+async function getComments() {
+  const { data, error } = await supabase.from('comments').select('*');
+  if (error) {
+    console.error('Error fetching comments:', error);
+    return;
   }
-};
+  comments.value = data.map(comment => ({ ...comment, reactions: {} }));
+  await fetchReactions();
+}
 
-const deleteComment = (id) => {
-  comments.value = comments.value.filter(c => c.id !== id);
-};
-
-const reactToComment = (id, type) => {
-  const comment = comments.value.find(c => c.id === id);
-  if (comment) {
-    comment.reactions[type] += 1;
+async function fetchReactions() {
+  const { data, error } = await supabase.from('reactions').select('*');
+  if (error) {
+    console.error('Error fetching reactions:', error);
+    return;
   }
-};
-
-const CommentSection = {
-  setup() {
-    const name = ref("");
-    const avatar = ref("avatar1.png");
-    const comment = ref("");
-    const comments = ref([]);
-    const reactions = ref({});
-    const avatars = ["avatar1.png", "avatar2.png", "avatar3.png", "avatar4.png", "avatar5.png", "avatar6.png"];
-    const reactionsList = ["heart", "wow", "sad", "like"];
-
-    onMounted(() => {
-      fetchComments();
-      fetchReactions();
-    });
-
-    async function fetchComments() {
-      let { data } = await supabase.from("comments").select("*");
-      comments.value = data || [];
+  data.forEach(({ comment_id, reaction_type }) => {
+    const comment = comments.value.find(c => c.id === comment_id);
+    if (comment) {
+      if (!comment.reactions[reaction_type]) {
+        comment.reactions[reaction_type] = 0;
+      }
+      comment.reactions[reaction_type]++;
     }
+  });
+}
 
-    async function fetchReactions() {
-      let { data } = await supabase.from("reactions").select("reaction_type, COUNT(*) as count").group("reaction_type");
-      const reactionCounts = {};
-      data?.forEach(({ reaction_type, count }) => {
-        reactionCounts[reaction_type] = count;
-      });
-      reactions.value = reactionCounts;
-    }
+async function handleReaction(commentId, reactionType) {
+  await supabase.from('reactions').insert([{ comment_id: commentId, reaction_type: reactionType }]);
+  await fetchReactions();
+}
 
-    async function handleCommentSubmit() {
-      if (!name.value || !comment.value) return;
-      await supabase.from("comments").insert([{ name: name.value, avatar: avatar.value, comment: comment.value }]);
-      fetchComments();
-      comment.value = "";
-    }
+async function submitComment() {
+  if (!newComment.value.name || !newComment.value.comment) return;
+  const { data, error } = await supabase.from('comments').insert([newComment.value]);
+  if (!error) {
+    newComment.value = { name: '', comment: '', avatar: avatars.value[0] };
+    getComments();
+  }
+}
 
-    async function handleReaction(type) {
-      if (!name.value) return alert("Please enter your name before reacting.");
-      await supabase.from("reactions").insert([{ name: name.value, reaction_type: type }]);
-      fetchReactions();
-    }
+onMounted(() => {
+  getComments();
+});
 
-    return {
-      name,
-      avatar,
-      comment,
-      comments,
-      reactions,
-      avatars,
-      reactionsList,
-      handleCommentSubmit,
-      handleReaction,
-    };
-  },
-};
-
-export { CommentSection };
 </script>
 
 <style scoped>
@@ -748,7 +722,89 @@ export { CommentSection };
   border-radius: 10px;
 }
 
-.reaction-button {
+.comment-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff7d1;
+  border: 1px dashed black;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.avatar-selection {
+  display: flex;
+  gap: 10px;
+}
+
+.avatar-option {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.submit-button {
+  background-color: #ffcc00;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.comment-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.comment-item {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.reactions button {
+  margin-right: 10px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 18px;
 }
 </style>

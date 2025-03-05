@@ -142,15 +142,6 @@
                 </li>
               </ul>
             </div>
-            <div class="reaction-buttons">
-              <button
-                v-for="reaction in reactionsList"
-                :key="reaction"
-                @click="handleReaction(reaction)"
-              >
-                {{ reactionEmojis[reaction] }} {{ reactions[reaction] }}
-              </button>
-            </div>
           </div>
         </div>
       </div>
@@ -286,9 +277,6 @@ const prevItem = () => {
 };
 
 const comments = ref([]);
-const reactions = ref({ like: 0, heart: 0, wow: 0, sad: 0 });
-const reactionsList = ['like', 'heart', 'wow', 'sad'];
-const reactionEmojis = { like: '👍', heart: '❤️', wow: '😲', sad: '😢' };
 const avatars = ref([avatar1, avatar2, avatar3, avatar4, avatar5, avatar6]);
 const newComment = ref({ name: '', comment: '', avatar: avatars.value[0] });
 
@@ -299,28 +287,6 @@ async function getComments() {
     return;
   }
   comments.value = data;
-  await fetchReactions();
-}
-
-async function fetchReactions() {
-  const { data, error } = await supabase.from('reactions').select('*');
-  if (error) {
-    console.error('Error fetching reactions:', error);
-    return;
-  }
-  reactions.value = { like: 0, heart: 0, wow: 0, sad: 0 };
-  data.forEach(({ reaction_type }) => {
-    reactions.value[reaction_type]++;
-  });
-}
-
-async function handleReaction(reactionType) {
-  const { data, error } = await supabase.from('reactions').insert([{ reaction_type: reactionType }]);
-
-  if (error) {
-    console.error('Error adding reaction:', error);
-    return;
-  }
 }
 
 async function submitComment() {
@@ -840,24 +806,6 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-}
-
-.reaction-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 15px;
-}
-
-.reaction-buttons button {
-  width: 100px;
-  padding: 5px;
-  margin: 3px 0;
-  background: #b74b4b;
-  color: whitesmoke;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
 }
 
 /* Scrollbar Styling */

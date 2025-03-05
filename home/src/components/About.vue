@@ -981,6 +981,7 @@ button:disabled img {
   border: 2px solid #b74b4b;
   border-radius: 50%;
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 .comment-details {

@@ -516,8 +516,6 @@ onMounted(() => {
 .box5 {
   width: 100%;
   height: 570px;
-  overflow-y: auto;
-  overflow-x: hidden; 
   margin-top: 0; 
 }
 
@@ -741,7 +739,6 @@ onMounted(() => {
 .group-boxes {
   display: flex;
   gap: 15px;
-  margin-top: 100px;
 }
 
 .group-box {

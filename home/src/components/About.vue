@@ -125,9 +125,10 @@
                   <img src="https://cdn-icons-png.flaticon.com/128/318/318476.png" alt="Next" />
                 </button>
                 <button @click="resetGallery">
-                  <img src="https://cdn-icons-png.flaticon.com/128/565/565922.png" alt="Reset" />
+                  <img src="https://cdn-icons-png.flaticon.com/128/2618/2618245.png" alt="Reset" />
                 </button>
               </div>
+            </div>
             <h2>Leave a Comment</h2>
             <div class="comment-container">
               <div class="avatar-selection">
@@ -139,6 +140,7 @@
                   </label>
                 </div>
               </div>
+              
               <div class="comment-section">
               <input type="text" v-model="newComment.name" placeholder="Your Name" />
               <textarea v-model="newComment.comment" placeholder="Write a comment..."></textarea>
@@ -157,7 +159,6 @@
               </ul>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </div>
@@ -515,7 +516,8 @@ onMounted(() => {
 .box5 {
   width: 100%;
   height: 570px;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden; 
 }
 
 .box:hover {

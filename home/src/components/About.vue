@@ -426,7 +426,7 @@ const triggerSurprise = () => {
 
 .warning {
   position: absolute;  /* Make it stick inside a relative parent */
-  bottom: -10px;         /* Adjust the spacing from the bottom */
+  bottom: -13px;         /* Adjust the spacing from the bottom */
   left: 50%;           /* Center it horizontally */
   transform: translateX(-50%); /* Ensures perfect centering */
   font-family: "Public Pixel", sans-serif;

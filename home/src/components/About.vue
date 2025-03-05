@@ -430,6 +430,7 @@ const triggerSurprise = () => {
   font-family: "Public Pixel", sans-serif;
   font-size: 12px;
   color: #662c2c;
+  margin: 15px;
 }
 
 .main-buttons{
@@ -455,16 +456,10 @@ const triggerSurprise = () => {
   width: 30px;
   height:30px;
   justify-content: left;
+  cursor: pointer;
 }
 
-/* ChatGPT Logo */
-.chatgpt-logo {
-  width: 80px;
-  height: auto;
-  margin-bottom: 10px;
-}
-
-.source:hover, .surprise:hover {
+.surprise2:hover, .surprise:hover {
   background: whitesmoke;
 }
 

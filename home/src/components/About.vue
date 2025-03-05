@@ -1,6 +1,6 @@
 <template>
   <router-link to="/t" class="btn">
-  <img src="'https://cdn-icons-png.flaticon.com/128/1946/1946488.png'" alt="Back to Home" class="btn-image" />
+  <img src="https://cdn-icons-png.flaticon.com/128/1946/1946488.png" alt="Back to Home" class="btn-image" />
   Back to Home!
 </router-link>
   <div class="container">

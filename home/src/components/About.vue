@@ -866,7 +866,7 @@ button:disabled img {
 
 .avatar-selection {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   margin-bottom: 9px;
   width: 80px;
@@ -874,7 +874,6 @@ button:disabled img {
 
 .avatar-container {
   display: flex;
-  
   align-items: center;
   margin-bottom: 5px;
   gap: 10px; 

@@ -818,7 +818,7 @@ onMounted(() => {
   width: 20px;
   height: 20px;
   transition: transform 0.2s;
-  margin-bottom: 5px
+  margin-bottom: 10px;
 }
 
 .gallery-buttons img:hover {
@@ -906,10 +906,11 @@ button:disabled img {
 .comment-section textarea {
   width: 90%;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border: 2px solid #b74b4b;
   border-radius: 10px;
   font-family: 'Poppins', sans-serif;
+  font-size: 12px;
 }
 
 .comment-section button {
@@ -918,18 +919,22 @@ button:disabled img {
   background: #b74b4b;
   color: whitesmoke;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   cursor: pointer;
+  margin-bottom: 5px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
 }
 
 .comment-list {
   max-height: 300px;
   overflow-y: auto;
   width: 100%;
-  padding: 10px;
+  padding: 3px;
   border: 2px solid #b74b4b;
   border-radius: 5px;
   background: white;
+  align-items: left;
 }
 
 .comment-item {
@@ -948,6 +953,7 @@ button:disabled img {
 .comment-header .avatar {
   width: 40px;
   height: 40px;
+  border: 5px solid #b74b4b;
   border-radius: 50%;
   margin-right: 10px;
 }

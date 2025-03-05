@@ -771,16 +771,17 @@ onMounted(() => {
 }
 
 .group-img {
-  width: 120px;
-  height: 100px;
-  background: #b74b4b;
+  width: 50px;
+  height: 30px;
+  background: whitesmoke;
   border-radius: 10px;
 }
 
 .gallery-img {
-  width: 50px;
-  height: 30px;
+  width: 120px;
+  height: 100px;
   border-radius: 10px;
+  border: 1rem solid #b74b4b;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 

@@ -356,7 +356,7 @@ onMounted(() => {
 
 .main-sidebar {
   width: 30%;
-  height: auto;
+  height: 570px;
   background-color: #b74b4b;
   padding: 20px;
   border-radius: 15px;
@@ -479,7 +479,6 @@ onMounted(() => {
   transition: transform 0.5s ease, opacity 0.5s ease;
   color: black;
   font-size: 8px;
-  justify-content: flex-start;
 }
 
 .box1, .box2 {

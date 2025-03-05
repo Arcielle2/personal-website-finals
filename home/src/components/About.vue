@@ -850,7 +850,7 @@ button:disabled img {
   display: flex;
   flex-direction: column;
   align-items: left;
-  width: 100%;
+  width: 350px;
   background: black;
   color: white;
   padding: 20px;

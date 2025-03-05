@@ -734,21 +734,16 @@ onMounted(() => {
 
 .comment-section {
   max-width: auto;
-  height: 400px;
   margin: auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
   background: #b74b4b;
   display: flex;
-  flex-direction: column;
-  flex: 1;
-  overflow-y: auto;
 }
 
 .avatar-selection {
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 10px;
 }
@@ -772,7 +767,7 @@ onMounted(() => {
 }
 
 .avatar-option:hover, .selected {
-  border: 2px solid #b74b4b;
+  border: 2px solid #ffcc00;
   transform: scale(1.1);
 }
 

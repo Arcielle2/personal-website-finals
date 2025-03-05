@@ -355,6 +355,7 @@ onMounted(() => {
 
 .main-sidebar {
   width: 30%;
+  height: 570px;
   background-color: #b74b4b;
   padding: 20px;
   border-radius: 15px;
@@ -376,7 +377,7 @@ onMounted(() => {
 
 .sidebar {
   width: 100%;
-    height: 570px;
+    height: 18rem;
     border:10px solid #15191d;
     background: #1f2122;
     color: #fff;

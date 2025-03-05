@@ -386,8 +386,15 @@ const showSource = () => {
   mainHeader.value = "Sources"; 
   currentView.value = "source";
   isSurprise.value = false;
-  selectedImage.value = false;
+  
+  // Hide sidebar content completely
+  selectedImage.value = ""; // Set to empty string instead of null
   showHiImage.value = false;
+  hobbyDescription.value = "";
+  courseDescription.value = "";
+
+  // Ensure sidebar has no elements left
+  document.querySelector(".sidebar").innerHTML = "";
 };
 
 const triggerSurprise = () => {

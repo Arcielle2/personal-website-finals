@@ -504,6 +504,7 @@ const triggerSurprise = () => {
 }
 
 .main-header{
+  display: flex;
   width: 100%;
   height: 4rem;
   border:10px solid #15191d;

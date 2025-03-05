@@ -356,12 +356,15 @@ onMounted(() => {
 
 .main-sidebar {
   width: 30%;
+  height: auto;
   background-color: #b74b4b;
   padding: 20px;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-content: center;
+  justify-content: flex-start;
+  gap: 12px;
 }
 
 .main-header{
@@ -372,7 +375,6 @@ onMounted(() => {
   background: #1f2122;
   font-family: 'Public Pixel', sans-serif;
   font-size: 24px;
-  margin-bottom: 10px;
 }
 
 .sidebar {
@@ -477,6 +479,7 @@ onMounted(() => {
   transition: transform 0.5s ease, opacity 0.5s ease;
   color: black;
   font-size: 8px;
+  justify-content: flex-start;
 }
 
 .box1, .box2 {

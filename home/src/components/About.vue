@@ -115,33 +115,36 @@
           <div class="last-box">
             <div class="pg-label"><p>Picture Gallery</p></div>
             <div class="comment-container">
-              <h1 class="title">Comments</h1>
-              <div class="comment-form">
-                <input v-model="newComment.name" placeholder="Your Name" class="input" />
-                <textarea v-model="newComment.comment" placeholder="Write a comment..." class="input"></textarea>
-                <div class="avatar-selection">
-                  <label v-for="avatar in avatars" :key="avatar">
-                    <input type="radio" v-model="newComment.avatar" :value="avatar" />
-                    <img :src="avatar" class="avatar-option" />
-                  </label>
-                </div>
-                <button @click="submitComment" class="submit-button">Submit</button>
-              </div>
-              <ul class="comment-list">
-                <li v-for="comment in comments" :key="comment.id" class="comment-item">
-                  <div class="comment-header">
-                    <img :src="comment.avatar" alt="Avatar" class="avatar" />
-                    <strong>{{ comment.name }}:</strong>
-                  </div>
-                  <p>{{ comment.comment }}</p>
-                  <div class="reactions">
-                    <button v-for="reaction in reactionsList" :key="reaction" @click="handleReaction(comment.id, reaction)">
-                      {{ reactionEmojis[reaction] }} ({{ comment.reactions[reaction] || 0 }})
-                    </button>
-                  </div>
-                </li>
-              </ul>
-            </div>
+    <h1 class="title">Comments</h1>
+    <div class="comment-form">
+      <input v-model="newComment.name" placeholder="Your Name" class="input" />
+      <textarea v-model="newComment.comment" placeholder="Write a comment..." class="input"></textarea>
+      <div class="avatar-selection">
+        <label v-for="avatar in avatars" :key="avatar">
+          <input type="radio" v-model="newComment.avatar" :value="avatar" />
+          <img :src="avatar" class="avatar-option" />
+        </label>
+      </div>
+      <button @click="submitComment" class="submit-button">Submit</button>
+    </div>
+    <div class="comments-reactions">
+      <ul class="comment-list">
+        <li v-for="comment in comments" :key="comment.id" class="comment-item">
+          <div class="comment-header">
+            <img :src="comment.avatar" alt="Avatar" class="avatar" />
+            <strong>{{ comment.name }}:</strong>
+          </div>
+          <p>{{ comment.comment }}</p>
+        </li>
+      </ul>
+      <div class="reactions-column">
+        <button v-for="reaction in reactionsList" :key="reaction" @click="handleReaction(reaction)">
+          {{ reactionEmojis[reaction] }} ({{ reactions[reaction] || 0 }})
+        </button>
+      </div>
+    </div>
+  </div>
+              
           </div>
         </div>
       </div>
@@ -270,11 +273,12 @@ const prevItem = () => {
 };
 
 const comments = ref([]);
+const reactions = ref({ like: 0, heart: 0, wow: 0, sad: 0 });
 const reactionsList = ['like', 'heart', 'wow', 'sad'];
 const reactionEmojis = { like: '👍', heart: '❤️', wow: '😲', sad: '😢' };
 const avatars = ref([
-  'avatar1.png', 'avatar2.png', 'avatar3.png',
-  'avatar4.png', 'avatar5.png', 'avatar6.png'
+  'avatar1.jfif', 'avatar2.jfif', 'avatar3.jfif',
+  'avatar4.jfif', 'avatar5.jfif', 'avatar6.jfif'
 ]);
 const newComment = ref({ name: '', comment: '', avatar: avatars.value[0] });
 
@@ -284,7 +288,7 @@ async function getComments() {
     console.error('Error fetching comments:', error);
     return;
   }
-  comments.value = data.map(comment => ({ ...comment, reactions: {} }));
+  comments.value = data;
   await fetchReactions();
 }
 
@@ -294,35 +298,31 @@ async function fetchReactions() {
     console.error('Error fetching reactions:', error);
     return;
   }
-  data.forEach(({ comment_id, reaction_type }) => {
-    const comment = comments.value.find(c => c.id === comment_id);
-    if (comment) {
-      if (!comment.reactions[reaction_type]) {
-        comment.reactions[reaction_type] = 0;
-      }
-      comment.reactions[reaction_type]++;
-    }
+  reactions.value = { like: 0, heart: 0, wow: 0, sad: 0 };
+  data.forEach(({ reaction_type }) => {
+    reactions.value[reaction_type]++;
   });
 }
 
-async function handleReaction(commentId, reactionType) {
-  await supabase.from('reactions').insert([{ comment_id: commentId, reaction_type: reactionType }]);
-  await fetchReactions();
+async function handleReaction(reactionType) {
+  const { error } = await supabase.from('reactions').insert([{ reaction_type: reactionType }]);
+  if (!error) {
+    reactions.value[reactionType]++;
+  }
 }
 
 async function submitComment() {
   if (!newComment.value.name || !newComment.value.comment) return;
-  const { data, error } = await supabase.from('comments').insert([newComment.value]);
-  if (!error) {
+  const { data, error } = await supabase.from('comments').insert([newComment.value]).select();
+  if (!error && data) {
+    comments.value.push(data[0]);
     newComment.value = { name: '', comment: '', avatar: avatars.value[0] };
-    getComments();
   }
 }
 
 onMounted(() => {
   getComments();
 });
-
 </script>
 
 <style scoped>
@@ -772,18 +772,20 @@ onMounted(() => {
   font-weight: bold;
 }
 
+.comments-reactions {
+  display: flex;
+  justify-content: space-between;
+}
+
 .comment-list {
   list-style-type: none;
   padding: 0;
+  flex: 1;
 }
 
 .comment-item {
   padding: 10px;
   border-bottom: 1px solid #ccc;
-}
-
-.comment-item:last-child {
-  border-bottom: none;
 }
 
 .comment-header {
@@ -798,8 +800,13 @@ onMounted(() => {
   border-radius: 50%;
 }
 
-.reactions button {
-  margin-right: 10px;
+.reactions-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reactions-column button {
   cursor: pointer;
   background: none;
   border: none;

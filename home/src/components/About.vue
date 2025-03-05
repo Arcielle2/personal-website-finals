@@ -740,7 +740,7 @@ onMounted(() => {
 
 .comment-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   width: 100%;
   background: whitesmoke;

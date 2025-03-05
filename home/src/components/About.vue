@@ -818,6 +818,7 @@ onMounted(() => {
   width: 20px;
   height: 20px;
   transition: transform 0.2s;
+  margin-bottom: 5px
 }
 
 .gallery-buttons img:hover {
@@ -907,7 +908,8 @@ button:disabled img {
   padding: 10px;
   margin-bottom: 10px;
   border: 2px solid #b74b4b;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
 }
 
 .comment-section button {

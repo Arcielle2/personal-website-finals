@@ -661,6 +661,10 @@ onMounted(() => {
   height: 21px
 }
 
+.buttons button:hover {
+  transform: scale(1.1);
+}
+
 .buttons button:disabled {
   background-color: gray;
   cursor: not-allowed;
@@ -767,6 +771,10 @@ onMounted(() => {
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0px 0px 15px 6px #b74b4b;
+}
+
+.group-box:hover{
+  transform: scale(1.1);
 }
 
 .group-img {
@@ -899,7 +907,7 @@ button:disabled img {
 
 .avatar-option:hover{
   border-color: #b74b4b;
-  transform: scale(2.2);
+  transform: scale(1.2.1.2);
   
 }
 

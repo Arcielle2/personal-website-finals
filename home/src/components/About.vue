@@ -868,14 +868,10 @@ button:disabled img {
 .avatar-selection {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-content: center;
   justify-content: center;
-  margin-bottom: 9px;
+  margin-bottom: 10px;
   width: 80px;
-}
-
-.avatar-selection:hover{
-  border-color: #b74b4b;
 }
 
 .avatar-container {
@@ -891,12 +887,18 @@ button:disabled img {
 }
 
 .avatar-option {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   cursor: pointer;
   transition: 0.3s;
   border: 3px solid transparent;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-option:hover{
+  border-color: #b74b4b;
 }
 
 .hidden-radio:checked + label .avatar-option {
@@ -941,8 +943,9 @@ button:disabled img {
   padding: 3px;
   border: 2px solid #b74b4b;
   border-radius: 5px;
-  background: white;
+  background: black;
   align-items: left;
+  color: white;
 }
 
 .comment-item {

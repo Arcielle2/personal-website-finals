@@ -13,7 +13,6 @@
           <div v-if="!hobbyDescription" class="image-container">
               <div v-if="currentView === 'source'">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT Logo" class="chatgpt-logo" />
-                <img src="https://cdn.prod.website-files.com/6538f4cf95dd3ef4800e55d2/653917c52456c0cc8a03b775_work-1.jpg" alt="Pierre Louis Logo" class="pierre-louis-logo" />
                 <br />
                 <a href="https://pierrelouis.webflow.io/" target="_blank">Pierre Louis Web</a>
               </div>
@@ -379,18 +378,15 @@ onMounted(() => {
   getComments();
 });
 
-const mainHeader = ref(""); // Empty by default
-const currentView = ref(""); // Tracks sidebar content
+const mainHeader = ref(""); // Updates the main header
+const currentView = ref(""); // Tracks which sidebar content is active
 const isSurprise = ref(false);
-const showHiImage = ref(true);
-
-// Rename if selectedImage already exists elsewhere
-const sidebarImage = ref("https://via.placeholder.com/150");
 
 const showSource = () => {
   mainHeader.value = "Sources"; 
   currentView.value = "source";
   isSurprise.value = false;
+  selectedImage.value = null;
 };
 
 const triggerSurprise = () => {
@@ -401,9 +397,9 @@ const triggerSurprise = () => {
   setTimeout(() => {
     isSurprise.value = false;
     mainHeader.value = "";
-    currentView.value = ""; // Resets sidebar to normal
   }, 10000);
 };
+
 </script>
 
 <style scoped>
@@ -449,7 +445,6 @@ const triggerSurprise = () => {
 .surprise-effect {
   animation: color-change 10s linear infinite;
 }
-
 @keyframes color-change {
   0% { background: #b74b4b; }
   10% { background: #ff5733; }

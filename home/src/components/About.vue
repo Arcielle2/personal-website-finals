@@ -131,19 +131,18 @@
             </button>
           </div>
 
-          <h2>Leave a Comment</h2>
-
           <div class="comment-container">
+            <h1>Leave a Comment</h1>
             <!-- Avatar Selection -->
             <div class="avatar-selection">
-              <p>Select an avatar:</p><br>
+              <p class="avatar-label">Select an avatar:</p>
               <div v-for="(avatar, index) in avatars" :key="index" class="avatar-container">
                 <input type="radio" v-model="newComment.avatar" :value="avatar" :id="'avatar' + index" class="hidden-radio" />
                 <label :for="'avatar' + index">
                   <img :src="avatar" class="avatar-option" :class="{ selected: newComment.avatar === avatar }" />
                 </label>
               </div>
-            </div> <!-- ✅ Now properly closed -->
+            </div>
 
             <!-- Comment Section -->
             <div class="comment-section">
@@ -849,7 +848,7 @@ button:disabled img {
 .comment-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   width: 100%;
   background: whitesmoke;
   padding: 20px;
@@ -860,11 +859,15 @@ button:disabled img {
   font-family: 'Poppins', sans-serif;
 }
 
+.comment-container p{
+  font-size: 12px;
+}
+
 .avatar-selection {
-  display: flex;
+  display: block;
   flex-direction: row;
-  align-items: flex-start;
-  margin-bottom: 15px;
+  align-items: center;
+  margin-bottom: 9px;
   width: 80px;
 }
 

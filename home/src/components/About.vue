@@ -849,7 +849,7 @@ button:disabled img {
 .comment-container {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: center;
   width: 350px;
   background: black;
   color: white;
@@ -899,6 +899,8 @@ button:disabled img {
 
 .avatar-option:hover{
   border-color: #b74b4b;
+  transform: scale(1.1);
+  
 }
 
 .hidden-radio:checked + label .avatar-option {

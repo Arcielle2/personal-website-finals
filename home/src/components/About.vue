@@ -127,7 +127,6 @@
                   <img src="https://cdn-icons-png.flaticon.com/128/2618/2618245.png" alt="Reset" />
                 </button>
               </div>
-            </div>
             <h2>Leave a Comment</h2>
             <div class="comment-container">
               <div class="avatar-selection">
@@ -157,6 +156,7 @@
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </div>

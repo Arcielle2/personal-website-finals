@@ -21,10 +21,10 @@
       <div class="main-buttons">
         <div class="surprise2"  @click="triggerSurprise"> </div>
         <div class="surprise"  @click="triggerSurprise"> </div>
-        <div class="picture">
+      </div>
+      <div class="picture">
           <img :src="lastPic" alt="Bottom" class="bottom-img" />
         </div>
-      </div>
       <div class="warning">
         <p>!Go back to Home before reloading!</p>
       </div>
@@ -427,8 +427,8 @@ const triggerSurprise = () => {
 }
 
 .bottom {
-  height: 30px;
-  width: 100%;
+  height: 10px;
+  width: auto;
 }
 
 .warning {

@@ -846,7 +846,6 @@ button:disabled img {
   font-weight: bold; /* Optional: Make text stand out more */
 }
 
-
 .comment-container {
   display: flex;
   flex-direction: column;

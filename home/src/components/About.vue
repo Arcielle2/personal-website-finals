@@ -382,18 +382,24 @@ onMounted(() => {
 
 .main-buttons{
   display: flex;
+  gap: 5px;
+  align-items: left;
 }
 
 .source {
   border: 2px solid #1f2122;
   background: #1f2122;
   border-radius: 20px;
+  width: 20px;
+  height:20px;
 }
 
 .surprise {
   border: 2px solid #1f2122;
   background: #1f2122;
   border-radius: 20px;
+  width: 20px;
+  height:20px;
 }
 
 .btn {

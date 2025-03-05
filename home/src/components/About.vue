@@ -406,6 +406,18 @@ const triggerSurprise = () => {
   }, 10000);
 };
 
+const warnBeforeReload = (event) => {
+  event.preventDefault();
+  event.returnValue = "Are you sure you want to leave? Make sure to go back home first!";
+};
+
+onMounted(() => {
+  window.addEventListener("beforeunload", warnBeforeReload);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("beforeunload", warnBeforeReload);
+});
 </script>
 
 <style scoped>

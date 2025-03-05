@@ -6,27 +6,20 @@
   <div class="container">
     <div class="main-sidebar">
       <div class="main-header">
-      <h2>{{ sidebarContent }}</h2>
+
       </div>
       <div class="sidebar">
         <div v-if="!courseDescription" class="image-container">
           <div v-if="!hobbyDescription" class="image-container">
-            <h1>{{ mainHeader }}</h1>
           <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />
           <img v-if="showHiImage" :src="hiImage" alt="Overlay Image" class="overlay-img" />
           </div>
         </div>
         <p v-else class="sidebar-text">{{ courseDescription }}</p>
       </div>
-
-      <div class="circle-container">
-        <div 
-          v-for="(item, index) in circles" 
-          :key="index" 
-          class="circle" 
-          :style="{ backgroundColor: item.color }"
-          @click="changeContent(index)"
-        ></div>
+      <div class="main-buttons">
+        <div class="source"> </div>
+        <div class="surprise"> </div>
       </div>
     </div>
 
@@ -378,21 +371,6 @@ async function submitComment() {
 onMounted(() => {
   getComments();
 });
-
-const selectedIndex = ref(0);
-
-const circles = ref([
-  { color: "red", header: "Welcome to Red Mode", sidebar: "Sidebar: Red" },
-  { color: "blue", header: "Welcome to Blue Mode", sidebar: "Sidebar: Blue" },
-  { color: "green", header: "Welcome to Green Mode", sidebar: "Sidebar: Green" },
-]);
-
-const mainHeader = computed(() => circles.value[selectedIndex.value].header);
-const sidebarContent = computed(() => circles.value[selectedIndex.value].sidebar);
-
-const changeContent = (index) => {
-  selectedIndex.value = index;
-};
 </script>
 
 <style scoped>
@@ -400,6 +378,22 @@ const changeContent = (index) => {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.main-buttons{
+  display: flex;
+}
+
+.source {
+  border: 2px solid #1f2122;
+  background: #1f2122;
+  border-radius: 20px;
+}
+
+.surprise {
+  border: 2px solid #1f2122;
+  background: #1f2122;
+  border-radius: 20px;
 }
 
 .btn {
@@ -530,23 +524,6 @@ const changeContent = (index) => {
   100% {
     transform: translate(-5px, 5px) scale(1);
   }
-}
-
-.circle-container {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 30px;
-}
-.circle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-.circle:hover {
-  transform: scale(1.1);
 }
 
 .main-content {

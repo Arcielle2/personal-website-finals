@@ -778,8 +778,8 @@ onMounted(() => {
 }
 
 .gallery-img {
-  width: 100%;
-  max-width: 400px;
+  width: 50px;
+  height: 30px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }

@@ -3,7 +3,7 @@
   <img src="https://cdn-icons-png.flaticon.com/128/1946/1946488.png" alt="Back to Home" class="btn-image" />
   Back to Home!
 </router-link>
-  <div class="container">
+<div class="container">
     <div class="main-sidebar" :class="{ 'surprise-effect': isSurprise }">
       <div class="main-header">
         <h1>{{ mainHeader }}</h1>
@@ -11,25 +11,23 @@
       <div class="sidebar">
         <div v-if="!courseDescription" class="image-container">
           <div v-if="!hobbyDescription" class="image-container">
-          <h2 v-if="currentView === 'surprise'">🎉 Surprise! 🎉</h2>
-          <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />
-          <img v-if="showHiImage" :src="hiImage" alt="Overlay Image" class="overlay-img" />
+            <h2 v-if="currentView === 'surprise'">🎉 Surprise! 🎉</h2>
+            <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />
+            <img v-if="showHiImage" :src="hiImage" alt="Overlay Image" class="overlay-img" />
           </div>
         </div>
         <p v-else class="sidebar-text">{{ courseDescription }}</p>
       </div>
       <div class="main-buttons">
-        <div class="surprise2"  @click="triggerSurprise"> </div>
-        <div class="surprise"  @click="triggerSurprise"> </div>
+        <div class="surprise2" @click="triggerSurprise"></div>
+        <div class="surprise" @click="triggerSurprise"></div>
       </div>
+      <!-- Picture section is now inside main-sidebar -->
       <div class="picture">
-          <img :src="lastPic" alt="Bottom" class="bottom-img" />
-        </div>
-      <div class="warning">
-        <p>!Go back to Home before reloading!</p>
+        <img :src="lastPic" alt="Bottom" class="bottom-img" />
       </div>
     </div>
-
+    
     <div class="main-content">
       <div class="box box1">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(0)" />
@@ -183,6 +181,9 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="warning">
+  <p>!Go back to Home before reloading!</p>
   </div>
 </template>
 

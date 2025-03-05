@@ -349,13 +349,13 @@ onMounted(() => {
   padding: 10px;
   height: 91.8vh;
   justify-content: center;
+  align-content: center;
   margin-top: 1.7rem;
   gap: 10px;
 }
 
 .main-sidebar {
   width: 30%;
-  height: 570px;
   background-color: #b74b4b;
   padding: 20px;
   border-radius: 15px;
@@ -467,7 +467,7 @@ onMounted(() => {
   background-color: black;
   border-radius: 15px;
   border: 3px solid rgba(238, 238, 238, 0.2);
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   font-size: 20px;
   font-weight: bold;

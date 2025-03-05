@@ -6,7 +6,7 @@
   <div class="container">
     <div class="main-sidebar" :class="{ 'surprise-effect': isSurprise }">
       <div class="main-header">
-        <h1>{{ mainHeader }}</h1>
+        <div class="main-header">{{ mainHeader }}</div>
       </div>
       <div class="sidebar">
         <div v-if="!courseDescription" class="image-container">
@@ -19,7 +19,6 @@
         <p v-else class="sidebar-text">{{ courseDescription }}</p>
       </div>
       <div class="main-buttons">
-        <div class="source" @click="showSource(); changeSidebarImage(source1)"> </div>
         <div class="surprise"  @click="triggerSurprise"> </div>
       </div>
     </div>
@@ -31,7 +30,7 @@
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(0)" />
           <div class="course-label"><p>Course</p></div>
           <div class="course-boxes">
-            <div class="course-box" @click="changeSidebarImage(course1Text)">
+            <div class="course-box" @click="updateContent(course1Text)">
               <img :src="c1" alt="Course 1" class="course-img" />
             </div>
             <div class="course-box" @click="changeSidebarImage(course2Text)">
@@ -221,12 +220,22 @@ import pic13 from "@/assets/pic13.jfif";
 import pic14 from "@/assets/pic14.jfif";
 import pic15 from "@/assets/pic15.jfif";
 
+const mainHeader = ref("");  // This will store the first sentence
+const sidebarContent = ref("");  // This will store the rest of the content
+
+const updateContent = (text) => {
+  const firstSentence = text.split(".")[0] + ".";  // Extract first sentence
+  const remainingText = text.substring(firstSentence.length).trim();  // Get the rest
+
+  mainHeader.value = firstSentence;
+  sidebarContent.value = remainingText;
+};
+
 const openBoxes = ref([false]);
 const selectedImage = ref(defaultImage);
 const showHiImage = ref(false);
 const courseDescription = ref("");
 const hobbyDescription = ref("");
-const showSource = ref("");
 
 const course1Text = "Bachelor of Science in Computer Science with specialization in Cybersecurity and Forensics. I’m currently studying for a Bachelor of Science in Computer Science with a specialization in Cybersecurity and Forensics at Asia Pacific College. This program allows me to dive deep into the exciting world of computer science while focusing on protecting systems, preventing cyberattacks, and investigating digital crimes. I’m thrilled to explore this dynamic field and develop skills that are vital in today’s digital landscape!";
 const course2Text = "SM Foundation Scholar. I’m also proud to be an SM scholar at Asia Pacific College, which has helped me pursue my academic goals with a little extra support.";
@@ -243,8 +252,6 @@ const hobby8Text = "Designing. Designing allows me to channel my creativity and 
 const Education = "Eating Foods. I enjoy discovering new flavors and indulging in comfort food.";
 const Achievements = "Watching Movies. Movies transport me to new adventures, letting me experience stories from diverse perspectives.";
 const Goals = "Designing. Designing allows me to channel my creativity and bring ideas to life in a visually appealing way.";
-
-const source1 = "❤ChatGPT and Pierre Louis Webflow❤"
 
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];

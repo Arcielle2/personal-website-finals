@@ -795,7 +795,7 @@ onMounted(() => {
 .gallery-img {
   width: 300px;
   height: 180px;
-  position: cover;
+  object-fit: cover;
   border-radius: 10px;
   border: 10px solid #b74b4b;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -865,7 +865,7 @@ button:disabled img {
 }
 
 .avatar-selection {
-  display: block;
+  display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 9px;
@@ -874,8 +874,11 @@ button:disabled img {
 
 .avatar-container {
   display: flex;
+  
   align-items: center;
   margin-bottom: 5px;
+  gap: 10px; 
+  justify-content: center;
 }
 
 .hidden-radio {

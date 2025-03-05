@@ -4,11 +4,11 @@
   Back to Home!
 </router-link>
   <div class="container">
-    <div class="main-sidebar">
+    <div class="main-sidebar" :class="{ 'surprise-effect': isSurprise }">
       <div class="main-header">
         <h1>{{ mainHeader }}</h1>
       </div>
-      <div class="sidebar" :class="{ 'surprise-effect': isSurprise }">
+      <div class="sidebar">
         <div v-if="!courseDescription" class="image-container">
           <div v-if="!hobbyDescription" class="image-container">
               <div v-if="currentView === 'source'">
@@ -499,7 +499,8 @@ const triggerSurprise = () => {
   border-radius: 10px;
   background: #1f2122;
   font-family: 'Public Pixel', sans-serif;
-  font-size: 24px;
+  font-size: 18px;
+  align-items: center;
 }
 
 .sidebar {

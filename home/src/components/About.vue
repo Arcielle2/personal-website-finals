@@ -851,7 +851,8 @@ button:disabled img {
   flex-direction: column;
   align-items: left;
   width: 100%;
-  background: whitesmoke;
+  background: black;
+  color: white;
   padding: 20px;
   border-radius: 10px;
   gap: 15px;
@@ -868,8 +869,13 @@ button:disabled img {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   margin-bottom: 9px;
   width: 80px;
+}
+
+.avatar-selection:hover{
+  border-color: #b74b4b;
 }
 
 .avatar-container {

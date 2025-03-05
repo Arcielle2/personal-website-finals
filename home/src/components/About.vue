@@ -18,6 +18,7 @@
         </div>
         <p v-else class="sidebar-text">{{ courseDescription }}</p>
       </div>
+      <div class="surprise"  @click="triggerSurprise"> </div>
       <div class="main-buttons">
         <div class="surprise"  @click="triggerSurprise"> </div>
       </div>

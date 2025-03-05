@@ -1146,4 +1146,74 @@ button:disabled img {
 .comment-container::-webkit-scrollbar-track {
   background: whitesmoke;
 }
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .main-sidebar, .main-content, .sub-content {
+    width: 90%;
+    height: auto;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .box {
+    width: 100%;
+    height: auto;
+  }
+
+  .hobby-boxes, .course-boxes, .group-boxes {
+    grid-template-columns: repeat(2, 1fr); /* Reduce columns for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .toggle-btn, .back-btn {
+    width: 40px; 
+    height: 40px;
+  }
+
+  .buttons button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-img, .gallery-img {
+    width: 100%;
+    height: auto;
+  }
+
+  .avatar-option {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .comment-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .comment-section input, .comment-section textarea {
+    width: 100%;
+  }
+}
+
+
 </style>

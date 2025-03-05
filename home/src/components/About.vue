@@ -382,7 +382,8 @@ onMounted(() => {
   text-decoration: none;
   color: white;
   font-weight: bold;
-  margin-left: 20px;
+  margin-left: 40px;
+  margin-top: 10;
   border-radius: 10px;
   font-family: 'Public Pixel', sans-serif;
   font-size: 12px;
@@ -391,6 +392,7 @@ onMounted(() => {
 .btn-image {
   width: 20px;
   height: 20px;
+  filter: brightness(0) invert(1)
 }
 
 .container {

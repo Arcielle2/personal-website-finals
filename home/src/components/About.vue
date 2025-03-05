@@ -67,13 +67,13 @@
         <div class="hidden-content" v-if="openBoxes[2]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(2)" />
             <div class="group-boxes">
-              <div class="group-box" @click="changeSidebarImage(Education)">
+              <div class="group-box" @click="changeSidebarImage(Education); showTitle(t11)">
                 <img :src="g3" alt="Education" class="group-img" />
               </div>
-              <div class="group-box" @click="changeSidebarImage(Goals)">
+              <div class="group-box" @click="changeSidebarImage(Goals); showTitle(t13)">
                 <img :src="g2" alt="Goals" class="group-img" />
               </div>
-              <div class="group-box" @click="changeSidebarImage(Achievements)">
+              <div class="group-box" @click="changeSidebarImage(Achievements); showTitle(t12)">
                 <img :src="g1" alt="Achievements" class="group-img" />
               </div>
             </div>
@@ -87,28 +87,28 @@
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(3)" />
           <div class="hobby-label"><p>Hobbies and Interests</p></div>
             <div class="hobby-boxes">
-              <div class="hobby-box" @click="changeSidebarImage(hobby1Text)">
+              <div class="hobby-box" @click="changeSidebarImage(hobby1Text); showTitle(t3)">
                 <img :src="h1" alt="Hobby 1" class="hobby-img" />
               </div>
-              <div class="hobby-box" @click="changeSidebarImage(hobby2Text)">
+              <div class="hobby-box" @click="changeSidebarImage(hobby2Text); showTitle(t4)">
                 <img :src="h2" alt="Hobby 2" class="hobby-img" />
               </div>
-              <div class="hobby-box" @click="changeSidebarImage(hobby3Text)">
+              <div class="hobby-box" @click="changeSidebarImage(hobby3Text); showTitle(t5)">
                 <img :src="h3" alt="Hobby 3" class="hobby-img" />
               </div>
-              <div class="hobby-box" @click="changeSidebarImage(hobby4Text)">
+              <div class="hobby-box" @click="changeSidebarImage(hobby4Text); showTitle(t6)">
                 <img :src="h4" alt="Hobby 4" class="hobby-img" />
               </div>
-              <div class="hobby-box" @click="changeSidebarImage(hobby5Text)">
+              <div class="hobby-box" @click="changeSidebarImage(hobby5Text); showTitle(t7)">
                 <img :src="h5" alt="Hobby 5" class="hobby-img" />
               </div>
-              <div class="hobby-box" @click="changeSidebarImage(hobby6Text)">
+              <div class="hobby-box" @click="changeSidebarImage(hobby6Text); showTitle(t8)">
                 <img :src="h6" alt="Hobby 6" class="hobby-img" />
               </div>
-              <div class="hobby-box" @click="changeSidebarImage(hobby7Text)">
+              <div class="hobby-box" @click="changeSidebarImage(hobby7Text); showTitle(t9)">
                 <img :src="h7" alt="Hobby 7" class="hobby-img" />
               </div>
-              <div class="hobby-box" @click="changeSidebarImage(hobby8Text)">
+              <div class="hobby-box" @click="changeSidebarImage(hobby8Text); showTitle(t10)">
                 <img :src="h8" alt="Hobby 8" class="hobby-img" />
               </div>
             </div>
@@ -227,24 +227,35 @@ const courseDescription = ref("");
 const hobbyDescription = ref("");
 const title = ref("");
 
-const t1 ="c1.jfif";
-const t2 ="c2.jfif";
 
-const course1Text = "Bachelor of Science in Computer Science with specialization in Cybersecurity and Forensics. I’m currently studying for a Bachelor of Science in Computer Science with a specialization in Cybersecurity and Forensics at Asia Pacific College. This program allows me to dive deep into the exciting world of computer science while focusing on protecting systems, preventing cyberattacks, and investigating digital crimes. I’m thrilled to explore this dynamic field and develop skills that are vital in today’s digital landscape!";
-const course2Text = "SM Foundation Scholar. I’m also proud to be an SM scholar at Asia Pacific College, which has helped me pursue my academic goals with a little extra support.";
+const course1Text = "Bachelor of Science in Computer Science with specialization in Cybersecurity and Forensics\n I’m currently studying for a Bachelor of Science in Computer Science with a specialization in Cybersecurity and Forensics at Asia Pacific College. This program allows me to dive deep into the exciting world of computer science while focusing on protecting systems, preventing cyberattacks, and investigating digital crimes. I’m thrilled to explore this dynamic field and develop skills that are vital in today’s digital landscape!";
+const course2Text = "SM Foundation Scholar\nI’m also proud to be an SM scholar at Asia Pacific College, which has helped me pursue my academic goals with a little extra support.";
+const t1 ="Course";
+const t2 ="Scholarship";
 
-const hobby1Text = "Playing Instrument. I love playing the ukulele and keyboard; music brings joy and relaxation to my everyday life.";
-const hobby2Text = "Singing.Singing allows me to express myself and connect with my emotions through melodies and lyrics.";
-const hobby3Text = "Listening to Music. Music is my constant companion—it energizes me, soothes my soul, and inspires creativity.";
-const hobby4Text = "Reading Books. Diving into books is like exploring a new world; it fuels my imagination and broadens my perspective.";
-const hobby5Text = "Playing Online Games. I enjoy playing online games as they challenge my strategy skills and are a fun way to unwind.";
-const hobby6Text = "Eating Foods. I enjoy discovering new flavors and indulging in comfort food.";
-const hobby7Text = "Watching Movies. Movies transport me to new adventures, letting me experience stories from diverse perspectives.";
-const hobby8Text = "Designing. Designing allows me to channel my creativity and bring ideas to life in a visually appealing way.";
+const hobby1Text = "🎹I love playing the ukulele and keyboard; music brings joy and relaxation to my everyday life.🎹";
+const hobby2Text = "🎤Singing allows me to express myself and connect with my emotions through melodies and lyrics.🎤";
+const hobby3Text = "🎶Music is my constant companion—it energizes me, soothes my soul, and inspires creativity.🎶";
+const hobby4Text = "📕Diving into books is like exploring a new world; it fuels my imagination and broadens my perspective.📕";
+const hobby5Text = "🎮I enjoy playing online games as they challenge my strategy skills and are a fun way to unwind.🎮";
+const hobby6Text = "🍝I enjoy discovering new flavors and indulging in comfort food.🍝";
+const hobby7Text = "🎬Movies transport me to new adventures, letting me experience stories from diverse perspectives.🎬";
+const hobby8Text = "💻Designing allows me to channel my creativity and bring ideas to life in a visually appealing way.💻";
+const t3 = "Playing Instrument";
+const t4 = "Singing.";
+const t5 = "Listening to Music";
+const t6 = "Reading Books";
+const t7 = "Playing Online Games";
+const t8 = "Eating Foods";
+const t9 = "Watching Movies";
+const t10 = "Designing";
 
-const Education = "Eating Foods. I enjoy discovering new flavors and indulging in comfort food.";
+const Education = "Last school year, I was recognized as an honor student,\n\na distinction I’ve consistently achieved since my elementary days. Back then, I actively participated in various competitions, from quiz bees to journalism contests, which helped nurture my skills. Now that I am at Asia Pacific College, I want to expand my knowledge and deepen my understanding of my chosen field of study. To support this goal, I joined the JISSA organization, where I’ve found opportunities to connect with peers, explore new ideas, and further develop my abilities.";
 const Achievements = "Watching Movies. Movies transport me to new adventures, letting me experience stories from diverse perspectives.";
-const Goals = "Designing. Designing allows me to channel my creativity and bring ideas to life in a visually appealing way.";
+const Goals = "My main goal\nis to graduate and have a successful career in IT. Beyond my career, I also have a dream of traveling more. I want to explore new places, immerse myself in different cultures, and gain unique experiences";
+const t11 = "Education";
+const t12 = "Achievements";
+const t13 = "Goals";
 
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];

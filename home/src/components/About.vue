@@ -794,8 +794,8 @@ onMounted(() => {
 }
 
 .gallery-img {
-  width: 250px;
-  height: 150px;
+  width: 350px;
+  height: 300px;
   position: cover;
   border-radius: 10px;
   border: 10px solid #b74b4b;

@@ -112,36 +112,44 @@
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(4)" />
         <div class="hidden-content" v-if="openBoxes[4]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(4)" />
-            <div class="pg-label"><p>Picture Gallery</p></div>
-              <div class="image-display">
-                <img :src="galleryImages[currentImageIndex]" alt="Gallery Image" class="gallery-img" />
+          <div class="pg-label"><p>Picture Gallery</p></div>
+          
+          <div class="image-display">
+            <img :src="galleryImages[currentImageIndex]" alt="Gallery Image" class="gallery-img" />
+          </div>
+          
+          <div class="gallery-buttons">
+            <button @click="prevImage" :disabled="currentImageIndex === 0">
+              <img src="https://cdn-icons-png.flaticon.com/128/318/318477.png" alt="Previous" />
+            </button>
+            <button @click="nextImage" :disabled="currentImageIndex === galleryImages.length - 1">
+              <img src="https://cdn-icons-png.flaticon.com/128/318/318476.png" alt="Next" />
+            </button>
+            <button @click="resetGallery">
+              <img src="https://cdn-icons-png.flaticon.com/128/2618/2618245.png" alt="Reset" />
+            </button>
+          </div>
+
+          <h2>Leave a Comment</h2>
+
+          <div class="comment-container">
+            <!-- Avatar Selection -->
+            <div class="avatar-selection">
+              <p>Select an avatar:</p>
+              <div v-for="(avatar, index) in avatars" :key="index" class="avatar-container">
+                <input type="radio" v-model="newComment.avatar" :value="avatar" :id="'avatar' + index" class="hidden-radio" />
+                <label :for="'avatar' + index">
+                  <img :src="avatar" class="avatar-option" :class="{ selected: newComment.avatar === avatar }" />
+                </label>
               </div>
-              <div class="gallery-buttons">
-                <button @click="prevImage" :disabled="currentImageIndex === 0">
-                  <img src="https://cdn-icons-png.flaticon.com/128/318/318477.png" alt="Previous" />
-                </button>
-                <button @click="nextImage" :disabled="currentImageIndex === galleryImages.length - 1">
-                  <img src="https://cdn-icons-png.flaticon.com/128/318/318476.png" alt="Next" />
-                </button>
-                <button @click="resetGallery">
-                  <img src="https://cdn-icons-png.flaticon.com/128/2618/2618245.png" alt="Reset" />
-                </button>
-              </div>
-            <h2>Leave a Comment</h2>
-            <div class="comment-container">
-              <div class="avatar-selection">
-                <p>Select an avatar:</p>
-                <div v-for="(avatar, index) in avatars" :key="index" class="avatar-container">
-                  <input type="radio" v-model="newComment.avatar" :value="avatar" :id="'avatar' + index" class="hidden-radio" />
-                  <label :for="'avatar' + index">
-                    <img :src="avatar" class="avatar-option" :class="{ selected: newComment.avatar === avatar }" />
-                  </label>
-                </div>              
-              <div class="comment-section">
+            </div> <!-- ✅ Now properly closed -->
+
+            <!-- Comment Section -->
+            <div class="comment-section">
               <input type="text" v-model="newComment.name" placeholder="Your Name" />
               <textarea v-model="newComment.comment" placeholder="Write a comment..."></textarea>
               <button @click="submitComment">Post Comment</button>
-              
+
               <ul class="comment-list">
                 <li v-for="comment in comments" :key="comment.id" class="comment-item">
                   <div class="comment-header">
@@ -154,9 +162,8 @@
                 </li>
               </ul>
             </div>
-          </div>
+          </div> <!-- ✅ Properly closed comment-container -->
         </div>
-      </div>
       </div>
     </div>
   </div>
@@ -731,17 +738,6 @@ onMounted(() => {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
-}
-
-.last-box {
-  display: flex; /* Ensures proper layout */
-  flex-direction: column; /* Stack elements */
-  align-items: center; /* Center content */
-  justify-content: center;
-  width: 100%;
-  height: auto; /* Allow it to expand based on content */
-  max-height: 100%; /* Prevent it from being too tall */
-  overflow-y: auto; /* Enables scrolling if content exceeds the box */
 }
 
 .group-boxes {

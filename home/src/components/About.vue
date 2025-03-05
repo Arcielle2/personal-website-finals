@@ -430,23 +430,24 @@ onUnmounted(() => {
 .main-buttons{
   display: flex;
   gap: 5px;
+}
+
+.surprise {
+  border: 2px solid #1f2122;
+  background: #1f2122;
+  border-radius: 20px;
+  width: 30px;
+  height:30px;  
   justify-content: right;
 }
 
-.source {
+.surprise2 {
   border: 2px solid #1f2122;
   background: #1f2122;
   border-radius: 20px;
   width: 30px;
   height:30px;
-}
-
-.surprise, .surprise2 {
-  border: 2px solid #1f2122;
-  background: #1f2122;
-  border-radius: 20px;
-  width: 30px;
-  height:30px;
+  justify-content: left;
 }
 
 /* ChatGPT Logo */

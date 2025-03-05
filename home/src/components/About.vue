@@ -746,6 +746,7 @@ onMounted(() => {
   background: whitesmoke;
   padding: 20px;
   border-radius: 10px;
+  height:300px;
 }
 
 .avatar-selection {

@@ -866,7 +866,7 @@ button:disabled img {
 
 .avatar-selection {
   display: block;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   margin-bottom: 9px;
   width: 80px;
@@ -906,7 +906,7 @@ button:disabled img {
 .comment-section textarea {
   width: 90%;
   padding: 10px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   border: 2px solid #b74b4b;
   border-radius: 10px;
   font-family: 'Poppins', sans-serif;
@@ -921,7 +921,7 @@ button:disabled img {
   border: none;
   border-radius: 15px;
   cursor: pointer;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   font-family: 'Poppins', sans-serif;
   font-size: 12px;
 }

@@ -939,7 +939,7 @@ button:disabled img {
 
 .comment-item {
   display: flex;
-  align-items: center;
+  align-items: left;
   padding: 10px 0;
   border-bottom: 2px solid #b74b4b;
 }
@@ -953,7 +953,7 @@ button:disabled img {
 .comment-header .avatar {
   width: 40px;
   height: 40px;
-  border: 5px solid #b74b4b;
+  border: 2px solid #b74b4b;
   border-radius: 50%;
   margin-right: 10px;
 }

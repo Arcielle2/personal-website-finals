@@ -225,7 +225,8 @@ const openBoxes = ref([false]);
 const selectedImage = ref(defaultImage);
 const showHiImage = ref(false);
 const courseDescription = ref("");
-const hobbyDescription = ref("")
+const hobbyDescription = ref("");
+const showSource = ref("");
 
 const course1Text = "Bachelor of Science in Computer Science with specialization in Cybersecurity and Forensics. I’m currently studying for a Bachelor of Science in Computer Science with a specialization in Cybersecurity and Forensics at Asia Pacific College. This program allows me to dive deep into the exciting world of computer science while focusing on protecting systems, preventing cyberattacks, and investigating digital crimes. I’m thrilled to explore this dynamic field and develop skills that are vital in today’s digital landscape!";
 const course2Text = "SM Foundation Scholar. I’m also proud to be an SM scholar at Asia Pacific College, which has helped me pursue my academic goals with a little extra support.";

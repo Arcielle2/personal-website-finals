@@ -115,43 +115,49 @@
           <div class="last-box">
             <div class="pg-label"><p>Picture Gallery</p></div>
             <div class="comment-container">
-    <h1 class="title">Comments</h1>
-    <div class="comment-section">
-    <div class="comment-form">
-      <input v-model="newComment.name" placeholder="Your Name" class="input" />
-      <textarea v-model="newComment.comment" placeholder="Write a comment..." class="input"></textarea>
-      <div class="avatar-selection">
-        <label v-for="avatar in avatars" :key="avatar">
-          <input type="radio" v-model="newComment.avatar" :value="avatar" />
-          <img :src="avatar" class="avatar-option" />
+              <div class="comment-section">
+    <h2>Leave a Comment</h2>
+    <div class="avatar-selection">
+      <p>Select an avatar:</p>
+      <div v-for="(avatar, index) in avatars" :key="index" class="avatar-container">
+        <input type="radio" v-model="newComment.avatar" :value="avatar" :id="'avatar' + index" class="hidden-radio" />
+        <label :for="'avatar' + index">
+          <img :src="avatar" class="avatar-option" :class="{ selected: newComment.avatar === avatar }" />
         </label>
       </div>
-      <button @click="submitComment" class="submit-button">Submit</button>
     </div>
-
-    <div class="comments-reactions">
-      <ul class="comment-list">
-        <li v-for="comment in comments" :key="comment.id" class="comment-item">
-          <div class="comment-header">
-            <img :src="comment.avatar" alt="Avatar" class="avatar" />
-            <strong>{{ comment.name }}:</strong>
+    
+    <input type="text" v-model="newComment.name" placeholder="Your Name" />
+    <textarea v-model="newComment.comment" placeholder="Write a comment..."></textarea>
+    <button @click="submitComment">Post Comment</button>
+    
+    <ul class="comment-list">
+      <li v-for="comment in comments" :key="comment.id" class="comment-item">
+        <div class="comment-header">
+          <img :src="comment.avatar" alt="Avatar" class="avatar" />
+          <div class="comment-details">
+            <strong>{{ comment.name }}</strong>
+            <p>{{ comment.comment }}</p>
           </div>
-          <p>{{ comment.comment }}</p>
-        </li>
-      </ul>
-      <div class="reactions-column">
-        <button v-for="reaction in reactionsList" :key="reaction" @click="handleReaction(reaction)">
-          {{ reactionEmojis[reaction] }} ({{ reactions[reaction] || 0 }})
-        </button>
-      </div>
-    </div>
+        </div>
+      </li>
+    </ul>
   </div>
-    </div>        
+  <div class="reaction-buttons">
+    <button
+      v-for="reaction in reactionsList"
+      :key="reaction"
+      @click="handleReaction(reaction)"
+    >
+      {{ reactionEmojis[reaction] }} {{ reactions[reaction] }}
+    </button>
+  </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script setup>
@@ -179,6 +185,7 @@ import avatar3 from "@/assets/avatar3.jfif";
 import avatar4 from "@/assets/avatar4.jfif";
 import avatar5 from "@/assets/avatar5.jfif";
 import avatar6 from "@/assets/avatar6.jfif";
+import { c } from "vite/dist/node/moduleRunnerTransport.d-CXw_Ws6P";
 
 const openBoxes = ref([false]);
 const selectedImage = ref(defaultImage);
@@ -284,10 +291,7 @@ const comments = ref([]);
 const reactions = ref({ like: 0, heart: 0, wow: 0, sad: 0 });
 const reactionsList = ['like', 'heart', 'wow', 'sad'];
 const reactionEmojis = { like: '👍', heart: '❤️', wow: '😲', sad: '😢' };
-const avatars = ref([
-  'avatar1.jfif', 'avatar2.jfif', 'avatar3.jfif',
-  'avatar4.jfif', 'avatar5.jfif', 'avatar6.jfif'
-]);
+const avatars = ref([avatar1, avatar2, avatar3, avatar4, avatar5, avatar6]);
 const newComment = ref({ name: '', comment: '', avatar: avatars.value[0] });
 
 async function getComments() {
@@ -313,9 +317,11 @@ async function fetchReactions() {
 }
 
 async function handleReaction(reactionType) {
-  const { error } = await supabase.from('reactions').insert([{ reaction_type: reactionType }]);
-  if (!error) {
-    reactions.value[reactionType]++;
+  const { data, error } = await supabase.from('reactions').insert([{ reaction_type: reactionType }]);
+
+  if (error) {
+    console.error('Error adding reaction:', error);
+    return;
   }
 }
 
@@ -728,39 +734,28 @@ onMounted(() => {
   border-radius: 10px;
 }
 
-.comment-container {
-  max-width: 600px;
+.comment-section {
+  max-width: 500px;
   margin: auto;
   padding: 20px;
-  background-color: #fff7d1;
-  border: 1px dashed black;
-  border-radius: 8px;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.title {
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.comment-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-.input {
-  padding: 8px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 10px;
+  background: #fff;
 }
 
 .avatar-selection {
   display: flex;
+  align-items: center;
   gap: 10px;
+}
+
+.avatar-container {
+  display: inline-block;
+  text-align: center;
+}
+
+.hidden-radio {
+  display: none;
 }
 
 .avatar-option {
@@ -768,60 +763,40 @@ onMounted(() => {
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
+  transition: 0.2s;
   border: 2px solid transparent;
 }
 
-.submit-button {
-  background-color: #ffcc00;
-  padding: 8px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.comments-reactions {
-  display: flex;
-  justify-content: space-between;
+.avatar-option:hover, .selected {
+  border: 2px solid #ffcc00;
+  transform: scale(1.1);
 }
 
 .comment-list {
-  list-style-type: none;
-  padding: 0;
-  flex: 1;
+  margin-top: 20px;
 }
 
 .comment-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
   padding: 10px;
-  border-bottom: 1px solid #ccc;
+  border-radius: 10px;
+  background: #f9f9f9;
 }
 
 .comment-header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
+  text-align: center;
 }
 
 .avatar {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-}
-
-.reactions-column {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.reactions-column button {
-  cursor: pointer;
-  background: none;
-  border: none;
-  font-size: 18px;
-}
-
-.comment-section {
-  display: flex;
+  margin-bottom: 5px;
 }
 </style>

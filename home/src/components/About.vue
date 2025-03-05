@@ -386,7 +386,8 @@ const showSource = () => {
   mainHeader.value = "Sources"; 
   currentView.value = "source";
   isSurprise.value = false;
-  selectedImage.value = null;
+  selectedImage.value = false;
+  showHiImage.value = false;
 };
 
 const triggerSurprise = () => {

@@ -224,7 +224,7 @@ import pic12 from "@/assets/pic12.jfif";
 import pic13 from "@/assets/pic13.jfif";
 import pic14 from "@/assets/pic14.jfif";
 import pic15 from "@/assets/pic15.jfif";
-import lastPic from "@/assets/pic15.jfif";
+import lastPic from "@/assets/lastPic.jfif";
 
 const openBoxes = ref([false]);
 const selectedImage = ref(defaultImage);

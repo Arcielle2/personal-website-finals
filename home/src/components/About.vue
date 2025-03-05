@@ -899,7 +899,7 @@ button:disabled img {
 
 .avatar-option:hover{
   border-color: #b74b4b;
-  transform: scale(1.1);
+  transform: scale(2.2);
   
 }
 
@@ -959,7 +959,7 @@ button:disabled img {
 
 .comment-header {
   display: flex;
-  align-items: center;
+  align-items: left;
   width: 100%;
 }
 
@@ -968,7 +968,7 @@ button:disabled img {
   height: 50px;
   border: 2px solid #b74b4b;
   border-radius: 50%;
-  margin-right: 20px;
+  margin-left: 20px;
 }
 
 .comment-details {

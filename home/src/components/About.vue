@@ -378,9 +378,11 @@ onMounted(() => {
   getComments();
 });
 
-const mainHeader = ref(""); // Updates the main header
-const currentView = ref(""); // Tracks which sidebar content is active
+const mainHeader = ref(""); // Empty by default
+const currentView = ref(""); // Tracks sidebar content
 const isSurprise = ref(false);
+const selectedImage = ref("https://via.placeholder.com/150"); // Example image
+const showHiImage = ref(true);
 
 const showSource = () => {
   mainHeader.value = "Sources"; 
@@ -396,6 +398,7 @@ const triggerSurprise = () => {
   setTimeout(() => {
     isSurprise.value = false;
     mainHeader.value = "";
+    currentView.value = ""; // Resets sidebar to normal
   }, 10000);
 };
 
@@ -444,9 +447,19 @@ const triggerSurprise = () => {
 .surprise-effect {
   animation: color-change 10s linear infinite;
 }
+
 @keyframes color-change {
-  0% { filter: hue-rotate(0deg); }
-  100% { filter: hue-rotate(360deg); }
+  0% { background: #b74b4b; }
+  10% { background: #ff5733; }
+  20% { background: #ffbd33; }
+  30% { background: #33ff57; }
+  40% { background: #33a1ff; }
+  50% { background: #a133ff; }
+  60% { background: #ff33a8; }
+  70% { background: #ff3333; }
+  80% { background: #33fff0; }
+  90% { background: #ffd133; }
+  100% { background: #b74b4b; }
 }
 
 .btn {
@@ -501,6 +514,7 @@ const triggerSurprise = () => {
   font-family: 'Public Pixel', sans-serif;
   font-size: 18px;
   align-items: center;
+  justify-content: center;
 }
 
 .sidebar {

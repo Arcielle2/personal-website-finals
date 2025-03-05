@@ -132,7 +132,7 @@
           </div>
 
           <div class="comment-container">
-            <h1>Leave a Comment</h1>
+            <h1>🎀Leave a Comment!🎀</h1>
             <!-- Avatar Selection -->
             <p class="avatar-label">Select an avatar:</p>
             <div class="avatar-selection">

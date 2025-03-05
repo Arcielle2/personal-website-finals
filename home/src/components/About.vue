@@ -528,6 +528,8 @@ onMounted(() => {
 
 .box:hover .toggle-btn {
   filter: brightness(0) invert(1);
+  transition: transform 0.5s ease;
+  transform: scale(1.1);
 }
 
 .toggle-btn {
@@ -593,6 +595,11 @@ onMounted(() => {
   align-items: center;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.course-box:hover{
+  transition: transform 0.5s ease;
+  transform: scale(1.1);
 }
 
 .course-img {
@@ -662,7 +669,7 @@ onMounted(() => {
 }
 
 .buttons button:hover {
-  transform: scale(1.1);
+  background: #b74b4b;
 }
 
 .buttons button:disabled {
@@ -774,7 +781,8 @@ onMounted(() => {
 }
 
 .group-box:hover{
-  transform: scale(1.1) ease 0.5s;
+  transition: transform 0.5s ease;
+  transform: scale(1.1);
 }
 
 .group-img {
@@ -907,8 +915,8 @@ button:disabled img {
 
 .avatar-option:hover{
   border-color: #b74b4b;
-  transform: scale(1.2.1.2);
-  
+  transition: transform 0.5s ease;
+  transform: scale(1.1);
 }
 
 .hidden-radio:checked + label .avatar-option {

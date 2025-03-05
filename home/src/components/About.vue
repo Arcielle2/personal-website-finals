@@ -112,7 +112,6 @@
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(4)" />
         <div class="hidden-content" v-if="openBoxes[4]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(4)" />
-          <div class="last-box">
             <div class="pg-label"><p>Picture Gallery</p></div>
               <div class="image-display">
                 <img :src="galleryImages[currentImageIndex]" alt="Gallery Image" class="gallery-img" />
@@ -162,7 +161,6 @@
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script setup>
@@ -514,7 +512,7 @@ onMounted(() => {
 
 .box5 {
   width: 100%;
-  min-height: 600px;
+  height: 570px;
   margin-top: 0; 
   overflow-y: auto;
 }

@@ -349,7 +349,7 @@ onMounted(() => {
   padding: 10px;
   height: 90vh;
   justify-content: center;
-  align-content: center;
+  align-items: flex-start;
   margin-top: 1.7rem;
   gap: 10px;
 }
@@ -455,6 +455,8 @@ onMounted(() => {
 .main-content {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: flex-start;
   gap: 10px;
   width: 35%;
 }
@@ -478,7 +480,7 @@ onMounted(() => {
 }
 
 .box1, .box2 {
-  width: 48.8%;
+  width: calc(50% - 5px);
   height: 150px;
 }
 

@@ -962,17 +962,18 @@ button:disabled img {
 }
 
 .comment-header .avatar {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border: 2px solid #b74b4b;
   border-radius: 50%;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .comment-details {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  align-items: left;
 }
 
 /* Scrollbar Styling */

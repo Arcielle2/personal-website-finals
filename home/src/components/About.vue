@@ -14,6 +14,8 @@
           <h2 v-if="currentView === 'surprise'">🎉 Surprise! 🎉</h2>
           <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />
           <img v-if="showHiImage" :src="hiImage" alt="Overlay Image" class="overlay-img" />
+          <p>{{ Education }}</p>
+          <img :src="educationImage" alt="Education Image" width="300" />
           </div>
         </div>
         <p v-else class="sidebar-text">{{ courseDescription }}</p>
@@ -198,11 +200,9 @@ import h8 from "@/assets/h8.jfif";
 import g1 from "@/assets/g1.jfif";
 import g2 from "@/assets/g2.jfif";
 import g3 from "@/assets/g3.jfif";
-import avatar1 from "@/assets/avatar1.jfif";
 import avatar2 from "@/assets/avatar2.jfif";
 import avatar3 from "@/assets/avatar3.jfif";
 import avatar4 from "@/assets/avatar4.jfif";
-import avatar5 from "@/assets/avatar5.jfif";
 import avatar6 from "@/assets/avatar6.jfif";
 import pic1 from "@/assets/pic1.jfif";
 import pic2 from "@/assets/pic2.jfif";
@@ -219,13 +219,13 @@ import pic12 from "@/assets/pic12.jfif";
 import pic13 from "@/assets/pic13.jfif";
 import pic14 from "@/assets/pic14.jfif";
 import pic15 from "@/assets/pic15.jfif";
+import educ from "@/assets/educ.jfif";
 
 const openBoxes = ref([false]);
 const selectedImage = ref(defaultImage);
 const showHiImage = ref(false);
 const courseDescription = ref("");
 const hobbyDescription = ref("");
-const title = ref("");
 
 
 const course1Text = "Bachelor of Science in Computer Science with specialization in Cybersecurity and Forensics\n I’m currently studying for a Bachelor of Science in Computer Science with a specialization in Cybersecurity and Forensics at Asia Pacific College. This program allows me to dive deep into the exciting world of computer science while focusing on protecting systems, preventing cyberattacks, and investigating digital crimes. I’m thrilled to explore this dynamic field and develop skills that are vital in today’s digital landscape!";
@@ -250,12 +250,14 @@ const t8 = "Eating Foods";
 const t9 = "Watching Movies";
 const t10 = "Designing";
 
-const Education = "Last school year, I was recognized as an honor student,\n\na distinction I’ve consistently achieved since my elementary days. Back then, I actively participated in various competitions, from quiz bees to journalism contests, which helped nurture my skills. Now that I am at Asia Pacific College, I want to expand my knowledge and deepen my understanding of my chosen field of study. To support this goal, I joined the JISSA organization, where I’ve found opportunities to connect with peers, explore new ideas, and further develop my abilities.";
+const Education = ref
 const Achievements = "Watching Movies. Movies transport me to new adventures, letting me experience stories from diverse perspectives.";
 const Goals = "My main goal\nis to graduate and have a successful career in IT. Beyond my career, I also have a dream of traveling more. I want to explore new places, immerse myself in different cultures, and gain unique experiences";
 const t11 = "Education";
 const t12 = "Achievements";
 const t13 = "Goals";
+
+const educationImage = ref("educ.jfif");
 
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];

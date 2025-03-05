@@ -333,7 +333,7 @@ const resetGallery = () => {
 };
 
 const comments = ref([]);
-const avatars = ref([avatar1, avatar2, avatar3, avatar4, avatar5, avatar6]);
+const avatars = ref([avatar2, avatar3, avatar4, avatar6]);
 const newComment = ref({ name: '', comment: '', avatar: avatars.value[0] });
 
 async function getComments() {

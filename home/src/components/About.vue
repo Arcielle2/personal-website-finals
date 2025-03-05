@@ -528,8 +528,6 @@ onMounted(() => {
 
 .box:hover .toggle-btn {
   filter: brightness(0) invert(1);
-  transition: transform 0.5s ease;
-  transform: scale(1.1);
 }
 
 .toggle-btn {

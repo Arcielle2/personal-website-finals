@@ -771,8 +771,8 @@ onMounted(() => {
 }
 
 .group-img {
-  width: 80px;
-  height: 60px;
+  width: 50px;
+  height: 30px;
   background: whitesmoke;
   border-radius: 10px;
 }
@@ -798,8 +798,8 @@ onMounted(() => {
 }
 
 .gallery-buttons img {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   transition: transform 0.2s;
 }
 

@@ -516,8 +516,7 @@ onMounted(() => {
   width: 100%;
   height: 570px;
   margin-top: 0; 
-  overflow-y: auto; /* Allow scrolling if needed */
-  padding-top: 100px;
+  overflow-y: auto;
 }
 
 .box:hover {
@@ -735,6 +734,17 @@ onMounted(() => {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
+}
+
+.last-box {
+  display: flex; /* Ensures proper layout */
+  flex-direction: column; /* Stack elements */
+  align-items: center; /* Center content */
+  justify-content: center;
+  width: 100%;
+  height: auto; /* Allow it to expand based on content */
+  max-height: 100%; /* Prevent it from being too tall */
+  overflow-y: auto; /* Enables scrolling if content exceeds the box */
 }
 
 .group-boxes {

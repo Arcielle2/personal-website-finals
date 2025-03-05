@@ -830,7 +830,7 @@ button:disabled img {
 }
 
 .box5 {
-  font-size: 20px;
+  font-size: 12px;
   color: black;
   margin-bottom: 10px;
 }

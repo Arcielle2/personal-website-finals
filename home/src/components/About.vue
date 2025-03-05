@@ -22,6 +22,9 @@
         <div class="surprise2"  @click="triggerSurprise"> </div>
         <div class="surprise"  @click="triggerSurprise"> </div>
       </div>
+      <div class="warning">
+        <p>!Go back to Home before reloading!</p>
+      </div>
     </div>
 
     <div class="main-content">
@@ -406,18 +409,10 @@ const triggerSurprise = () => {
   }, 10000);
 };
 
-const warnBeforeReload = (event) => {
-  event.preventDefault();
-  event.returnValue = "Are you sure you want to leave? Make sure to go back home first!";
-};
-
-onMounted(() => {
-  window.addEventListener("beforeunload", warnBeforeReload);
-});
-
-onUnmounted(() => {
-  window.removeEventListener("beforeunload", warnBeforeReload);
-});
+  window.addEventListener("beforeunload", function (event) {
+    event.preventDefault();
+    event.returnValue = "Are you sure you want to leave? Make sure to go back home first!";
+  });
 </script>
 
 <style scoped>
@@ -427,9 +422,21 @@ onUnmounted(() => {
   box-sizing: border-box;
 }
 
+.warning {
+  position: absolute;  /* Make it stick inside a relative parent */
+  bottom: 5px;         /* Adjust the spacing from the bottom */
+  left: 50%;           /* Center it horizontally */
+  transform: translateX(-50%); /* Ensures perfect centering */
+  font-family: "Public Pixel", sans-serif;
+  font-size: 12px;
+  color: #662c2c;
+}
+
 .main-buttons{
   display: flex;
-  gap: 5px;
+  justify-content: space-between; /* Pushes elements to both ends */
+  align-items: center; /* Centers them vertically */
+  width: 100%;
 }
 
 .surprise {

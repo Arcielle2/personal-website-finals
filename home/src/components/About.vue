@@ -487,6 +487,7 @@ onMounted(() => {
 
 .sub-content {
   width: 30%;
+  height: auto;
 }
 
 .box {

@@ -11,14 +11,7 @@
       <div class="sidebar">
         <div v-if="!courseDescription" class="image-container">
           <div v-if="!hobbyDescription" class="image-container">
-            <div v-if="!currentView === 'source'">
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT Logo" class="chatgpt-logo" />
-                  <br />
-                  <a href="https://pierrelouis.webflow.io/" target="_blank">Pierre Louis Web</a>
-                  <br />
-                  <img src="https://cdn.prod.website-files.com/6538f4cf95dd3ef4800e55d2/653917c52456c0cc8a03b775_work-1.jpg" alt="Pierre Louis Logo" class="chatgpt-logo">
-                </div>
-              <h2 v-if="currentView === 'surprise'">🎉 Surprise! 🎉</h2>
+          <h2 v-if="currentView === 'surprise'">🎉 Surprise! 🎉</h2>
           <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />
           <img v-if="showHiImage" :src="hiImage" alt="Overlay Image" class="overlay-img" />
           </div>
@@ -26,7 +19,7 @@
         <p v-else class="sidebar-text">{{ courseDescription }}</p>
       </div>
       <div class="main-buttons">
-        <div class="source"  @click="showSource"> </div>
+        <div class="source" @click="showSource(); changeSidebarImage(source1)"> </div>
         <div class="surprise"  @click="triggerSurprise"> </div>
       </div>
     </div>
@@ -250,6 +243,8 @@ const Education = "Eating Foods. I enjoy discovering new flavors and indulging i
 const Achievements = "Watching Movies. Movies transport me to new adventures, letting me experience stories from diverse perspectives.";
 const Goals = "Designing. Designing allows me to channel my creativity and bring ideas to life in a visually appealing way.";
 
+const source1 = "❤ChatGPT and Pierre Louis Webflow❤"
+
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];
 };
@@ -383,18 +378,6 @@ onMounted(() => {
 const mainHeader = ref(""); // Updates the main header
 const currentView = ref(""); // Tracks which sidebar content is active
 const isSurprise = ref(false);
-
-const showSource = () => {
-  selectedImage.value = "";
-  mainHeader.value = "Sources"; 
-  currentView.value = "source";
-  isSurprise.value = false;
-
-  // Hide previous sidebar content
-  showHiImage.value = false;
-  hobbyDescription.value = "";
-  courseDescription.value = "";
-};
 
 const triggerSurprise = () => {
   mainHeader.value = "Surprise!";

@@ -823,6 +823,8 @@ button:disabled img {
   padding: 20px;
   border-radius: 10px;
   gap: 15px;
+  height: 100px;
+  overflow-y: auto;
 }
 
 .avatar-selection {

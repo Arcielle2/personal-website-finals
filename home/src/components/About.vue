@@ -23,9 +23,6 @@
         <div class="surprise" @click="triggerSurprise"></div>
       </div>
       <!-- Picture section is now inside main-sidebar -->
-      <div class="picture">
-        <img :src="lastPic" alt="Bottom" class="bottom-img" />
-      </div>
     </div>
 
     <div class="main-content">
@@ -427,23 +424,9 @@ const triggerSurprise = () => {
   box-sizing: border-box;
 }
 
-.bottom {
-  height: 10px;
-  width: auto;
-}
-
-.bottom-img {
-  width: 100%; /* Adjusts to the container */
-  max-width: 400px; /* Optional: Set a max width */
-  height: auto;
-  display: block;
-  margin: 10px auto; /* Centers the image */
-  border-radius: 10px; /* Optional: Adds rounded corners */
-}
-
 .warning {
   position: absolute;  /* Make it stick inside a relative parent */
-  bottom: 0;         /* Adjust the spacing from the bottom */
+  bottom: 2px;         /* Adjust the spacing from the bottom */
   left: 50%;           /* Center it horizontally */
   transform: translateX(-50%); /* Ensures perfect centering */
   font-family: "Public Pixel", sans-serif;

@@ -18,8 +18,8 @@
         </div>
         <p v-else class="sidebar-text">{{ courseDescription }}</p>
       </div>
-      <div class="surprise"  @click="triggerSurprise"> </div>
       <div class="main-buttons">
+        <div class="surprise2"  @click="triggerSurprise"> </div>
         <div class="surprise"  @click="triggerSurprise"> </div>
       </div>
     </div>
@@ -429,7 +429,7 @@ const triggerSurprise = () => {
   height:30px;
 }
 
-.surprise {
+.surprise, .surprise2 {
   border: 2px solid #1f2122;
   background: #1f2122;
   border-radius: 20px;

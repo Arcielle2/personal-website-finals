@@ -6,11 +6,19 @@
   <div class="container">
     <div class="main-sidebar">
       <div class="main-header">
-
+        <h1>{{ mainHeader }}</h1>
       </div>
       <div class="sidebar">
         <div v-if="!courseDescription" class="image-container">
           <div v-if="!hobbyDescription" class="image-container">
+            <div class="sidebar" :class="{ 'surprise-effect': isSurprise }">
+              <div v-if="currentView === 'source'">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT Logo" class="chatgpt-logo" />
+                <br />
+                <a href="https://pierrelouis.webflow.io/" target="_blank">Pierre Louis Web</a>
+              </div>
+              <h2 v-if="currentView === 'surprise'">🎉 Surprise! 🎉</h2>
+            </div>
           <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />
           <img v-if="showHiImage" :src="hiImage" alt="Overlay Image" class="overlay-img" />
           </div>
@@ -18,8 +26,8 @@
         <p v-else class="sidebar-text">{{ courseDescription }}</p>
       </div>
       <div class="main-buttons">
-        <div class="source"> </div>
-        <div class="surprise"> </div>
+        <div class="source"  @click="showSource"> </div>
+        <div class="surprise"  @click="triggerSurprise"> </div>
       </div>
     </div>
 
@@ -371,6 +379,28 @@ async function submitComment() {
 onMounted(() => {
   getComments();
 });
+
+const mainHeader = ref(""); // Updates the main header
+const currentView = ref(""); // Tracks which sidebar content is active
+const isSurprise = ref(false);
+
+const showSource = () => {
+  mainHeader.value = "Sources"; 
+  currentView.value = "source";
+  isSurprise.value = false;
+};
+
+const triggerSurprise = () => {
+  mainHeader.value = "Surprise!";
+  currentView.value = "surprise";
+  isSurprise.value = true;
+
+  setTimeout(() => {
+    isSurprise.value = false;
+    mainHeader.value = "";
+  }, 10000);
+};
+
 </script>
 
 <style scoped>
@@ -400,6 +430,25 @@ onMounted(() => {
   border-radius: 20px;
   width: 30px;
   height:30px;
+}
+
+/* ChatGPT Logo */
+.chatgpt-logo {
+  width: 80px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.source:hover, .surprise:hover {
+  background: whitesmoke;
+}
+
+.surprise-effect {
+  animation: color-change 10s linear infinite;
+}
+@keyframes color-change {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
 }
 
 .btn {

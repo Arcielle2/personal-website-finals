@@ -114,36 +114,39 @@
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(4)" />
           <div class="last-box">
             <div class="pg-label"><p>Picture Gallery</p></div>
-            <div class="comment-section">
-              <div class="cm-label"><p>Leave A Comment here!!!</p></div>
-              <div class="mb-4">
-                <input v-model="newComment.name" type="text" placeholder="Your Name" class="border p-2 w-full rounded mb-2" />
-                <input v-model="newComment.avatar" type="text" placeholder="Avatar URL (optional)" class="border p-2 w-full rounded mb-2" />
-                <textarea v-model="newComment.message" placeholder="Your Comment" class="border p-2 w-full rounded mb-2"></textarea>
-                <button @click="addComment" class="bg-blue-500 text-white p-2 rounded">Post Comment</button>
-              </div>
-              <div>
-                <div v-for="comment in comments" :key="comment.id" class="mb-3 p-3 border rounded">
-                  <div class="flex gap-3">
-                    <img :src="comment.avatar || 'https://via.placeholder.com/40'" alt="Avatar" class="w-10 h-10 rounded-full" />
-                    <div class="w-full">
-                      <h4 class="font-bold">{{ comment.name }}</h4>
-                      <textarea v-model="comment.message" class="w-full border p-2 rounded"></textarea>
-                      <div class="flex items-center gap-2 mt-2">
-                        <button @click="reactToComment(comment.id, 'heart')">❤️ {{ comment.reactions.heart }}</button>
-                        <button @click="reactToComment(comment.id, 'haha')">😂 {{ comment.reactions.haha }}</button>
-                        <button @click="reactToComment(comment.id, 'sad')">😢 {{ comment.reactions.sad }}</button>
-                        <button @click="deleteComment(comment.id)" class="text-red-500">🗑️</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="flex gap-4">
+              <div class="flex gap-4">
+    <div class="w-3/4 p-4 border rounded-lg">
+      <h2 class="text-xl font-bold">Comments</h2>
+      <div class="mb-4">
+        <input class="border p-2 w-full" placeholder="Your name" v-model="name" />
+        <select class="border p-2 w-full mt-2" v-model="avatar">
+          <option v-for="a in avatars" :key="a" :value="a">{{ a }}</option>
+        </select>
+        <textarea class="border p-2 w-full mt-2" placeholder="Write a comment..." v-model="comment"></textarea>
+        <button class="mt-2 bg-blue-500 text-white px-4 py-2 rounded" @click="handleCommentSubmit">Submit</button>
+      </div>
+      <div>
+        <div v-for="(c, index) in comments" :key="index" class="border p-2 mb-2 rounded-lg flex items-center">
+          <img :src="c.avatar" alt="avatar" class="w-10 h-10 rounded-full mr-2" />
+          <div>
+            <p class="font-bold">{{ c.name }}</p>
+            <p>{{ c.comment }}</p>
           </div>
         </div>
       </div>
     </div>
+    <div class="w-1/4 flex flex-col gap-2">
+      <reaction-button v-for="reaction in reactionsList" :key="reaction" @click="handleReaction(reaction)" class="bg-gray-300 p-2 rounded">
+        {{ reaction === "heart" ? "❤️" : reaction === "wow" ? "😲" : reaction === "sad" ? "😢" : "👍" }} ({{ reactions[reaction] || 0 }})
+      </reaction-button>
+    </div>
+  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 </template>
 
@@ -290,6 +293,64 @@ const reactToComment = (id, type) => {
     comment.reactions[type] += 1;
   }
 };
+
+const CommentSection = {
+  setup() {
+    const name = ref("");
+    const avatar = ref("avatar1.png");
+    const comment = ref("");
+    const comments = ref([]);
+    const reactions = ref({});
+    const avatars = ["avatar1.png", "avatar2.png", "avatar3.png", "avatar4.png", "avatar5.png", "avatar6.png"];
+    const reactionsList = ["heart", "wow", "sad", "like"];
+
+    onMounted(() => {
+      fetchComments();
+      fetchReactions();
+    });
+
+    async function fetchComments() {
+      let { data } = await supabase.from("comments").select("*");
+      comments.value = data || [];
+    }
+
+    async function fetchReactions() {
+      let { data } = await supabase.from("reactions").select("reaction_type, COUNT(*) as count").group("reaction_type");
+      const reactionCounts = {};
+      data?.forEach(({ reaction_type, count }) => {
+        reactionCounts[reaction_type] = count;
+      });
+      reactions.value = reactionCounts;
+    }
+
+    async function handleCommentSubmit() {
+      if (!name.value || !comment.value) return;
+      await supabase.from("comments").insert([{ name: name.value, avatar: avatar.value, comment: comment.value }]);
+      fetchComments();
+      comment.value = "";
+    }
+
+    async function handleReaction(type) {
+      if (!name.value) return alert("Please enter your name before reacting.");
+      await supabase.from("reactions").insert([{ name: name.value, reaction_type: type }]);
+      fetchReactions();
+    }
+
+    return {
+      name,
+      avatar,
+      comment,
+      comments,
+      reactions,
+      avatars,
+      reactionsList,
+      handleCommentSubmit,
+      handleReaction,
+    };
+  },
+};
+
+export { CommentSection };
 </script>
 
 <style scoped>
@@ -687,14 +748,7 @@ const reactToComment = (id, type) => {
   border-radius: 10px;
 }
 
-button {
-  padding: 5px 10px;
-  border: none;
+.reaction-button {
   cursor: pointer;
-  border-radius: 5px;
-}
-
-button:hover {
-  opacity: 0.8;
 }
 </style>

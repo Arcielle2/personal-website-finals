@@ -189,6 +189,21 @@ import avatar3 from "@/assets/avatar3.jfif";
 import avatar4 from "@/assets/avatar4.jfif";
 import avatar5 from "@/assets/avatar5.jfif";
 import avatar6 from "@/assets/avatar6.jfif";
+import pic1 from "@/assets/pic1.jfif";
+import pic2 from "@/assets/pic2.jfif";
+import pic3 from "@/assets/pic3.jfif";
+import pic4 from "@/assets/pic4.jfif";
+import pic5 from "@/assets/pic5.jfif";
+import pic6 from "@/assets/pic6.jfif";
+import pic7 from "@/assets/pic7.jfif";
+import pic8 from "@/assets/pic8.jfif";
+import pic9 from "@/assets/pic9.jfif";
+import pic10 from "@/assets/pic10.jfif";
+import pic11 from "@/assets/pic11.jfif";
+import pic12 from "@/assets/pic12.jfif";
+import pic13 from "@/assets/pic13.jfif";
+import pic14 from "@/assets/pic14.jfif";
+import pic15 from "@/assets/pic15.jfif";
 
 const openBoxes = ref([false]);
 const selectedImage = ref(defaultImage);
@@ -291,21 +306,8 @@ const prevItem = () => {
 };
 
 const galleryImages = ref([
-  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic1.jfif=1",
-  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic2.jfif=2",
-  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic3.jfif=3",
-  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic4.jfif=4",
-  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic5.jfif=5",
-  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic6.jfif=6",
-  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic7.jfif=7",
-  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic8.jfif=8",
-  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic9.jfif=9",
-  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic10.jfif=10",
-  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic11.jfif=11",
-  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic12.jfif=12",
-  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic13.jfif=13",
-  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic14.jfif=14",
-  "https://arciellegercan.github.io/WEBPROG-SF231-Personal-Website/home/pictures/pic15.jfif=15",
+  pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8, pic9, pic10,
+  pic11, pic12, pic13, pic14, pic15
 ]);
 
 const currentImageIndex = ref(0);

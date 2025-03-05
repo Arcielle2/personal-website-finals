@@ -449,6 +449,7 @@ const triggerSurprise = () => {
   width: 30px;
   height:30px;  
   justify-content: right;
+  cursor: pointer;
 }
 
 .surprise2 {

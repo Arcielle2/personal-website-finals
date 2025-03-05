@@ -943,8 +943,6 @@ button:disabled img {
   overflow-y: auto;
   width: 100%;
   padding: 3px;
-  border: 2px solid #b74b4b;
-  border-radius: 5px;
   background: black;
   align-items: left;
   color: white;

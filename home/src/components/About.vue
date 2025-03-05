@@ -513,14 +513,18 @@ const triggerSurprise = () => {
 .main-header{
   display: flex;
   width: 100%;
-  height: 4rem;
-  border:10px solid #15191d;
+  min-height: 4rem; /* Ensures a base height but allows growth */
+  padding: 0 10px; /* Adds spacing inside */
+  border: 10px solid #15191d;
   border-radius: 10px;
   background: #1f2122;
   font-family: 'Public Pixel', sans-serif;
   font-size: 18px;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  white-space: normal; /* Allows wrapping */
+  overflow-wrap: break-word;
 }
 
 .sidebar {

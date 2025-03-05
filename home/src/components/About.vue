@@ -1,4 +1,8 @@
 <template>
+  <router-link to="/t" class="btn">
+  <img src="'https://cdn-icons-png.flaticon.com/128/1946/1946488.png'" alt="Back to Home" class="btn-image" />
+  Back to Home!
+</router-link>
   <div class="container">
     <div class="main-sidebar">
       <div class="main-header">
@@ -369,6 +373,25 @@ onMounted(() => {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  background: #b74b4b;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-family: 'Public Pixel', sans-serif;
+  font-size: 12px;
+}
+
+.btn-image {
+  width: 20px;
+  height: 20px;
 }
 
 .container {

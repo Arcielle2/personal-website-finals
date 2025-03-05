@@ -401,7 +401,6 @@ onMounted(() => {
   height: 90vh;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 1.7rem;
   gap: 10px;
 }
 

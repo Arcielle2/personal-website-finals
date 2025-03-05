@@ -8,17 +8,15 @@
       <div class="main-header">
         <h1>{{ mainHeader }}</h1>
       </div>
-      <div class="sidebar">
+      <div class="sidebar" :class="{ 'surprise-effect': isSurprise }">
         <div v-if="!courseDescription" class="image-container">
           <div v-if="!hobbyDescription" class="image-container">
-            <div class="sidebar" :class="{ 'surprise-effect': isSurprise }">
               <div v-if="currentView === 'source'">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT Logo" class="chatgpt-logo" />
                 <br />
                 <a href="https://pierrelouis.webflow.io/" target="_blank">Pierre Louis Web</a>
               </div>
               <h2 v-if="currentView === 'surprise'">🎉 Surprise! 🎉</h2>
-            </div>
           <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />
           <img v-if="showHiImage" :src="hiImage" alt="Overlay Image" class="overlay-img" />
           </div>

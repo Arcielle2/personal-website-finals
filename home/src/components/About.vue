@@ -116,42 +116,42 @@
             <div class="pg-label"><p>Picture Gallery</p></div>
             <div class="comment-container">
               <div class="comment-section">
-    <h2>Leave a Comment</h2>
-    <div class="avatar-selection">
-      <p>Select an avatar:</p>
-      <div v-for="(avatar, index) in avatars" :key="index" class="avatar-container">
-        <input type="radio" v-model="newComment.avatar" :value="avatar" :id="'avatar' + index" class="hidden-radio" />
-        <label :for="'avatar' + index">
-          <img :src="avatar" class="avatar-option" :class="{ selected: newComment.avatar === avatar }" />
-        </label>
-      </div>
-    </div>
-    
-    <input type="text" v-model="newComment.name" placeholder="Your Name" />
-    <textarea v-model="newComment.comment" placeholder="Write a comment..."></textarea>
-    <button @click="submitComment">Post Comment</button>
-    
-    <ul class="comment-list">
-      <li v-for="comment in comments" :key="comment.id" class="comment-item">
-        <div class="comment-header">
-          <img :src="comment.avatar" alt="Avatar" class="avatar" />
-          <div class="comment-details">
-            <strong>{{ comment.name }}</strong>
-            <p>{{ comment.comment }}</p>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div class="reaction-buttons">
-    <button
-      v-for="reaction in reactionsList"
-      :key="reaction"
-      @click="handleReaction(reaction)"
-    >
-      {{ reactionEmojis[reaction] }} {{ reactions[reaction] }}
-    </button>
-  </div>
+              <h2>Leave a Comment</h2>
+              <div class="avatar-selection">
+                <p>Select an avatar:</p>
+                <div v-for="(avatar, index) in avatars" :key="index" class="avatar-container">
+                  <input type="radio" v-model="newComment.avatar" :value="avatar" :id="'avatar' + index" class="hidden-radio" />
+                  <label :for="'avatar' + index">
+                    <img :src="avatar" class="avatar-option" :class="{ selected: newComment.avatar === avatar }" />
+                  </label>
+                </div>
+              </div>
+              
+              <input type="text" v-model="newComment.name" placeholder="Your Name" />
+              <textarea v-model="newComment.comment" placeholder="Write a comment..."></textarea>
+              <button @click="submitComment">Post Comment</button>
+              
+              <ul class="comment-list">
+                <li v-for="comment in comments" :key="comment.id" class="comment-item">
+                  <div class="comment-header">
+                    <img :src="comment.avatar" alt="Avatar" class="avatar" />
+                    <div class="comment-details">
+                      <strong>{{ comment.name }}</strong>
+                      <p>{{ comment.comment }}</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="reaction-buttons">
+              <button
+                v-for="reaction in reactionsList"
+                :key="reaction"
+                @click="handleReaction(reaction)"
+              >
+                {{ reactionEmojis[reaction] }} {{ reactions[reaction] }}
+              </button>
+            </div>
           </div>
         </div>
       </div>

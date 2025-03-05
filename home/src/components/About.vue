@@ -383,7 +383,7 @@ onMounted(() => {
 .main-buttons{
   display: flex;
   gap: 5px;
-  align-items: right;
+  align-content: right;
 }
 
 .source {

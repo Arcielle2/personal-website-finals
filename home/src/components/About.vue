@@ -14,8 +14,6 @@
           <h2 v-if="currentView === 'surprise'">🎉 Surprise! 🎉</h2>
           <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />
           <img v-if="showHiImage" :src="hiImage" alt="Overlay Image" class="overlay-img" />
-          <p>{{ Education }}</p>
-          <img :src="educationImage" alt="Education Image" width="300" />
           </div>
         </div>
         <p v-else class="sidebar-text">{{ courseDescription }}</p>
@@ -219,7 +217,6 @@ import pic12 from "@/assets/pic12.jfif";
 import pic13 from "@/assets/pic13.jfif";
 import pic14 from "@/assets/pic14.jfif";
 import pic15 from "@/assets/pic15.jfif";
-import educ from "@/assets/educ.jfif";
 
 const openBoxes = ref([false]);
 const selectedImage = ref(defaultImage);
@@ -250,14 +247,12 @@ const t8 = "Eating Foods";
 const t9 = "Watching Movies";
 const t10 = "Designing";
 
-const Education = ref
-const Achievements = "Watching Movies. Movies transport me to new adventures, letting me experience stories from diverse perspectives.";
+const Education = "I began my educational journey at Northville 4B Elementary School, where I studied from 2011 to 2017. After completing elementary school, I attended Assemblywoman Felicity G. Bernardino Memorial Trade School for my junior high school years from 2017 to 2021. Following that, I pursued my senior high school education at AMA Computer College Malolos from 2021 to 2023. Currently, I am enrolled at Asia Pacific College, where I am pursuing my college degree from 2023 to 2025."
+const Achievements = "Last school year, I was recognized as an honor student, a distinction I’ve consistently achieved since my elementary days. Back then, I actively participated in various competitions, from quiz bees to journalism contests, which helped nurture my skills. Now that I am at Asia Pacific College, I want to expand my knowledge and deepen my understanding of my chosen field of study. To support this goal, I joined the JISSA organization, where I’ve found opportunities to connect with peers, explore new ideas, and further develop my abilities.";
 const Goals = "My main goal\nis to graduate and have a successful career in IT. Beyond my career, I also have a dream of traveling more. I want to explore new places, immerse myself in different cultures, and gain unique experiences";
 const t11 = "Education";
 const t12 = "Achievements";
 const t13 = "Goals";
-
-const educationImage = ref("educ.jfif");
 
 const toggleBox = (index) => {
   openBoxes.value[index] = !openBoxes.value[index];
@@ -521,7 +516,7 @@ const triggerSurprise = () => {
   border-radius: 10px;
   background: #1f2122;
   font-family: 'Public Pixel', sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   align-items: center;
   justify-content: center;
   text-align: center;

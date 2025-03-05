@@ -137,9 +137,7 @@
                   <label :for="'avatar' + index">
                     <img :src="avatar" class="avatar-option" :class="{ selected: newComment.avatar === avatar }" />
                   </label>
-                </div>
-              </div>
-              
+                </div>              
               <div class="comment-section">
               <input type="text" v-model="newComment.name" placeholder="Your Name" />
               <textarea v-model="newComment.comment" placeholder="Write a comment..."></textarea>
@@ -158,6 +156,7 @@
               </ul>
             </div>
           </div>
+        </div>
       </div>
     </div>
   </div>

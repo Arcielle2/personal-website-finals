@@ -1163,17 +1163,15 @@ button:disabled img {
     display: flex;
     flex-direction: column;
     width: 100%;
+    gap: 10px;
   }
 
   .box {
     width: 100%;
     height: auto;
   }
-
-  .hobby-boxes, .course-boxes, .group-boxes {
-    grid-template-columns: repeat(2, 1fr); /* Reduce columns for smaller screens */
-  }
 }
+
 
 @media (max-width: 768px) {
   .toggle-btn, .back-btn {

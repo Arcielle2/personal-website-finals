@@ -741,17 +741,16 @@ onMounted(() => {
 }
 
 .hidden-content.last-page {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80%;
+  width: 30%;
+  height: 570px;
   background-color: rgb(231, 231, 231);
-  border-radius: 12px;
+  padding: 20px;
+  border-radius: 15px;
   display: flex;
   flex-direction: column;
-  text-align: center;
-  overflow-y: auto; 
+  align-content: center;
+  justify-content: flex-start;
+  gap: 12px;
 }
 
 .group-boxes {

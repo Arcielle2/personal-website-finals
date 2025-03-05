@@ -738,13 +738,10 @@ onMounted(() => {
   text-align: center;
 }
 
-.last-box{
-  height: 570px;
-}
-
 .group-boxes {
   display: flex;
   gap: 15px;
+  margin-top: 100px;
 }
 
 .group-box {

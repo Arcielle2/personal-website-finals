@@ -746,7 +746,6 @@ onMounted(() => {
   background: whitesmoke;
   padding: 20px;
   border-radius: 10px;
-  height:300px;
 }
 
 .avatar-selection {
@@ -871,6 +870,12 @@ onMounted(() => {
 
 .comment-list::-webkit-scrollbar-track {
   background: whitesmoke;
+}
+
+/* Extra fix for Firefox */
+.comment-list {
+  scrollbar-width: thin;
+  scrollbar-color: #b74b4b whitesmoke;
 }
 
 </style>

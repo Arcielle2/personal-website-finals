@@ -116,6 +116,7 @@
             <div class="pg-label"><p>Picture Gallery</p></div>
             <div class="comment-container">
     <h1 class="title">Comments</h1>
+    <div class="comment-section">
     <div class="comment-form">
       <input v-model="newComment.name" placeholder="Your Name" class="input" />
       <textarea v-model="newComment.comment" placeholder="Write a comment..." class="input"></textarea>
@@ -127,6 +128,7 @@
       </div>
       <button @click="submitComment" class="submit-button">Submit</button>
     </div>
+
     <div class="comments-reactions">
       <ul class="comment-list">
         <li v-for="comment in comments" :key="comment.id" class="comment-item">
@@ -144,7 +146,7 @@
       </div>
     </div>
   </div>
-              
+    </div>        
           </div>
         </div>
       </div>
@@ -817,5 +819,9 @@ onMounted(() => {
   background: none;
   border: none;
   font-size: 18px;
+}
+
+.comment-section {
+  display: flex;
 }
 </style>

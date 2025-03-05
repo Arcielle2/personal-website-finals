@@ -738,4 +738,143 @@ onMounted(() => {
   border-radius: 10px;
 }
 
+.comment-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: whitesmoke;
+  padding: 20px;
+  width: 400px;
+  height: 500px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.avatar-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.avatar-container {
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.avatar-option {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: 0.3s;
+  border: 2px solid transparent;
+}
+
+.hidden-radio:checked + label .avatar-option {
+  border: 2px solid #b74b4b;
+}
+
+.comment-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.comment-section input,
+.comment-section textarea {
+  width: 90%;
+  margin: 5px 0;
+  padding: 8px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.comment-section textarea {
+  resize: none;
+  height: 80px;
+}
+
+button {
+  background-color: #b74b4b;
+  color: whitesmoke;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top: 5px;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: black;
+}
+
+.comment-list {
+  width: 100%;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.comment-item {
+  display: flex;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #b74b4b;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+.comment-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.comment-header .avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment-details {
+  flex: 1;
+}
+
+.comment-details strong {
+  color: black;
+}
+
+.reaction-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.reaction-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background-color: transparent;
+  color: black;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.reaction-buttons button:hover {
+  color: #b74b4b;
+}
+
 </style>

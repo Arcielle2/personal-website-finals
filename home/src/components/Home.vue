@@ -51,6 +51,9 @@
     </div>
   </section>
 </div>
+<footer class="footer">
+    <p>Inspired by <span class="highlight">ChatGPT</span> and <span class="highlight">Pierre</span></p>
+  </footer>
 </template>
 
 <style scoped>
@@ -352,5 +355,19 @@ span {
   text-align: center;
   color: #b74b4b;
   font-style: italic;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: rgb(22, 22, 22);
+  color: white;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+.highlight {
+  color: #b74b4b;
+  font-weight: bold;
 }
 </style>

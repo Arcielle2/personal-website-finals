@@ -518,6 +518,8 @@ onMounted(() => {
   height: 570px;
   overflow-y: auto;
   overflow-x: hidden; 
+  margin-top: 0; /* Ensure it starts at the correct position */
+  padding-top: 10px; 
 }
 
 .box:hover {

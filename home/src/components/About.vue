@@ -830,13 +830,13 @@ button:disabled img {
   cursor: not-allowed;
 }
 
-.last-page {
+.box5 {
   font-size: 20px;
   color: black;
   margin-bottom: 10px;
 }
 
-.last-page h1 {
+.box5 h1 {
   text-shadow: 
     0px 0px 10px #b74b4b,  
     0px 0px 20px #b74b4b,  

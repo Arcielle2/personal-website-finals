@@ -27,7 +27,7 @@
         <img :src="lastPic" alt="Bottom" class="bottom-img" />
       </div>
     </div>
-    
+
     <div class="main-content">
       <div class="box box1">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(0)" />
@@ -430,6 +430,15 @@ const triggerSurprise = () => {
 .bottom {
   height: 10px;
   width: auto;
+}
+
+.bottom-img {
+  width: 100%; /* Adjusts to the container */
+  max-width: 400px; /* Optional: Set a max width */
+  height: auto;
+  display: block;
+  margin: 10px auto; /* Centers the image */
+  border-radius: 10px; /* Optional: Adds rounded corners */
 }
 
 .warning {

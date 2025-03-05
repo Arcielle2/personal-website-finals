@@ -30,10 +30,10 @@
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(0)" />
           <div class="course-label"><p>Course</p></div>
           <div class="course-boxes">
-            <div class="course-box" @click="changeSidebarImage(course1Text)">
+            <div class="course-box" @click="changeSidebarImage(course1Text); title(t1)">
               <img :src="c1" alt="Course 1" class="course-img" />
             </div>
-            <div class="course-box" @click="changeSidebarImage(course2Text)">
+            <div class="course-box" @click="changeSidebarImage(course2Text); title(t2)">
               <img :src="c2" alt="Course 2" class="course-img" />
             </div>
           </div>
@@ -225,6 +225,10 @@ const selectedImage = ref(defaultImage);
 const showHiImage = ref(false);
 const courseDescription = ref("");
 const hobbyDescription = ref("");
+const title = ref("");
+
+const t1 ="Course";
+const t2 ="Scholarship";
 
 const course1Text = "Bachelor of Science in Computer Science with specialization in Cybersecurity and Forensics. I’m currently studying for a Bachelor of Science in Computer Science with a specialization in Cybersecurity and Forensics at Asia Pacific College. This program allows me to dive deep into the exciting world of computer science while focusing on protecting systems, preventing cyberattacks, and investigating digital crimes. I’m thrilled to explore this dynamic field and develop skills that are vital in today’s digital landscape!";
 const course2Text = "SM Foundation Scholar. I’m also proud to be an SM scholar at Asia Pacific College, which has helped me pursue my academic goals with a little extra support.";
@@ -248,6 +252,11 @@ const toggleBox = (index) => {
 
 const changeSidebarImage = (description) => {
   courseDescription.value = description;
+  selectedImage.value = null;
+};
+
+const showTitle = (description) => {
+  mainHeader.value = description;
   selectedImage.value = null;
 };
 

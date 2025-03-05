@@ -136,7 +136,7 @@
           <div class="comment-container">
             <!-- Avatar Selection -->
             <div class="avatar-selection">
-              <p>Select an avatar:</p>
+              <p>Select an avatar:</p><br>
               <div v-for="(avatar, index) in avatars" :key="index" class="avatar-container">
                 <input type="radio" v-model="newComment.avatar" :value="avatar" :id="'avatar' + index" class="hidden-radio" />
                 <label :for="'avatar' + index">

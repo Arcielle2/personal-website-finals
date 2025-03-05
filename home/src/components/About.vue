@@ -11,12 +11,12 @@
       <div class="sidebar">
         <div v-if="!courseDescription" class="image-container">
           <div v-if="!hobbyDescription" class="image-container">
-            <div v-if="currentView === 'source'">
+            <div v-if="!currentView === 'source'">
                   <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT Logo" class="chatgpt-logo" />
                   <br />
                   <a href="https://pierrelouis.webflow.io/" target="_blank">Pierre Louis Web</a>
                   <br />
-                  <img src="https://cdn.prod.website-files.com/6538f4cf95dd3ef4800e55d2/653917c52456c0cc8a03b775_work-1.jpg" alt="Pierre Louis Logo" class="pierre-louis-logo">
+                  <img src="https://cdn.prod.website-files.com/6538f4cf95dd3ef4800e55d2/653917c52456c0cc8a03b775_work-1.jpg" alt="Pierre Louis Logo" class="chatgpt-logo">
                 </div>
               <h2 v-if="currentView === 'surprise'">🎉 Surprise! 🎉</h2>
           <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />

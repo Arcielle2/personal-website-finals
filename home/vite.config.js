@@ -16,3 +16,5 @@ export default defineConfig({
     },
   },
 })
+
+console.log("Vite Alias '@' points to:", fileURLToPath(new URL('./src', import.meta.url)));

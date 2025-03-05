@@ -151,6 +151,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
+import { supabase } from '../lib/supabaseClient';
 import sunImage from "@/assets/ribbon.jfif";
 import defaultImage from "@/assets/bubu.jfif"; // Default sidebar image
 import hiImage from "@/assets/hi.jfif"; // Overlay image
@@ -267,9 +268,6 @@ const prevItem = () => {
     currentIndex.value--;
   }
 };
-
-import { ref, onMounted } from 'vue';
-import { supabase } from '../lib/supabaseClient';
 
 const comments = ref([]);
 const reactionsList = ['like', 'heart', 'wow', 'sad'];

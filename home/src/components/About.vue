@@ -171,6 +171,12 @@ import h8 from "@/assets/h8.jfif";
 import g1 from "@/assets/g1.jfif";
 import g2 from "@/assets/g2.jfif";
 import g3 from "@/assets/g3.jfif";
+import avatar1 from "@/assets/avatar1.jfif";
+import avatar2 from "@/assets/avatar2.jfif";
+import avatar3 from "@/assets/avatar3.jfif";
+import avatar4 from "@/assets/avatar4.jfif";
+import avatar5 from "@/assets/avatar5.jfif";
+import avatar6 from "@/assets/avatar6.jfif";
 
 const openBoxes = ref([false]);
 const selectedImage = ref(defaultImage);

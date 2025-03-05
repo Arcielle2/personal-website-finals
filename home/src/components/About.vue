@@ -383,7 +383,8 @@ onMounted(() => {
   color: white;
   font-weight: bold;
   margin-left: 40px;
-  margin-top: 10px;
+  margin-top: 40px;
+  margin-bottom:10px;
   border-radius: 10px;
   font-family: 'Public Pixel', sans-serif;
   font-size: 12px;

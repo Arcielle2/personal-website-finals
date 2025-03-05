@@ -115,7 +115,6 @@
           <div class="last-box">
             <div class="pg-label"><p>Picture Gallery</p></div>
             <div class="comment-container">
-              <div class="comment-section">
               <h2>Leave a Comment</h2>
               <div class="avatar-selection">
                 <p>Select an avatar:</p>
@@ -126,7 +125,7 @@
                   </label>
                 </div>
               </div>
-              
+              <div class="comment-section">
               <input type="text" v-model="newComment.name" placeholder="Your Name" />
               <textarea v-model="newComment.comment" placeholder="Write a comment..."></textarea>
               <button @click="submitComment">Post Comment</button>
@@ -740,6 +739,8 @@ onMounted(() => {
   border: 1px solid #ccc;
   border-radius: 10px;
   background: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .avatar-selection {

@@ -6,11 +6,12 @@
   <div class="container">
     <div class="main-sidebar">
       <div class="main-header">
-
+      <h2>{{ sidebarContent }}</h2>
       </div>
       <div class="sidebar">
         <div v-if="!courseDescription" class="image-container">
           <div v-if="!hobbyDescription" class="image-container">
+            <h1>{{ mainHeader }}</h1>
           <img :src="selectedImage" alt="Sidebar Image" class="sidebar-img" />
           <img v-if="showHiImage" :src="hiImage" alt="Overlay Image" class="overlay-img" />
           </div>
@@ -377,6 +378,21 @@ async function submitComment() {
 onMounted(() => {
   getComments();
 });
+
+const selectedIndex = ref(0);
+
+const circles = ref([
+  { color: "red", header: "Welcome to Red Mode", sidebar: "Sidebar: Red" },
+  { color: "blue", header: "Welcome to Blue Mode", sidebar: "Sidebar: Blue" },
+  { color: "green", header: "Welcome to Green Mode", sidebar: "Sidebar: Green" },
+]);
+
+const mainHeader = computed(() => circles.value[selectedIndex.value].header);
+const sidebarContent = computed(() => circles.value[selectedIndex.value].sidebar);
+
+const changeContent = (index) => {
+  selectedIndex.value = index;
+};
 </script>
 
 <style scoped>

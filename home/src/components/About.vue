@@ -114,8 +114,8 @@
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(4)" />
           <div class="last-box">
             <div class="pg-label"><p>Picture Gallery</p></div>
+            <h2>Leave a Comment</h2>
             <div class="comment-container">
-              <h2>Leave a Comment</h2>
               <div class="avatar-selection">
                 <p>Select an avatar:</p>
                 <div v-for="(avatar, index) in avatars" :key="index" class="avatar-container">

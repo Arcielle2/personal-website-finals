@@ -21,6 +21,9 @@
       <div class="main-buttons">
         <div class="surprise2"  @click="triggerSurprise"> </div>
         <div class="surprise"  @click="triggerSurprise"> </div>
+        <div class="picture">
+          <img :src="lastPic" alt="Bottom" class="bottom-img" />
+        </div>
       </div>
       <div class="warning">
         <p>!Go back to Home before reloading!</p>
@@ -221,6 +224,7 @@ import pic12 from "@/assets/pic12.jfif";
 import pic13 from "@/assets/pic13.jfif";
 import pic14 from "@/assets/pic14.jfif";
 import pic15 from "@/assets/pic15.jfif";
+import lastPic from "@/assets/pic15.jfif";
 
 const openBoxes = ref([false]);
 const selectedImage = ref(defaultImage);
@@ -422,6 +426,11 @@ const triggerSurprise = () => {
   box-sizing: border-box;
 }
 
+.bottom {
+  height: 30px;
+  width: 100%;
+}
+
 .warning {
   position: absolute;  /* Make it stick inside a relative parent */
   bottom: 5px;         /* Adjust the spacing from the bottom */
@@ -430,7 +439,7 @@ const triggerSurprise = () => {
   font-family: "Public Pixel", sans-serif;
   font-size: 12px;
   color: #662c2c;
-  margin: 15px;
+  margin-top: 15px;
 }
 
 .main-buttons{

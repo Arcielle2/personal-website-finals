@@ -17,7 +17,18 @@
         </div>
         <p v-else class="sidebar-text">{{ courseDescription }}</p>
       </div>
+
+      <div class="circle-container">
+        <div 
+          v-for="(item, index) in circles" 
+          :key="index" 
+          class="circle" 
+          :style="{ backgroundColor: item.color }"
+          @click="changeContent(index)"
+        ></div>
+      </div>
     </div>
+
     <div class="main-content">
       <div class="box box1">
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(0)" />
@@ -503,6 +514,23 @@ onMounted(() => {
   100% {
     transform: translate(-5px, 5px) scale(1);
   }
+}
+
+.circle-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 30px;
+}
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.circle:hover {
+  transform: scale(1.1);
 }
 
 .main-content {

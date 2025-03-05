@@ -842,8 +842,8 @@ button:disabled img {
     0px 0px 20px #b74b4b,  
     0px 0px 30px #b74b4b,
     0px 0px 40px #b74b4b,
-    0px 0px 50px #b74b4b; /* Adjust blur effect */
-  font-weight: bold; /* Optional: Make text stand out more */
+    0px 0px 50px #b74b4b;
+  font-weight: bold;
 }
 
 .comment-container {

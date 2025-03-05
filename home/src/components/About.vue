@@ -517,6 +517,7 @@ const triggerSurprise = () => {
   justify-content: center;
   align-items: flex-start;
   gap: 10px;
+  margin-bottom: 20px;
 }
 
 .main-sidebar {

@@ -383,12 +383,12 @@ const currentView = ref(""); // Tracks which sidebar content is active
 const isSurprise = ref(false);
 
 const showSource = () => {
+  selectedImage.value = "";
   mainHeader.value = "Sources"; 
   currentView.value = "source";
   isSurprise.value = false;
 
   // Hide previous sidebar content
-  selectedImage.value = "";
   showHiImage.value = false;
   hobbyDescription.value = "";
   courseDescription.value = "";

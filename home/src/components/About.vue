@@ -185,7 +185,6 @@ import avatar3 from "@/assets/avatar3.jfif";
 import avatar4 from "@/assets/avatar4.jfif";
 import avatar5 from "@/assets/avatar5.jfif";
 import avatar6 from "@/assets/avatar6.jfif";
-import { c } from "vite/dist/node/moduleRunnerTransport.d-CXw_Ws6P";
 
 const openBoxes = ref([false]);
 const selectedImage = ref(defaultImage);

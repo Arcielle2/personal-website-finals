@@ -6,7 +6,7 @@
   <div class="container">
     <div class="main-sidebar" :class="{ 'surprise-effect': isSurprise }">
       <div class="main-header">
-        <div class="main-header">{{ mainHeader }}</div>
+        <h1>{{ mainHeader }}</h1>
       </div>
       <div class="sidebar">
         <div v-if="!courseDescription" class="image-container">
@@ -30,7 +30,7 @@
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(0)" />
           <div class="course-label"><p>Course</p></div>
           <div class="course-boxes">
-            <div class="course-box" @click="updateContent(course1Text)">
+            <div class="course-box" @click="changeSidebarImage(course1Text)">
               <img :src="c1" alt="Course 1" class="course-img" />
             </div>
             <div class="course-box" @click="changeSidebarImage(course2Text)">
@@ -219,17 +219,6 @@ import pic12 from "@/assets/pic12.jfif";
 import pic13 from "@/assets/pic13.jfif";
 import pic14 from "@/assets/pic14.jfif";
 import pic15 from "@/assets/pic15.jfif";
-
-const mainHeader = ref("");  // This will store the first sentence
-const sidebarContent = ref("");  // This will store the rest of the content
-
-const updateContent = (text) => {
-  const firstSentence = text.split(".")[0] + ".";  // Extract first sentence
-  const remainingText = text.substring(firstSentence.length).trim();  // Get the rest
-
-  mainHeader.value = firstSentence;
-  sidebarContent.value = remainingText;
-};
 
 const openBoxes = ref([false]);
 const selectedImage = ref(defaultImage);

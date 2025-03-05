@@ -105,7 +105,6 @@
             </div>
         </div>
       </div>
-    </div>
 
     <div class="sub-content">
       <div class="box box5">
@@ -156,6 +155,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 </template>
 

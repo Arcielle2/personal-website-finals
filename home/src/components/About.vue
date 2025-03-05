@@ -771,9 +771,9 @@ onMounted(() => {
 }
 
 .group-img {
-  width: 50px;
-  height: 30px;
-  background: whitesmoke;
+  width: 120px;
+  height: 100px;
+  background: #b74b4b;
   border-radius: 10px;
 }
 

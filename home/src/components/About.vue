@@ -114,6 +114,20 @@
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(4)" />
           <div class="last-box">
             <div class="pg-label"><p>Picture Gallery</p></div>
+              <div class="image-display">
+                <img :src="galleryImages[currentImageIndex]" alt="Gallery Image" class="gallery-img" />
+              </div>
+              <div class="gallery-buttons">
+                <button @click="prevImage" :disabled="currentImageIndex === 0">
+                  <img src="https://cdn-icons-png.flaticon.com/128/318/318477.png" alt="Previous" />
+                </button>
+                <button @click="nextImage" :disabled="currentImageIndex === galleryImages.length - 1">
+                  <img src="https://cdn-icons-png.flaticon.com/128/318/318476.png" alt="Next" />
+                </button>
+                <button @click="resetGallery">
+                  <img src="https://cdn-icons-png.flaticon.com/128/565/565922.png" alt="Reset" />
+                </button>
+              </div>
             <h2>Leave a Comment</h2>
             <div class="comment-container">
               <div class="avatar-selection">
@@ -274,6 +288,45 @@ const prevItem = () => {
   if (currentIndex.value > 0) {
     currentIndex.value--;
   }
+};
+
+const galleryImages = ref([
+  "https://source.unsplash.com/random/400x300?sig=1",
+  "https://source.unsplash.com/random/400x300?sig=2",
+  "https://source.unsplash.com/random/400x300?sig=3",
+  "https://source.unsplash.com/random/400x300?sig=4",
+  "https://source.unsplash.com/random/400x300?sig=5",
+  "https://source.unsplash.com/random/400x300?sig=6",
+  "https://source.unsplash.com/random/400x300?sig=7",
+  "https://source.unsplash.com/random/400x300?sig=8",
+  "https://source.unsplash.com/random/400x300?sig=9",
+  "https://source.unsplash.com/random/400x300?sig=10",
+  "https://source.unsplash.com/random/400x300?sig=11",
+  "https://source.unsplash.com/random/400x300?sig=12",
+  "https://source.unsplash.com/random/400x300?sig=13",
+  "https://source.unsplash.com/random/400x300?sig=14",
+  "https://source.unsplash.com/random/400x300?sig=15",
+]);
+
+const currentImageIndex = ref(0);
+
+// Next Image
+const nextImage = () => {
+  if (currentImageIndex.value < galleryImages.value.length - 1) {
+    currentImageIndex.value++;
+  }
+};
+
+// Previous Image
+const prevImage = () => {
+  if (currentImageIndex.value > 0) {
+    currentImageIndex.value--;
+  }
+};
+
+// Reset Gallery
+const resetGallery = () => {
+  currentImageIndex.value = 0;
 };
 
 const comments = ref([]);
@@ -702,6 +755,41 @@ onMounted(() => {
   height: 60px;
   background: whitesmoke;
   border-radius: 10px;
+}
+
+.gallery-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.gallery-buttons button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.gallery-buttons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s;
+}
+
+.gallery-buttons img:hover {
+  transform: scale(1.1);
+}
+
+button:disabled img {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .comment-container {

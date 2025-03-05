@@ -443,13 +443,13 @@ const triggerSurprise = () => {
 
 .warning {
   position: absolute;  /* Make it stick inside a relative parent */
-  bottom: 15px;         /* Adjust the spacing from the bottom */
+  bottom: 0;         /* Adjust the spacing from the bottom */
   left: 50%;           /* Center it horizontally */
   transform: translateX(-50%); /* Ensures perfect centering */
   font-family: "Public Pixel", sans-serif;
   font-size: 12px;
   color: #662c2c;
-  margin-top: 15px;
+  margin-top: 30px;
 }
 
 .main-buttons{

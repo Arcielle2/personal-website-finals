@@ -112,6 +112,7 @@
         <img class="toggle-btn" :src="sunImage" alt="Toggle Icon" @click="toggleBox(4)" />
         <div class="hidden-content" v-if="openBoxes[4]">
           <img class="back-btn" src="https://cdn-icons-png.flaticon.com/128/271/271220.png" @click="toggleBox(4)" />
+          <div class="last-page">
           <div class="pg-label"><p>Picture Gallery</p></div>
           
           <div class="image-display">
@@ -162,6 +163,7 @@
                 </li>
               </ul>
             </div>
+          </div>
           </div> <!-- ✅ Properly closed comment-container -->
         </div>
       </div>
@@ -736,6 +738,21 @@ onMounted(() => {
   font-size: 16px;
   font-weight: bold;
   text-align: center;
+}
+
+.hidden-content.last-page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(231, 231, 231);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: center;
+  overflow-y: auto; 
 }
 
 .group-boxes {

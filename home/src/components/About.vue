@@ -734,49 +734,44 @@ onMounted(() => {
 
 .comment-container {
   display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 20px;
+  gap: 15px;
+  max-width: 700px;
+  margin: auto;
 }
 
-.comment-section {
-  width: 500px;
-  height: 400px; /* Fixed height */
-  overflow-y: auto; /* Enables scrolling */
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
-}
-
-.reaction-section {
-  width: 100px;
-  height: 400px; /* Same height as comment section */
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  background: #fff;
+.avatar-selection {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
 }
 
+.comment-section {
+  flex: 1;
+  max-width: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  overflow-y: auto;
+}
+
 .comment-list {
   margin-top: 10px;
-  overflow-y: auto;
-  padding-right: 10px;
 }
 
 .comment-item {
   display: flex;
   align-items: center;
   padding: 10px;
-  border-bottom: 1px solid #ddd; /* Line separator */
-  background: #f9f9f9;
-  border-radius: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
 }
 
 .avatar {
@@ -788,20 +783,17 @@ onMounted(() => {
 
 .comment-content {
   flex: 1;
-  text-align: left;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 10px;
 }
 
-/* Scrollbar styling */
-.comment-list::-webkit-scrollbar {
-  width: 8px;
+.reaction-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
 }
 
-.comment-list::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 4px;
-}
-
-.comment-list::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
 </style>
